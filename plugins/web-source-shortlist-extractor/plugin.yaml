@@ -1,0 +1,7 @@
+name: web-source-shortlist-extractor
+version: 1.0.0
+description: "Source Shortlist Extractor for Hermes Agent: apply a template workflow to source shortlist work — covers source quality, recency and scope fit, using supplied facts only."
+author: Lionel Sim
+kind: standalone
+provides_tools:
+  - web_source_shortlist_extractor

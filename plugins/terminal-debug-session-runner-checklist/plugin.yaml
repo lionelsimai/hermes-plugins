@@ -1,0 +1,7 @@
+name: terminal-debug-session-runner-checklist
+version: 1.0.0
+description: "Debug Session Runner Checklist for Hermes Agent: apply a score workflow to debug session work — covers command safety, expected output and verification, using supplied facts only."
+author: Lionel Sim
+kind: standalone
+provides_tools:
+  - terminal_debug_session_runner_checklist

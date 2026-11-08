@@ -1,0 +1,7 @@
+name: terminal-script-draft-auditor
+version: 1.0.0
+description: "Script Draft Auditor for Hermes Agent: apply a analyze workflow to script draft work — covers command safety, expected output and verification, using supplied facts only."
+author: Lionel Sim
+kind: standalone
+provides_tools:
+  - terminal_script_draft_auditor

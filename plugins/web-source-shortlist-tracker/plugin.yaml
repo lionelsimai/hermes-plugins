@@ -1,0 +1,7 @@
+name: web-source-shortlist-tracker
+version: 1.0.0
+description: "Source Shortlist Tracker for Hermes Agent: apply a audit workflow to source shortlist work — covers source quality, recency and scope fit, using supplied facts only."
+author: Lionel Sim
+kind: standalone
+provides_tools:
+  - web_source_shortlist_tracker

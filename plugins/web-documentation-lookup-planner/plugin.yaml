@@ -1,0 +1,7 @@
+name: web-documentation-lookup-planner
+version: 1.0.0
+description: "Documentation Lookup Planner for Hermes Agent: apply a prioritize workflow to documentation lookup work — covers source quality, recency and scope fit, using supplied facts only."
+author: Lionel Sim
+kind: standalone
+provides_tools:
+  - web_documentation_lookup_planner

@@ -1,0 +1,7 @@
+name: web-research-brief-planner
+version: 1.0.0
+description: "Research Brief Planner for Hermes Agent: apply a checklist workflow to research brief work — covers source quality, recency and scope fit, using supplied facts only."
+author: Lionel Sim
+kind: standalone
+provides_tools:
+  - web_research_brief_planner

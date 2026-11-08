@@ -1,0 +1,113 @@
+{
+  "name": "terminal-script-draft-auditor",
+  "display_name": "Script Draft Auditor",
+  "description": "Script Draft Auditor for Hermes Agent: apply a analyze workflow to script draft work \u2014 covers command safety, expected output and verification, using supplied facts only.",
+  "category": "Terminal & Code Execution",
+  "domain": "Hermes Agent",
+  "version": "1.0.0",
+  "author": {
+    "name": "Lionel Sim",
+    "url": "https://sg.linkedin.com/in/lionelshen"
+  },
+  "license": "MIT",
+  "tools": [
+    {
+      "name": "terminal_script_draft_auditor",
+      "description": "Script Draft Auditor for Hermes Agent: apply a analyze workflow to script draft work \u2014 covers command safety, expected output and verification, using supplied facts only.",
+      "kind": "analyze",
+      "inputSchema": {
+        "type": "object",
+        "properties": {
+          "metrics": {
+            "type": "object"
+          },
+          "counts": {
+            "type": "object"
+          },
+          "amounts": {
+            "type": "object"
+          },
+          "series": {
+            "type": "array",
+            "items": {
+              "type": "number"
+            }
+          },
+          "text": {
+            "type": "string"
+          },
+          "completed": {
+            "type": "array",
+            "items": {
+              "type": "string"
+            }
+          },
+          "facts": {
+            "type": "object"
+          },
+          "items": {
+            "type": "array"
+          },
+          "goal": {
+            "type": "string"
+          },
+          "timeframe_days": {
+            "type": "integer"
+          }
+        },
+        "required": []
+      },
+      "sample_input": {
+        "counts": {
+          "script_draft_command_safety": 40,
+          "script_draft_expected_output": 25,
+          "script_draft_timeout_set": 10,
+          "script_draft_rollback_step": 75
+        },
+        "series": [
+          3,
+          5,
+          4,
+          8
+        ]
+      },
+      "output": {
+        "plugin": "terminal-script-draft-auditor",
+        "tool": "terminal_script_draft_auditor",
+        "kind": "analyze",
+        "result": "object (shape varies by kind, see README)",
+        "guardrails": "object \u2014 present on every result"
+      }
+    }
+  ],
+  "handler": {
+    "type": "analyze",
+    "config": {
+      "items": [
+        "script draft command safety",
+        "script draft expected output",
+        "script draft timeout set",
+        "script draft rollback step",
+        "script draft verification"
+      ]
+    }
+  },
+  "hermes": {
+    "skill": "SKILL.md in this folder (agentskills.io format)",
+    "plugin_manifest": "plugin.yaml in this folder (verified Hermes plugin format)",
+    "suggested_toolset": "terminal"
+  },
+  "guardrails": {
+    "no_fabrication": true,
+    "draft_only_for_generative_tools": true,
+    "human_approval_required": true,
+    "no_auto_send": true,
+    "use_supplied_facts_only": true,
+    "no_credential_handling": true
+  },
+  "keywords": [
+    "terminal & code execution",
+    "hermes",
+    "analyze"
+  ]
+}

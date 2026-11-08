@@ -1,0 +1,7 @@
+name: web-source-shortlist-summarizer
+version: 1.0.0
+description: "Source Shortlist Summarizer for Hermes Agent: apply a classify workflow to source shortlist work — covers source quality, recency and scope fit, using supplied facts only."
+author: Lionel Sim
+kind: standalone
+provides_tools:
+  - web_source_shortlist_summarizer

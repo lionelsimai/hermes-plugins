@@ -1,0 +1,7 @@
+name: web-fact-check-verifier
+version: 1.0.0
+description: "Fact Check Verifier for Hermes Agent: apply a audit workflow to fact check work — covers source quality, recency and scope fit, using supplied facts only."
+author: Lionel Sim
+kind: standalone
+provides_tools:
+  - web_fact_check_verifier

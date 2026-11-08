@@ -1,0 +1,113 @@
+{
+  "name": "web-fact-check-tracker",
+  "display_name": "Fact Check Tracker",
+  "description": "Fact Check Tracker for Hermes Agent: apply a prioritize workflow to fact check work \u2014 covers source quality, recency and scope fit, using supplied facts only.",
+  "category": "Web Research & Browsing",
+  "domain": "Hermes Agent",
+  "version": "1.0.0",
+  "author": {
+    "name": "Lionel Sim",
+    "url": "https://sg.linkedin.com/in/lionelshen"
+  },
+  "license": "MIT",
+  "tools": [
+    {
+      "name": "web_fact_check_tracker",
+      "description": "Fact Check Tracker for Hermes Agent: apply a prioritize workflow to fact check work \u2014 covers source quality, recency and scope fit, using supplied facts only.",
+      "kind": "prioritize",
+      "inputSchema": {
+        "type": "object",
+        "properties": {
+          "metrics": {
+            "type": "object"
+          },
+          "counts": {
+            "type": "object"
+          },
+          "amounts": {
+            "type": "object"
+          },
+          "series": {
+            "type": "array",
+            "items": {
+              "type": "number"
+            }
+          },
+          "text": {
+            "type": "string"
+          },
+          "completed": {
+            "type": "array",
+            "items": {
+              "type": "string"
+            }
+          },
+          "facts": {
+            "type": "object"
+          },
+          "items": {
+            "type": "array"
+          },
+          "goal": {
+            "type": "string"
+          },
+          "timeframe_days": {
+            "type": "integer"
+          }
+        },
+        "required": []
+      },
+      "sample_input": {
+        "items": [
+          {
+            "name": "Sample task A",
+            "impact": 8,
+            "effort": 3
+          },
+          {
+            "name": "Sample task B",
+            "impact": 6,
+            "effort": 1
+          }
+        ]
+      },
+      "output": {
+        "plugin": "web-fact-check-tracker",
+        "tool": "web_fact_check_tracker",
+        "kind": "prioritize",
+        "result": "object (shape varies by kind, see README)",
+        "guardrails": "object \u2014 present on every result"
+      }
+    }
+  ],
+  "handler": {
+    "type": "prioritize",
+    "config": {
+      "items": [
+        "fact check source quality",
+        "fact check recency",
+        "fact check corroboration",
+        "fact check citation completeness",
+        "fact check scope fit"
+      ]
+    }
+  },
+  "hermes": {
+    "skill": "SKILL.md in this folder (agentskills.io format)",
+    "plugin_manifest": "plugin.yaml in this folder (verified Hermes plugin format)",
+    "suggested_toolset": "web"
+  },
+  "guardrails": {
+    "no_fabrication": true,
+    "draft_only_for_generative_tools": true,
+    "human_approval_required": true,
+    "no_auto_send": true,
+    "use_supplied_facts_only": true,
+    "no_credential_handling": true
+  },
+  "keywords": [
+    "web research & browsing",
+    "hermes",
+    "prioritize"
+  ]
+}

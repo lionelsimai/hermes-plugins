@@ -1,0 +1,7 @@
+name: web-source-shortlist-verifier
+version: 1.0.0
+description: "Source Shortlist Verifier for Hermes Agent: apply a analyze workflow to source shortlist work — covers source quality, recency and scope fit, using supplied facts only."
+author: Lionel Sim
+kind: standalone
+provides_tools:
+  - web_source_shortlist_verifier

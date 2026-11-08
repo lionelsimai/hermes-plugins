@@ -1,0 +1,7 @@
+name: terminal-test-run-planner
+version: 1.0.0
+description: "Test Run Planner for Hermes Agent: apply a classify workflow to test run work — covers command safety, expected output and verification, using supplied facts only."
+author: Lionel Sim
+kind: standalone
+provides_tools:
+  - terminal_test_run_planner

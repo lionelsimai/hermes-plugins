@@ -1,0 +1,7 @@
+name: web-news-sweep-verifier
+version: 1.0.0
+description: "News Sweep Verifier for Hermes Agent: apply a prioritize workflow to news sweep work — covers source quality, recency and scope fit, using supplied facts only."
+author: Lionel Sim
+kind: standalone
+provides_tools:
+  - web_news_sweep_verifier

@@ -1,0 +1,7 @@
+name: web-price-research-planner
+version: 1.0.0
+description: "Price Research Planner for Hermes Agent: apply a template workflow to price research work — covers source quality, recency and scope fit, using supplied facts only."
+author: Lionel Sim
+kind: standalone
+provides_tools:
+  - web_price_research_planner

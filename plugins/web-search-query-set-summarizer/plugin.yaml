@@ -1,0 +1,7 @@
+name: web-search-query-set-summarizer
+version: 1.0.0
+description: "Search Query Set Summarizer for Hermes Agent: apply a prioritize workflow to search query set work — covers source quality, recency and scope fit, using supplied facts only."
+author: Lionel Sim
+kind: standalone
+provides_tools:
+  - web_search_query_set_summarizer

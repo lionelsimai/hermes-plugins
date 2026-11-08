@@ -1,0 +1,7 @@
+name: terminal-script-draft-runner-checklist
+version: 1.0.0
+description: "Script Draft Runner Checklist for Hermes Agent: apply a checklist workflow to script draft work — covers command safety, expected output and verification, using supplied facts only."
+author: Lionel Sim
+kind: standalone
+provides_tools:
+  - terminal_script_draft_runner_checklist

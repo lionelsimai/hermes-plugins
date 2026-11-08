@@ -1,0 +1,102 @@
+{
+  "name": "terminal-test-run-runner-checklist",
+  "display_name": "Test Run Runner Checklist",
+  "description": "Test Run Runner Checklist for Hermes Agent: apply a audit workflow to test run work \u2014 covers command safety, expected output and verification, using supplied facts only.",
+  "category": "Terminal & Code Execution",
+  "domain": "Hermes Agent",
+  "version": "1.0.0",
+  "author": {
+    "name": "Lionel Sim",
+    "url": "https://sg.linkedin.com/in/lionelshen"
+  },
+  "license": "MIT",
+  "tools": [
+    {
+      "name": "terminal_test_run_runner_checklist",
+      "description": "Test Run Runner Checklist for Hermes Agent: apply a audit workflow to test run work \u2014 covers command safety, expected output and verification, using supplied facts only.",
+      "kind": "audit",
+      "inputSchema": {
+        "type": "object",
+        "properties": {
+          "metrics": {
+            "type": "object"
+          },
+          "counts": {
+            "type": "object"
+          },
+          "amounts": {
+            "type": "object"
+          },
+          "series": {
+            "type": "array",
+            "items": {
+              "type": "number"
+            }
+          },
+          "text": {
+            "type": "string"
+          },
+          "completed": {
+            "type": "array",
+            "items": {
+              "type": "string"
+            }
+          },
+          "facts": {
+            "type": "object"
+          },
+          "items": {
+            "type": "array"
+          },
+          "goal": {
+            "type": "string"
+          },
+          "timeframe_days": {
+            "type": "integer"
+          }
+        },
+        "required": []
+      },
+      "sample_input": {
+        "text": "This sample covers test run command safety and test run expected output in detail."
+      },
+      "output": {
+        "plugin": "terminal-test-run-runner-checklist",
+        "tool": "terminal_test_run_runner_checklist",
+        "kind": "audit",
+        "result": "object (shape varies by kind, see README)",
+        "guardrails": "object \u2014 present on every result"
+      }
+    }
+  ],
+  "handler": {
+    "type": "audit",
+    "config": {
+      "items": [
+        "test run command safety",
+        "test run expected output",
+        "test run timeout set",
+        "test run rollback step",
+        "test run verification"
+      ]
+    }
+  },
+  "hermes": {
+    "skill": "SKILL.md in this folder (agentskills.io format)",
+    "plugin_manifest": "plugin.yaml in this folder (verified Hermes plugin format)",
+    "suggested_toolset": "terminal"
+  },
+  "guardrails": {
+    "no_fabrication": true,
+    "draft_only_for_generative_tools": true,
+    "human_approval_required": true,
+    "no_auto_send": true,
+    "use_supplied_facts_only": true,
+    "no_credential_handling": true
+  },
+  "keywords": [
+    "terminal & code execution",
+    "hermes",
+    "audit"
+  ]
+}

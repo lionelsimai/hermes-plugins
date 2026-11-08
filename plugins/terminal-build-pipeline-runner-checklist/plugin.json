@@ -1,0 +1,105 @@
+{
+  "name": "terminal-build-pipeline-runner-checklist",
+  "display_name": "Build Pipeline Runner Checklist",
+  "description": "Build Pipeline Runner Checklist for Hermes Agent: apply a template workflow to build pipeline work \u2014 covers command safety, expected output and verification, using supplied facts only.",
+  "category": "Terminal & Code Execution",
+  "domain": "Hermes Agent",
+  "version": "1.0.0",
+  "author": {
+    "name": "Lionel Sim",
+    "url": "https://sg.linkedin.com/in/lionelshen"
+  },
+  "license": "MIT",
+  "tools": [
+    {
+      "name": "terminal_build_pipeline_runner_checklist",
+      "description": "Build Pipeline Runner Checklist for Hermes Agent: apply a template workflow to build pipeline work \u2014 covers command safety, expected output and verification, using supplied facts only.",
+      "kind": "template",
+      "inputSchema": {
+        "type": "object",
+        "properties": {
+          "metrics": {
+            "type": "object"
+          },
+          "counts": {
+            "type": "object"
+          },
+          "amounts": {
+            "type": "object"
+          },
+          "series": {
+            "type": "array",
+            "items": {
+              "type": "number"
+            }
+          },
+          "text": {
+            "type": "string"
+          },
+          "completed": {
+            "type": "array",
+            "items": {
+              "type": "string"
+            }
+          },
+          "facts": {
+            "type": "object"
+          },
+          "items": {
+            "type": "array"
+          },
+          "goal": {
+            "type": "string"
+          },
+          "timeframe_days": {
+            "type": "integer"
+          }
+        },
+        "required": []
+      },
+      "sample_input": {
+        "facts": {
+          "build_pipeline_command_safety": "Sample supplied fact",
+          "build_pipeline_expected_output": "Second supplied fact"
+        }
+      },
+      "output": {
+        "plugin": "terminal-build-pipeline-runner-checklist",
+        "tool": "terminal_build_pipeline_runner_checklist",
+        "kind": "template",
+        "result": "object (shape varies by kind, see README)",
+        "guardrails": "object \u2014 present on every result"
+      }
+    }
+  ],
+  "handler": {
+    "type": "template",
+    "config": {
+      "items": [
+        "build pipeline command safety",
+        "build pipeline expected output",
+        "build pipeline timeout set",
+        "build pipeline rollback step",
+        "build pipeline verification"
+      ]
+    }
+  },
+  "hermes": {
+    "skill": "SKILL.md in this folder (agentskills.io format)",
+    "plugin_manifest": "plugin.yaml in this folder (verified Hermes plugin format)",
+    "suggested_toolset": "terminal"
+  },
+  "guardrails": {
+    "no_fabrication": true,
+    "draft_only_for_generative_tools": true,
+    "human_approval_required": true,
+    "no_auto_send": true,
+    "use_supplied_facts_only": true,
+    "no_credential_handling": true
+  },
+  "keywords": [
+    "terminal & code execution",
+    "hermes",
+    "template"
+  ]
+}

@@ -1,0 +1,7 @@
+name: terminal-docker-task-drafter
+version: 1.0.0
+description: "Docker Task Drafter for Hermes Agent: apply a plan workflow to docker task work — covers command safety, expected output and verification, using supplied facts only."
+author: Lionel Sim
+kind: standalone
+provides_tools:
+  - terminal_docker_task_drafter

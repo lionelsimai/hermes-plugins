@@ -1,0 +1,7 @@
+name: web-citation-list-extractor
+version: 1.0.0
+description: "Citation List Extractor for Hermes Agent: apply a audit workflow to citation list work — covers source quality, recency and scope fit, using supplied facts only."
+author: Lionel Sim
+kind: standalone
+provides_tools:
+  - web_citation_list_extractor

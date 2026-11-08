@@ -1,0 +1,7 @@
+name: terminal-build-pipeline-runner-checklist
+version: 1.0.0
+description: "Build Pipeline Runner Checklist for Hermes Agent: apply a template workflow to build pipeline work — covers command safety, expected output and verification, using supplied facts only."
+author: Lionel Sim
+kind: standalone
+provides_tools:
+  - terminal_build_pipeline_runner_checklist

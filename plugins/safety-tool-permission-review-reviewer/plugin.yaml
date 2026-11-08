@@ -1,0 +1,7 @@
+name: safety-tool-permission-review-reviewer
+version: 1.0.0
+description: "Tool Permission Review Reviewer for Hermes Agent: apply a classify workflow to tool permission review work — covers risk identified, approval required and audit logged, using supplied facts only."
+author: Lionel Sim
+kind: standalone
+provides_tools:
+  - safety_tool_permission_review_reviewer

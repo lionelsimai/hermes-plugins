@@ -1,0 +1,7 @@
+name: web-news-sweep-summarizer
+version: 1.0.0
+description: "News Sweep Summarizer for Hermes Agent: apply a score workflow to news sweep work — covers source quality, recency and scope fit, using supplied facts only."
+author: Lionel Sim
+kind: standalone
+provides_tools:
+  - web_news_sweep_summarizer

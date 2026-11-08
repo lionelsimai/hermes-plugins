@@ -1,0 +1,113 @@
+{
+  "name": "safety-tool-permission-review-gate",
+  "display_name": "Tool Permission Review Gate",
+  "description": "Tool Permission Review Gate for Hermes Agent: apply a analyze workflow to tool permission review work \u2014 covers risk identified, approval required and audit logged, using supplied facts only.",
+  "category": "Safety, Approvals & Guardrails",
+  "domain": "Hermes Agent",
+  "version": "1.0.0",
+  "author": {
+    "name": "Lionel Sim",
+    "url": "https://sg.linkedin.com/in/lionelshen"
+  },
+  "license": "MIT",
+  "tools": [
+    {
+      "name": "safety_tool_permission_review_gate",
+      "description": "Tool Permission Review Gate for Hermes Agent: apply a analyze workflow to tool permission review work \u2014 covers risk identified, approval required and audit logged, using supplied facts only.",
+      "kind": "analyze",
+      "inputSchema": {
+        "type": "object",
+        "properties": {
+          "metrics": {
+            "type": "object"
+          },
+          "counts": {
+            "type": "object"
+          },
+          "amounts": {
+            "type": "object"
+          },
+          "series": {
+            "type": "array",
+            "items": {
+              "type": "number"
+            }
+          },
+          "text": {
+            "type": "string"
+          },
+          "completed": {
+            "type": "array",
+            "items": {
+              "type": "string"
+            }
+          },
+          "facts": {
+            "type": "object"
+          },
+          "items": {
+            "type": "array"
+          },
+          "goal": {
+            "type": "string"
+          },
+          "timeframe_days": {
+            "type": "integer"
+          }
+        },
+        "required": []
+      },
+      "sample_input": {
+        "counts": {
+          "tool_permission_review_risk_identified": 40,
+          "tool_permission_review_approval_required": 25,
+          "tool_permission_review_least_privilege": 10,
+          "tool_permission_review_reversibility": 75
+        },
+        "series": [
+          3,
+          5,
+          4,
+          8
+        ]
+      },
+      "output": {
+        "plugin": "safety-tool-permission-review-gate",
+        "tool": "safety_tool_permission_review_gate",
+        "kind": "analyze",
+        "result": "object (shape varies by kind, see README)",
+        "guardrails": "object \u2014 present on every result"
+      }
+    }
+  ],
+  "handler": {
+    "type": "analyze",
+    "config": {
+      "items": [
+        "tool permission review risk identified",
+        "tool permission review approval required",
+        "tool permission review least privilege",
+        "tool permission review reversibility",
+        "tool permission review audit logged"
+      ]
+    }
+  },
+  "hermes": {
+    "skill": "SKILL.md in this folder (agentskills.io format)",
+    "plugin_manifest": "plugin.yaml in this folder (verified Hermes plugin format)",
+    "suggested_toolset": "skills"
+  },
+  "guardrails": {
+    "no_fabrication": true,
+    "draft_only_for_generative_tools": true,
+    "human_approval_required": true,
+    "no_auto_send": true,
+    "use_supplied_facts_only": true,
+    "no_credential_handling": true
+  },
+  "keywords": [
+    "safety, approvals & guardrails",
+    "hermes",
+    "analyze"
+  ]
+}

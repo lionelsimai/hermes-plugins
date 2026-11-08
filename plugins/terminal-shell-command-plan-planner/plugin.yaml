@@ -1,0 +1,7 @@
+name: terminal-shell-command-plan-planner
+version: 1.0.0
+description: "Shell Command Plan Planner for Hermes Agent: apply a template workflow to shell command plan work — covers command safety, expected output and verification, using supplied facts only."
+author: Lionel Sim
+kind: standalone
+provides_tools:
+  - terminal_shell_command_plan_planner

@@ -1,0 +1,7 @@
+name: terminal-script-draft-drafter
+version: 1.0.0
+description: "Script Draft Drafter for Hermes Agent: apply a classify workflow to script draft work — covers command safety, expected output and verification, using supplied facts only."
+author: Lionel Sim
+kind: standalone
+provides_tools:
+  - terminal_script_draft_drafter

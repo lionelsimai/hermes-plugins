@@ -1,0 +1,7 @@
+name: web-competitor-page-planner
+version: 1.0.0
+description: "Competitor Page Planner for Hermes Agent: apply a score workflow to competitor page work — covers source quality, recency and scope fit, using supplied facts only."
+author: Lionel Sim
+kind: standalone
+provides_tools:
+  - web_competitor_page_planner

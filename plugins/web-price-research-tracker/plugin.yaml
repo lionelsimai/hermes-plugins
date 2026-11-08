@@ -1,0 +1,7 @@
+name: web-price-research-tracker
+version: 1.0.0
+description: "Price Research Tracker for Hermes Agent: apply a plan workflow to price research work — covers source quality, recency and scope fit, using supplied facts only."
+author: Lionel Sim
+kind: standalone
+provides_tools:
+  - web_price_research_tracker

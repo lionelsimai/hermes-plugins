@@ -1,0 +1,7 @@
+name: terminal-ssh-task-planner
+version: 1.0.0
+description: "Ssh Task Planner for Hermes Agent: apply a audit workflow to ssh task work — covers command safety, expected output and verification, using supplied facts only."
+author: Lionel Sim
+kind: standalone
+provides_tools:
+  - terminal_ssh_task_planner

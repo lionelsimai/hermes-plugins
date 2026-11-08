@@ -1,0 +1,7 @@
+name: terminal-long-running-process-runner-checklist
+version: 1.0.0
+description: "Long Running Process Runner Checklist for Hermes Agent: apply a score workflow to long running process work — covers command safety, expected output and verification, using supplied facts only."
+author: Lionel Sim
+kind: standalone
+provides_tools:
+  - terminal_long_running_process_runner_checklist

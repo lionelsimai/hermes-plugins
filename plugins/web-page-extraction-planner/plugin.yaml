@@ -1,0 +1,7 @@
+name: web-page-extraction-planner
+version: 1.0.0
+description: "Page Extraction Planner for Hermes Agent: apply a plan workflow to page extraction work — covers source quality, recency and scope fit, using supplied facts only."
+author: Lionel Sim
+kind: standalone
+provides_tools:
+  - web_page_extraction_planner

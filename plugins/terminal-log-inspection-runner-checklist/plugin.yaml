@@ -1,0 +1,7 @@
+name: terminal-log-inspection-runner-checklist
+version: 1.0.0
+description: "Log Inspection Runner Checklist for Hermes Agent: apply a prioritize workflow to log inspection work — covers command safety, expected output and verification, using supplied facts only."
+author: Lionel Sim
+kind: standalone
+provides_tools:
+  - terminal_log_inspection_runner_checklist

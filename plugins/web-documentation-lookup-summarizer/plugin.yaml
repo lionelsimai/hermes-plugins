@@ -1,0 +1,7 @@
+name: web-documentation-lookup-summarizer
+version: 1.0.0
+description: "Documentation Lookup Summarizer for Hermes Agent: apply a template workflow to documentation lookup work — covers source quality, recency and scope fit, using supplied facts only."
+author: Lionel Sim
+kind: standalone
+provides_tools:
+  - web_documentation_lookup_summarizer

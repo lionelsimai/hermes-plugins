@@ -1,0 +1,105 @@
+{
+  "name": "terminal-debug-session-auditor",
+  "display_name": "Debug Session Auditor",
+  "description": "Debug Session Auditor for Hermes Agent: apply a template workflow to debug session work \u2014 covers command safety, expected output and verification, using supplied facts only.",
+  "category": "Terminal & Code Execution",
+  "domain": "Hermes Agent",
+  "version": "1.0.0",
+  "author": {
+    "name": "Lionel Sim",
+    "url": "https://sg.linkedin.com/in/lionelshen"
+  },
+  "license": "MIT",
+  "tools": [
+    {
+      "name": "terminal_debug_session_auditor",
+      "description": "Debug Session Auditor for Hermes Agent: apply a template workflow to debug session work \u2014 covers command safety, expected output and verification, using supplied facts only.",
+      "kind": "template",
+      "inputSchema": {
+        "type": "object",
+        "properties": {
+          "metrics": {
+            "type": "object"
+          },
+          "counts": {
+            "type": "object"
+          },
+          "amounts": {
+            "type": "object"
+          },
+          "series": {
+            "type": "array",
+            "items": {
+              "type": "number"
+            }
+          },
+          "text": {
+            "type": "string"
+          },
+          "completed": {
+            "type": "array",
+            "items": {
+              "type": "string"
+            }
+          },
+          "facts": {
+            "type": "object"
+          },
+          "items": {
+            "type": "array"
+          },
+          "goal": {
+            "type": "string"
+          },
+          "timeframe_days": {
+            "type": "integer"
+          }
+        },
+        "required": []
+      },
+      "sample_input": {
+        "facts": {
+          "debug_session_command_safety": "Sample supplied fact",
+          "debug_session_expected_output": "Second supplied fact"
+        }
+      },
+      "output": {
+        "plugin": "terminal-debug-session-auditor",
+        "tool": "terminal_debug_session_auditor",
+        "kind": "template",
+        "result": "object (shape varies by kind, see README)",
+        "guardrails": "object \u2014 present on every result"
+      }
+    }
+  ],
+  "handler": {
+    "type": "template",
+    "config": {
+      "items": [
+        "debug session command safety",
+        "debug session expected output",
+        "debug session timeout set",
+        "debug session rollback step",
+        "debug session verification"
+      ]
+    }
+  },
+  "hermes": {
+    "skill": "SKILL.md in this folder (agentskills.io format)",
+    "plugin_manifest": "plugin.yaml in this folder (verified Hermes plugin format)",
+    "suggested_toolset": "terminal"
+  },
+  "guardrails": {
+    "no_fabrication": true,
+    "draft_only_for_generative_tools": true,
+    "human_approval_required": true,
+    "no_auto_send": true,
+    "use_supplied_facts_only": true,
+    "no_credential_handling": true
+  },
+  "keywords": [
+    "terminal & code execution",
+    "hermes",
+    "template"
+  ]
+}

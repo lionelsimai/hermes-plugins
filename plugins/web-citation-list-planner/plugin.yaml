@@ -1,0 +1,7 @@
+name: web-citation-list-planner
+version: 1.0.0
+description: "Citation List Planner for Hermes Agent: apply a classify workflow to citation list work — covers source quality, recency and scope fit, using supplied facts only."
+author: Lionel Sim
+kind: standalone
+provides_tools:
+  - web_citation_list_planner

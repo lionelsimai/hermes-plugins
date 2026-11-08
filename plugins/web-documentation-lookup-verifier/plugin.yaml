@@ -1,0 +1,7 @@
+name: web-documentation-lookup-verifier
+version: 1.0.0
+description: "Documentation Lookup Verifier for Hermes Agent: apply a checklist workflow to documentation lookup work — covers source quality, recency and scope fit, using supplied facts only."
+author: Lionel Sim
+kind: standalone
+provides_tools:
+  - web_documentation_lookup_verifier
