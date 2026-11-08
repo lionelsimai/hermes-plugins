@@ -1,0 +1,7 @@
+name: biz-pipeline-review-planner
+version: 1.0.0
+description: "Pipeline Review Planner for Hermes Agent: apply a plan workflow to pipeline review work — covers facts supplied only, audience fit and evidence noted, using supplied facts only."
+author: Lionel Sim
+kind: standalone
+provides_tools:
+  - biz_pipeline_review_planner

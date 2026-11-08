@@ -1,0 +1,102 @@
+{
+  "name": "cron-sync-job-checker",
+  "display_name": "Sync Job Checker",
+  "description": "Sync Job Checker for Hermes Agent: apply a classify workflow to sync job work \u2014 covers schedule clarity, delivery target and owner named, using supplied facts only.",
+  "category": "Scheduling & Cron",
+  "domain": "Hermes Agent",
+  "version": "1.0.0",
+  "author": {
+    "name": "Lionel Sim",
+    "url": "https://sg.linkedin.com/in/lionelshen"
+  },
+  "license": "MIT",
+  "tools": [
+    {
+      "name": "cron_sync_job_checker",
+      "description": "Sync Job Checker for Hermes Agent: apply a classify workflow to sync job work \u2014 covers schedule clarity, delivery target and owner named, using supplied facts only.",
+      "kind": "classify",
+      "inputSchema": {
+        "type": "object",
+        "properties": {
+          "metrics": {
+            "type": "object"
+          },
+          "counts": {
+            "type": "object"
+          },
+          "amounts": {
+            "type": "object"
+          },
+          "series": {
+            "type": "array",
+            "items": {
+              "type": "number"
+            }
+          },
+          "text": {
+            "type": "string"
+          },
+          "completed": {
+            "type": "array",
+            "items": {
+              "type": "string"
+            }
+          },
+          "facts": {
+            "type": "object"
+          },
+          "items": {
+            "type": "array"
+          },
+          "goal": {
+            "type": "string"
+          },
+          "timeframe_days": {
+            "type": "integer"
+          }
+        },
+        "required": []
+      },
+      "sample_input": {
+        "text": "Please review: this concerns sync job schedule clarity and sync job failure handling."
+      },
+      "output": {
+        "plugin": "cron-sync-job-checker",
+        "tool": "cron_sync_job_checker",
+        "kind": "classify",
+        "result": "object (shape varies by kind, see README)",
+        "guardrails": "object \u2014 present on every result"
+      }
+    }
+  ],
+  "handler": {
+    "type": "classify",
+    "config": {
+      "items": [
+        "sync job schedule clarity",
+        "sync job delivery target",
+        "sync job failure handling",
+        "sync job idempotency",
+        "sync job owner named"
+      ]
+    }
+  },
+  "hermes": {
+    "skill": "SKILL.md in this folder (agentskills.io format)",
+    "plugin_manifest": "plugin.yaml in this folder (verified Hermes plugin format)",
+    "suggested_toolset": "cron"
+  },
+  "guardrails": {
+    "no_fabrication": true,
+    "draft_only_for_generative_tools": true,
+    "human_approval_required": true,
+    "no_auto_send": true,
+    "use_supplied_facts_only": true,
+    "no_credential_handling": true
+  },
+  "keywords": [
+    "scheduling & cron",
+    "hermes",
+    "classify"
+  ]
+}

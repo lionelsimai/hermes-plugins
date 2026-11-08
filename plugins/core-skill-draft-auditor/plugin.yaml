@@ -1,0 +1,7 @@
+name: core-skill-draft-auditor
+version: 1.0.0
+description: "Skill Draft Auditor for Hermes Agent: apply a template workflow to skill draft work — covers goal clarity, setup completeness and verification step, using supplied facts only."
+author: Lionel Sim
+kind: standalone
+provides_tools:
+  - core_skill_draft_auditor

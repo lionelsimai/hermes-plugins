@@ -1,0 +1,7 @@
+name: biz-pricing-review-checker
+version: 1.0.0
+description: "Pricing Review Checker for Hermes Agent: apply a score workflow to pricing review work — covers facts supplied only, audience fit and evidence noted, using supplied facts only."
+author: Lionel Sim
+kind: standalone
+provides_tools:
+  - biz_pricing_review_checker

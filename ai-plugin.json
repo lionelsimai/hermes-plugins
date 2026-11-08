@@ -1,0 +1,17 @@
+{
+  "schema_version": "v1",
+  "name_for_model": "lionel_hermes_plugins",
+  "human_plugin_name": "Lionel Hermes Plugins",
+  "description_for_human": "1,000 plugins for Hermes Agent (Nous Research): agent ops, memory, terminal, files, web, browser, messaging gateway, cron, email, data, APIs, MCP, multi-agent, media, RAG, productivity, GTM, community, DevOps and safety.",
+  "description_for_model": "Use these tools for Hermes Agent workflows. Every tool returns guardrails: supplied facts only, never invent facts or metrics, drafts only, human approval required, never auto-send, never handle credentials.",
+  "auth": {
+    "type": "none"
+  },
+  "api": {
+    "type": "openapi",
+    "openapi_url": "http://localhost:8787/openapi.json"
+  },
+  "logo_url": "",
+  "contact_email": "",
+  "legal_info_url": "https://github.com/lionelsimai/"
+}

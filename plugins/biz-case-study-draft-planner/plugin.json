@@ -1,0 +1,102 @@
+{
+  "name": "biz-case-study-draft-planner",
+  "display_name": "Case Study Draft Planner",
+  "description": "Case Study Draft Planner for Hermes Agent: apply a audit workflow to case study draft work \u2014 covers facts supplied only, audience fit and evidence noted, using supplied facts only.",
+  "category": "Business & GTM Ops",
+  "domain": "Hermes Agent",
+  "version": "1.0.0",
+  "author": {
+    "name": "Lionel Sim",
+    "url": "https://sg.linkedin.com/in/lionelshen"
+  },
+  "license": "MIT",
+  "tools": [
+    {
+      "name": "biz_case_study_draft_planner",
+      "description": "Case Study Draft Planner for Hermes Agent: apply a audit workflow to case study draft work \u2014 covers facts supplied only, audience fit and evidence noted, using supplied facts only.",
+      "kind": "audit",
+      "inputSchema": {
+        "type": "object",
+        "properties": {
+          "metrics": {
+            "type": "object"
+          },
+          "counts": {
+            "type": "object"
+          },
+          "amounts": {
+            "type": "object"
+          },
+          "series": {
+            "type": "array",
+            "items": {
+              "type": "number"
+            }
+          },
+          "text": {
+            "type": "string"
+          },
+          "completed": {
+            "type": "array",
+            "items": {
+              "type": "string"
+            }
+          },
+          "facts": {
+            "type": "object"
+          },
+          "items": {
+            "type": "array"
+          },
+          "goal": {
+            "type": "string"
+          },
+          "timeframe_days": {
+            "type": "integer"
+          }
+        },
+        "required": []
+      },
+      "sample_input": {
+        "text": "This sample covers case study draft facts supplied only and case study draft audience fit in detail."
+      },
+      "output": {
+        "plugin": "biz-case-study-draft-planner",
+        "tool": "biz_case_study_draft_planner",
+        "kind": "audit",
+        "result": "object (shape varies by kind, see README)",
+        "guardrails": "object \u2014 present on every result"
+      }
+    }
+  ],
+  "handler": {
+    "type": "audit",
+    "config": {
+      "items": [
+        "case study draft facts supplied only",
+        "case study draft audience fit",
+        "case study draft approval gate",
+        "case study draft next step clarity",
+        "case study draft evidence noted"
+      ]
+    }
+  },
+  "hermes": {
+    "skill": "SKILL.md in this folder (agentskills.io format)",
+    "plugin_manifest": "plugin.yaml in this folder (verified Hermes plugin format)",
+    "suggested_toolset": "web"
+  },
+  "guardrails": {
+    "no_fabrication": true,
+    "draft_only_for_generative_tools": true,
+    "human_approval_required": true,
+    "no_auto_send": true,
+    "use_supplied_facts_only": true,
+    "no_credential_handling": true
+  },
+  "keywords": [
+    "business & gtm ops",
+    "hermes",
+    "audit"
+  ]
+}

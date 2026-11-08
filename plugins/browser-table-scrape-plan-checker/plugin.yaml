@@ -1,0 +1,7 @@
+name: browser-table-scrape-plan-checker
+version: 1.0.0
+description: "Table Scrape Plan Checker for Hermes Agent: apply a prioritize workflow to table scrape plan work — covers step clarity, fallback step and completion proof, using supplied facts only."
+author: Lionel Sim
+kind: standalone
+provides_tools:
+  - browser_table_scrape_plan_checker

@@ -1,0 +1,7 @@
+name: cron-job-failure-review-scheduler-review
+version: 1.0.0
+description: "Job Failure Review Scheduler Review for Hermes Agent: apply a prioritize workflow to job failure review work — covers schedule clarity, delivery target and owner named, using supplied facts only."
+author: Lionel Sim
+kind: standalone
+provides_tools:
+  - cron_job_failure_review_scheduler_review

@@ -1,0 +1,7 @@
+name: core-skill-review-builder
+version: 1.0.0
+description: "Skill Review Builder for Hermes Agent: apply a plan workflow to skill review work — covers goal clarity, setup completeness and verification step, using supplied facts only."
+author: Lionel Sim
+kind: standalone
+provides_tools:
+  - core_skill_review_builder

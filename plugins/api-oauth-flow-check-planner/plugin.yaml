@@ -1,0 +1,7 @@
+name: api-oauth-flow-check-planner
+version: 1.0.0
+description: "Oauth Flow Check Planner for Hermes Agent: apply a classify workflow to oauth flow check work — covers contract fit, auth handled safely and verification call, using supplied facts only."
+author: Lionel Sim
+kind: standalone
+provides_tools:
+  - api_oauth_flow_check_planner

@@ -1,0 +1,7 @@
+name: biz-lead-list-check-reviewer
+version: 1.0.0
+description: "Lead List Check Reviewer for Hermes Agent: apply a analyze workflow to lead list check work — covers facts supplied only, audience fit and evidence noted, using supplied facts only."
+author: Lionel Sim
+kind: standalone
+provides_tools:
+  - biz_lead_list_check_reviewer

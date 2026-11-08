@@ -1,0 +1,7 @@
+name: biz-outreach-draft-scorer
+version: 1.0.0
+description: "Outreach Draft Scorer for Hermes Agent: apply a checklist workflow to outreach draft work — covers facts supplied only, audience fit and evidence noted, using supplied facts only."
+author: Lionel Sim
+kind: standalone
+provides_tools:
+  - biz_outreach_draft_scorer

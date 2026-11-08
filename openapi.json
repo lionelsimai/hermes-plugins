@@ -1,0 +1,71 @@
+{
+  "openapi": "3.1.0",
+  "info": {
+    "title": "Lionel Hermes Plugins",
+    "version": "1.0.0",
+    "description": "1,000 deterministic, guardrailed tools for Hermes Agent workflows. Drafts only, human approval required, no fabrication, no auto-send, no credential handling.",
+    "license": {
+      "name": "MIT"
+    },
+    "contact": {
+      "name": "Lionel Sim",
+      "url": "https://sg.linkedin.com/in/lionelshen"
+    }
+  },
+  "servers": [
+    {
+      "url": "http://localhost:8787"
+    }
+  ],
+  "paths": {
+    "/health": {
+      "get": {
+        "operationId": "health",
+        "responses": {
+          "200": {
+            "description": "ok"
+          }
+        }
+      }
+    },
+    "/catalog": {
+      "get": {
+        "operationId": "catalog",
+        "responses": {
+          "200": {
+            "description": "Full 1,000-plugin catalogue"
+          }
+        }
+      }
+    },
+    "/tools/{tool}": {
+      "post": {
+        "operationId": "call_tool",
+        "parameters": [
+          {
+            "name": "tool",
+            "in": "path",
+            "required": true,
+            "schema": {
+              "type": "string"
+            }
+          }
+        ],
+        "requestBody": {
+          "content": {
+            "application/json": {
+              "schema": {
+                "type": "object"
+              }
+            }
+          }
+        },
+        "responses": {
+          "200": {
+            "description": "Tool result with guardrails block"
+          }
+        }
+      }
+    }
+  }
+}

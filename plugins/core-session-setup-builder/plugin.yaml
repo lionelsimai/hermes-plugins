@@ -1,0 +1,7 @@
+name: core-session-setup-builder
+version: 1.0.0
+description: "Session Setup Builder for Hermes Agent: apply a audit workflow to session setup work — covers goal clarity, setup completeness and verification step, using supplied facts only."
+author: Lionel Sim
+kind: standalone
+provides_tools:
+  - core_session_setup_builder

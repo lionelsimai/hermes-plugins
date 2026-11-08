@@ -1,0 +1,33 @@
+{
+  "name": "lionel-sim-skills",
+  "owner": {
+    "name": "Lionel Sim",
+    "url": "https://sg.linkedin.com/in/lionelshen"
+  },
+  "metadata": {
+    "description": "Open-source AI agent skills and plugins by Lionel Sim (The AI Capitol).",
+    "version": "1.0.0"
+  },
+  "plugins": [
+    {
+      "name": "hermes-plugins",
+      "source": "./",
+      "description": "1,000 plugins for Hermes Agent (Nous Research) by Lionel Sim (The AI Capitol / Hermes AI Agent Singapore Community): agent ops, memory, terminal, files, web, browser, gateway, cron, MCP, multi-agent, RAG, safety \u2014 deterministic, guardrailed, drafts only, no auto-send.",
+      "version": "1.0.0",
+      "author": {
+        "name": "Lionel Sim"
+      },
+      "category": "productivity",
+      "license": "MIT",
+      "keywords": [
+        "hermes",
+        "hermes-agent",
+        "nous-research",
+        "agents",
+        "mcp",
+        "plugin",
+        "skills"
+      ]
+    }
+  ]
+}

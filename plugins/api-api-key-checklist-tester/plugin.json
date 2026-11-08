@@ -1,0 +1,102 @@
+{
+  "name": "api-api-key-checklist-tester",
+  "display_name": "Api Key Checklist Tester",
+  "description": "Api Key Checklist Tester for Hermes Agent: apply a classify workflow to api key checklist work \u2014 covers contract fit, auth handled safely and verification call, using supplied facts only.",
+  "category": "APIs & Integrations",
+  "domain": "Hermes Agent",
+  "version": "1.0.0",
+  "author": {
+    "name": "Lionel Sim",
+    "url": "https://sg.linkedin.com/in/lionelshen"
+  },
+  "license": "MIT",
+  "tools": [
+    {
+      "name": "api_api_key_checklist_tester",
+      "description": "Api Key Checklist Tester for Hermes Agent: apply a classify workflow to api key checklist work \u2014 covers contract fit, auth handled safely and verification call, using supplied facts only.",
+      "kind": "classify",
+      "inputSchema": {
+        "type": "object",
+        "properties": {
+          "metrics": {
+            "type": "object"
+          },
+          "counts": {
+            "type": "object"
+          },
+          "amounts": {
+            "type": "object"
+          },
+          "series": {
+            "type": "array",
+            "items": {
+              "type": "number"
+            }
+          },
+          "text": {
+            "type": "string"
+          },
+          "completed": {
+            "type": "array",
+            "items": {
+              "type": "string"
+            }
+          },
+          "facts": {
+            "type": "object"
+          },
+          "items": {
+            "type": "array"
+          },
+          "goal": {
+            "type": "string"
+          },
+          "timeframe_days": {
+            "type": "integer"
+          }
+        },
+        "required": []
+      },
+      "sample_input": {
+        "text": "Please review: this concerns api key checklist contract fit and api key checklist error cases covered."
+      },
+      "output": {
+        "plugin": "api-api-key-checklist-tester",
+        "tool": "api_api_key_checklist_tester",
+        "kind": "classify",
+        "result": "object (shape varies by kind, see README)",
+        "guardrails": "object \u2014 present on every result"
+      }
+    }
+  ],
+  "handler": {
+    "type": "classify",
+    "config": {
+      "items": [
+        "api key checklist contract fit",
+        "api key checklist auth handled safely",
+        "api key checklist error cases covered",
+        "api key checklist rate limits respected",
+        "api key checklist verification call"
+      ]
+    }
+  },
+  "hermes": {
+    "skill": "SKILL.md in this folder (agentskills.io format)",
+    "plugin_manifest": "plugin.yaml in this folder (verified Hermes plugin format)",
+    "suggested_toolset": "web"
+  },
+  "guardrails": {
+    "no_fabrication": true,
+    "draft_only_for_generative_tools": true,
+    "human_approval_required": true,
+    "no_auto_send": true,
+    "use_supplied_facts_only": true,
+    "no_credential_handling": true
+  },
+  "keywords": [
+    "apis & integrations",
+    "hermes",
+    "classify"
+  ]
+}

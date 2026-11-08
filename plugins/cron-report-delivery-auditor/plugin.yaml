@@ -1,0 +1,7 @@
+name: cron-report-delivery-auditor
+version: 1.0.0
+description: "Report Delivery Auditor for Hermes Agent: apply a score workflow to report delivery work — covers schedule clarity, delivery target and owner named, using supplied facts only."
+author: Lionel Sim
+kind: standalone
+provides_tools:
+  - cron_report_delivery_auditor

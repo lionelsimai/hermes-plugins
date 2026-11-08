@@ -1,0 +1,7 @@
+name: cron-daily-report-job-auditor
+version: 1.0.0
+description: "Daily Report Job Auditor for Hermes Agent: apply a score workflow to daily report job work — covers schedule clarity, delivery target and owner named, using supplied facts only."
+author: Lionel Sim
+kind: standalone
+provides_tools:
+  - cron_daily_report_job_auditor

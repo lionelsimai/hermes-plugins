@@ -1,0 +1,7 @@
+name: cron-reminder-job-auditor
+version: 1.0.0
+description: "Reminder Job Auditor for Hermes Agent: apply a prioritize workflow to reminder job work — covers schedule clarity, delivery target and owner named, using supplied facts only."
+author: Lionel Sim
+kind: standalone
+provides_tools:
+  - cron_reminder_job_auditor

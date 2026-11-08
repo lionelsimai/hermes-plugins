@@ -1,0 +1,7 @@
+name: community-member-spotlight-planner
+version: 1.0.0
+description: "Member Spotlight Planner for Hermes Agent: apply a checklist workflow to member spotlight work — covers member fit, tone fit and follow up named, using supplied facts only."
+author: Lionel Sim
+kind: standalone
+provides_tools:
+  - community_member_spotlight_planner

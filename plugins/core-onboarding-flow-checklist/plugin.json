@@ -1,0 +1,106 @@
+{
+  "name": "core-onboarding-flow-checklist",
+  "display_name": "Onboarding Flow Checklist",
+  "description": "Onboarding Flow Checklist for Hermes Agent: apply a score workflow to onboarding flow work \u2014 covers goal clarity, setup completeness and verification step, using supplied facts only.",
+  "category": "Core Agent Ops & Skill Authoring",
+  "domain": "Hermes Agent",
+  "version": "1.0.0",
+  "author": {
+    "name": "Lionel Sim",
+    "url": "https://sg.linkedin.com/in/lionelshen"
+  },
+  "license": "MIT",
+  "tools": [
+    {
+      "name": "core_onboarding_flow_checklist",
+      "description": "Onboarding Flow Checklist for Hermes Agent: apply a score workflow to onboarding flow work \u2014 covers goal clarity, setup completeness and verification step, using supplied facts only.",
+      "kind": "score",
+      "inputSchema": {
+        "type": "object",
+        "properties": {
+          "metrics": {
+            "type": "object"
+          },
+          "counts": {
+            "type": "object"
+          },
+          "amounts": {
+            "type": "object"
+          },
+          "series": {
+            "type": "array",
+            "items": {
+              "type": "number"
+            }
+          },
+          "text": {
+            "type": "string"
+          },
+          "completed": {
+            "type": "array",
+            "items": {
+              "type": "string"
+            }
+          },
+          "facts": {
+            "type": "object"
+          },
+          "items": {
+            "type": "array"
+          },
+          "goal": {
+            "type": "string"
+          },
+          "timeframe_days": {
+            "type": "integer"
+          }
+        },
+        "required": []
+      },
+      "sample_input": {
+        "metrics": {
+          "onboarding_flow_goal_clarity": 80,
+          "onboarding_flow_setup_completeness": 65,
+          "onboarding_flow_toolset_fit": 90
+        }
+      },
+      "output": {
+        "plugin": "core-onboarding-flow-checklist",
+        "tool": "core_onboarding_flow_checklist",
+        "kind": "score",
+        "result": "object (shape varies by kind, see README)",
+        "guardrails": "object \u2014 present on every result"
+      }
+    }
+  ],
+  "handler": {
+    "type": "score",
+    "config": {
+      "items": [
+        "onboarding flow goal clarity",
+        "onboarding flow setup completeness",
+        "onboarding flow toolset fit",
+        "onboarding flow guardrail coverage",
+        "onboarding flow verification step"
+      ]
+    }
+  },
+  "hermes": {
+    "skill": "SKILL.md in this folder (agentskills.io format)",
+    "plugin_manifest": "plugin.yaml in this folder (verified Hermes plugin format)",
+    "suggested_toolset": "skills"
+  },
+  "guardrails": {
+    "no_fabrication": true,
+    "draft_only_for_generative_tools": true,
+    "human_approval_required": true,
+    "no_auto_send": true,
+    "use_supplied_facts_only": true,
+    "no_credential_handling": true
+  },
+  "keywords": [
+    "core agent ops & skill authoring",
+    "hermes",
+    "score"
+  ]
+}

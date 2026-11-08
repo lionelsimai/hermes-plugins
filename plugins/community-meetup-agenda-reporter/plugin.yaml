@@ -1,0 +1,7 @@
+name: community-meetup-agenda-reporter
+version: 1.0.0
+description: "Meetup Agenda Reporter for Hermes Agent: apply a score workflow to meetup agenda work — covers member fit, tone fit and follow up named, using supplied facts only."
+author: Lionel Sim
+kind: standalone
+provides_tools:
+  - community_meetup_agenda_reporter

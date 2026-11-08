@@ -1,0 +1,7 @@
+name: community-moderation-queue-drafter
+version: 1.0.0
+description: "Moderation Queue Drafter for Hermes Agent: apply a plan workflow to moderation queue work — covers member fit, tone fit and follow up named, using supplied facts only."
+author: Lionel Sim
+kind: standalone
+provides_tools:
+  - community_moderation_queue_drafter

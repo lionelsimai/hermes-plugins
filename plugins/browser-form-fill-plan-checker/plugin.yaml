@@ -1,0 +1,7 @@
+name: browser-form-fill-plan-checker
+version: 1.0.0
+description: "Form Fill Plan Checker for Hermes Agent: apply a plan workflow to form fill plan work — covers step clarity, fallback step and completion proof, using supplied facts only."
+author: Lionel Sim
+kind: standalone
+provides_tools:
+  - browser_form_fill_plan_checker

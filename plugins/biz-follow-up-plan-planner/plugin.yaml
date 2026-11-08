@@ -1,0 +1,7 @@
+name: biz-follow-up-plan-planner
+version: 1.0.0
+description: "Follow Up Plan Planner for Hermes Agent: apply a score workflow to follow up plan work — covers facts supplied only, audience fit and evidence noted, using supplied facts only."
+author: Lionel Sim
+kind: standalone
+provides_tools:
+  - biz_follow_up_plan_planner

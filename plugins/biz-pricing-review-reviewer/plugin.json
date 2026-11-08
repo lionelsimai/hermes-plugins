@@ -1,0 +1,113 @@
+{
+  "name": "biz-pricing-review-reviewer",
+  "display_name": "Pricing Review Reviewer",
+  "description": "Pricing Review Reviewer for Hermes Agent: apply a analyze workflow to pricing review work \u2014 covers facts supplied only, audience fit and evidence noted, using supplied facts only.",
+  "category": "Business & GTM Ops",
+  "domain": "Hermes Agent",
+  "version": "1.0.0",
+  "author": {
+    "name": "Lionel Sim",
+    "url": "https://sg.linkedin.com/in/lionelshen"
+  },
+  "license": "MIT",
+  "tools": [
+    {
+      "name": "biz_pricing_review_reviewer",
+      "description": "Pricing Review Reviewer for Hermes Agent: apply a analyze workflow to pricing review work \u2014 covers facts supplied only, audience fit and evidence noted, using supplied facts only.",
+      "kind": "analyze",
+      "inputSchema": {
+        "type": "object",
+        "properties": {
+          "metrics": {
+            "type": "object"
+          },
+          "counts": {
+            "type": "object"
+          },
+          "amounts": {
+            "type": "object"
+          },
+          "series": {
+            "type": "array",
+            "items": {
+              "type": "number"
+            }
+          },
+          "text": {
+            "type": "string"
+          },
+          "completed": {
+            "type": "array",
+            "items": {
+              "type": "string"
+            }
+          },
+          "facts": {
+            "type": "object"
+          },
+          "items": {
+            "type": "array"
+          },
+          "goal": {
+            "type": "string"
+          },
+          "timeframe_days": {
+            "type": "integer"
+          }
+        },
+        "required": []
+      },
+      "sample_input": {
+        "counts": {
+          "pricing_review_facts_supplied_only": 40,
+          "pricing_review_audience_fit": 25,
+          "pricing_review_approval_gate": 10,
+          "pricing_review_next_step_clarity": 75
+        },
+        "series": [
+          3,
+          5,
+          4,
+          8
+        ]
+      },
+      "output": {
+        "plugin": "biz-pricing-review-reviewer",
+        "tool": "biz_pricing_review_reviewer",
+        "kind": "analyze",
+        "result": "object (shape varies by kind, see README)",
+        "guardrails": "object \u2014 present on every result"
+      }
+    }
+  ],
+  "handler": {
+    "type": "analyze",
+    "config": {
+      "items": [
+        "pricing review facts supplied only",
+        "pricing review audience fit",
+        "pricing review approval gate",
+        "pricing review next step clarity",
+        "pricing review evidence noted"
+      ]
+    }
+  },
+  "hermes": {
+    "skill": "SKILL.md in this folder (agentskills.io format)",
+    "plugin_manifest": "plugin.yaml in this folder (verified Hermes plugin format)",
+    "suggested_toolset": "web"
+  },
+  "guardrails": {
+    "no_fabrication": true,
+    "draft_only_for_generative_tools": true,
+    "human_approval_required": true,
+    "no_auto_send": true,
+    "use_supplied_facts_only": true,
+    "no_credential_handling": true
+  },
+  "keywords": [
+    "business & gtm ops",
+    "hermes",
+    "analyze"
+  ]
+}

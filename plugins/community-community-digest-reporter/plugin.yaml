@@ -1,0 +1,7 @@
+name: community-community-digest-reporter
+version: 1.0.0
+description: "Community Digest Reporter for Hermes Agent: apply a classify workflow to community digest work — covers member fit, tone fit and follow up named, using supplied facts only."
+author: Lionel Sim
+kind: standalone
+provides_tools:
+  - community_community_digest_reporter

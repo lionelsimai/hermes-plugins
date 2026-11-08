@@ -1,0 +1,7 @@
+name: cron-digest-job-checker
+version: 1.0.0
+description: "Digest Job Checker for Hermes Agent: apply a template workflow to digest job work — covers schedule clarity, delivery target and owner named, using supplied facts only."
+author: Lionel Sim
+kind: standalone
+provides_tools:
+  - cron_digest_job_checker

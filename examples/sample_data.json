@@ -1,0 +1,12 @@
+{
+  "note": "Fictional sample data only. No real people, clients or metrics.",
+  "samples": {
+    "memory_session_memory_summarizer": {
+      "text": "Sample: this concerns session memory fact accuracy and session memory source noted."
+    },
+    "cron_daily_report_job_planner": {
+      "goal": "Sample daily report",
+      "timeframe_days": 7
+    }
+  }
+}

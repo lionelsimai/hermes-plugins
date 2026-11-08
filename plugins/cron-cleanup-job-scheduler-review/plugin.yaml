@@ -1,0 +1,7 @@
+name: cron-cleanup-job-scheduler-review
+version: 1.0.0
+description: "Cleanup Job Scheduler Review for Hermes Agent: apply a score workflow to cleanup job work — covers schedule clarity, delivery target and owner named, using supplied facts only."
+author: Lionel Sim
+kind: standalone
+provides_tools:
+  - cron_cleanup_job_scheduler_review

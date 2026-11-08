@@ -1,0 +1,113 @@
+{
+  "name": "core-agent-profile-checklist",
+  "display_name": "Agent Profile Checklist",
+  "description": "Agent Profile Checklist for Hermes Agent: apply a analyze workflow to agent profile work \u2014 covers goal clarity, setup completeness and verification step, using supplied facts only.",
+  "category": "Core Agent Ops & Skill Authoring",
+  "domain": "Hermes Agent",
+  "version": "1.0.0",
+  "author": {
+    "name": "Lionel Sim",
+    "url": "https://sg.linkedin.com/in/lionelshen"
+  },
+  "license": "MIT",
+  "tools": [
+    {
+      "name": "core_agent_profile_checklist",
+      "description": "Agent Profile Checklist for Hermes Agent: apply a analyze workflow to agent profile work \u2014 covers goal clarity, setup completeness and verification step, using supplied facts only.",
+      "kind": "analyze",
+      "inputSchema": {
+        "type": "object",
+        "properties": {
+          "metrics": {
+            "type": "object"
+          },
+          "counts": {
+            "type": "object"
+          },
+          "amounts": {
+            "type": "object"
+          },
+          "series": {
+            "type": "array",
+            "items": {
+              "type": "number"
+            }
+          },
+          "text": {
+            "type": "string"
+          },
+          "completed": {
+            "type": "array",
+            "items": {
+              "type": "string"
+            }
+          },
+          "facts": {
+            "type": "object"
+          },
+          "items": {
+            "type": "array"
+          },
+          "goal": {
+            "type": "string"
+          },
+          "timeframe_days": {
+            "type": "integer"
+          }
+        },
+        "required": []
+      },
+      "sample_input": {
+        "counts": {
+          "agent_profile_goal_clarity": 40,
+          "agent_profile_setup_completeness": 25,
+          "agent_profile_toolset_fit": 10,
+          "agent_profile_guardrail_coverage": 75
+        },
+        "series": [
+          3,
+          5,
+          4,
+          8
+        ]
+      },
+      "output": {
+        "plugin": "core-agent-profile-checklist",
+        "tool": "core_agent_profile_checklist",
+        "kind": "analyze",
+        "result": "object (shape varies by kind, see README)",
+        "guardrails": "object \u2014 present on every result"
+      }
+    }
+  ],
+  "handler": {
+    "type": "analyze",
+    "config": {
+      "items": [
+        "agent profile goal clarity",
+        "agent profile setup completeness",
+        "agent profile toolset fit",
+        "agent profile guardrail coverage",
+        "agent profile verification step"
+      ]
+    }
+  },
+  "hermes": {
+    "skill": "SKILL.md in this folder (agentskills.io format)",
+    "plugin_manifest": "plugin.yaml in this folder (verified Hermes plugin format)",
+    "suggested_toolset": "skills"
+  },
+  "guardrails": {
+    "no_fabrication": true,
+    "draft_only_for_generative_tools": true,
+    "human_approval_required": true,
+    "no_auto_send": true,
+    "use_supplied_facts_only": true,
+    "no_credential_handling": true
+  },
+  "keywords": [
+    "core agent ops & skill authoring",
+    "hermes",
+    "analyze"
+  ]
+}

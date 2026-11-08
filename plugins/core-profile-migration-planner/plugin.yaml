@@ -1,0 +1,7 @@
+name: core-profile-migration-planner
+version: 1.0.0
+description: "Profile Migration Planner for Hermes Agent: apply a template workflow to profile migration work — covers goal clarity, setup completeness and verification step, using supplied facts only."
+author: Lionel Sim
+kind: standalone
+provides_tools:
+  - core_profile_migration_planner

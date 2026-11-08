@@ -1,0 +1,28 @@
+# Api Change Review Mapper
+
+Api Change Review Mapper for Hermes Agent: apply a checklist workflow to api change review work — covers contract fit, auth handled safely and verification call, using supplied facts only.
+
+- Category: APIs & Integrations
+- Tool: `api_api_change_review_mapper` (kind: checklist)
+- Suggested Hermes toolset: `web`
+- Formats: `plugin.json` (collection manifest) + `plugin.yaml`/`__init__.py` (verified Hermes plugin format) + `SKILL.md` (Hermes/agentskills.io skill)
+
+## Example call
+
+```json
+{
+  "tool": "api_api_change_review_mapper",
+  "arguments": {
+    "completed": [
+      "api change review contract fit",
+      "api change review auth handled safely"
+    ]
+  }
+}
+```
+
+## Guardrails
+
+- No fabrication: supplied facts only; missing facts are reported, never invented.
+- Draft-only for generative output; human approval required before any use or send.
+- No auto-send. No credential handling.

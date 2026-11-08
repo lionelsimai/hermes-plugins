@@ -1,0 +1,7 @@
+name: community-speaker-brief-summarizer
+version: 1.0.0
+description: "Speaker Brief Summarizer for Hermes Agent: apply a audit workflow to speaker brief work — covers member fit, tone fit and follow up named, using supplied facts only."
+author: Lionel Sim
+kind: standalone
+provides_tools:
+  - community_speaker_brief_summarizer

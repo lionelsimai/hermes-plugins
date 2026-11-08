@@ -1,0 +1,7 @@
+name: api-rest-endpoint-test-mapper
+version: 1.0.0
+description: "Rest Endpoint Test Mapper for Hermes Agent: apply a classify workflow to rest endpoint test work — covers contract fit, auth handled safely and verification call, using supplied facts only."
+author: Lionel Sim
+kind: standalone
+provides_tools:
+  - api_rest_endpoint_test_mapper

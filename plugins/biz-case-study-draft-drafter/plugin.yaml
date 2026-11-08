@@ -1,0 +1,7 @@
+name: biz-case-study-draft-drafter
+version: 1.0.0
+description: "Case Study Draft Drafter for Hermes Agent: apply a classify workflow to case study draft work — covers facts supplied only, audience fit and evidence noted, using supplied facts only."
+author: Lionel Sim
+kind: standalone
+provides_tools:
+  - biz_case_study_draft_drafter

@@ -1,0 +1,7 @@
+name: biz-partner-shortlist-drafter
+version: 1.0.0
+description: "Partner Shortlist Drafter for Hermes Agent: apply a plan workflow to partner shortlist work — covers facts supplied only, audience fit and evidence noted, using supplied facts only."
+author: Lionel Sim
+kind: standalone
+provides_tools:
+  - biz_partner_shortlist_drafter

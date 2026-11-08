@@ -1,0 +1,7 @@
+name: biz-follow-up-plan-checker
+version: 1.0.0
+description: "Follow Up Plan Checker for Hermes Agent: apply a plan workflow to follow up plan work — covers facts supplied only, audience fit and evidence noted, using supplied facts only."
+author: Lionel Sim
+kind: standalone
+provides_tools:
+  - biz_follow_up_plan_checker

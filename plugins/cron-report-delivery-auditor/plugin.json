@@ -1,0 +1,106 @@
+{
+  "name": "cron-report-delivery-auditor",
+  "display_name": "Report Delivery Auditor",
+  "description": "Report Delivery Auditor for Hermes Agent: apply a score workflow to report delivery work \u2014 covers schedule clarity, delivery target and owner named, using supplied facts only.",
+  "category": "Scheduling & Cron",
+  "domain": "Hermes Agent",
+  "version": "1.0.0",
+  "author": {
+    "name": "Lionel Sim",
+    "url": "https://sg.linkedin.com/in/lionelshen"
+  },
+  "license": "MIT",
+  "tools": [
+    {
+      "name": "cron_report_delivery_auditor",
+      "description": "Report Delivery Auditor for Hermes Agent: apply a score workflow to report delivery work \u2014 covers schedule clarity, delivery target and owner named, using supplied facts only.",
+      "kind": "score",
+      "inputSchema": {
+        "type": "object",
+        "properties": {
+          "metrics": {
+            "type": "object"
+          },
+          "counts": {
+            "type": "object"
+          },
+          "amounts": {
+            "type": "object"
+          },
+          "series": {
+            "type": "array",
+            "items": {
+              "type": "number"
+            }
+          },
+          "text": {
+            "type": "string"
+          },
+          "completed": {
+            "type": "array",
+            "items": {
+              "type": "string"
+            }
+          },
+          "facts": {
+            "type": "object"
+          },
+          "items": {
+            "type": "array"
+          },
+          "goal": {
+            "type": "string"
+          },
+          "timeframe_days": {
+            "type": "integer"
+          }
+        },
+        "required": []
+      },
+      "sample_input": {
+        "metrics": {
+          "report_delivery_schedule_clarity": 80,
+          "report_delivery_delivery_target": 65,
+          "report_delivery_failure_handling": 90
+        }
+      },
+      "output": {
+        "plugin": "cron-report-delivery-auditor",
+        "tool": "cron_report_delivery_auditor",
+        "kind": "score",
+        "result": "object (shape varies by kind, see README)",
+        "guardrails": "object \u2014 present on every result"
+      }
+    }
+  ],
+  "handler": {
+    "type": "score",
+    "config": {
+      "items": [
+        "report delivery schedule clarity",
+        "report delivery delivery target",
+        "report delivery failure handling",
+        "report delivery idempotency",
+        "report delivery owner named"
+      ]
+    }
+  },
+  "hermes": {
+    "skill": "SKILL.md in this folder (agentskills.io format)",
+    "plugin_manifest": "plugin.yaml in this folder (verified Hermes plugin format)",
+    "suggested_toolset": "cron"
+  },
+  "guardrails": {
+    "no_fabrication": true,
+    "draft_only_for_generative_tools": true,
+    "human_approval_required": true,
+    "no_auto_send": true,
+    "use_supplied_facts_only": true,
+    "no_credential_handling": true
+  },
+  "keywords": [
+    "scheduling & cron",
+    "hermes",
+    "score"
+  ]
+}

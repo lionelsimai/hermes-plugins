@@ -1,0 +1,7 @@
+name: browser-screenshot-review-checker
+version: 1.0.0
+description: "Screenshot Review Checker for Hermes Agent: apply a audit workflow to screenshot review work — covers step clarity, fallback step and completion proof, using supplied facts only."
+author: Lionel Sim
+kind: standalone
+provides_tools:
+  - browser_screenshot_review_checker

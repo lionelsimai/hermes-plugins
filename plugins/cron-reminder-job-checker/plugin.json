@@ -1,0 +1,106 @@
+{
+  "name": "cron-reminder-job-checker",
+  "display_name": "Reminder Job Checker",
+  "description": "Reminder Job Checker for Hermes Agent: apply a score workflow to reminder job work \u2014 covers schedule clarity, delivery target and owner named, using supplied facts only.",
+  "category": "Scheduling & Cron",
+  "domain": "Hermes Agent",
+  "version": "1.0.0",
+  "author": {
+    "name": "Lionel Sim",
+    "url": "https://sg.linkedin.com/in/lionelshen"
+  },
+  "license": "MIT",
+  "tools": [
+    {
+      "name": "cron_reminder_job_checker",
+      "description": "Reminder Job Checker for Hermes Agent: apply a score workflow to reminder job work \u2014 covers schedule clarity, delivery target and owner named, using supplied facts only.",
+      "kind": "score",
+      "inputSchema": {
+        "type": "object",
+        "properties": {
+          "metrics": {
+            "type": "object"
+          },
+          "counts": {
+            "type": "object"
+          },
+          "amounts": {
+            "type": "object"
+          },
+          "series": {
+            "type": "array",
+            "items": {
+              "type": "number"
+            }
+          },
+          "text": {
+            "type": "string"
+          },
+          "completed": {
+            "type": "array",
+            "items": {
+              "type": "string"
+            }
+          },
+          "facts": {
+            "type": "object"
+          },
+          "items": {
+            "type": "array"
+          },
+          "goal": {
+            "type": "string"
+          },
+          "timeframe_days": {
+            "type": "integer"
+          }
+        },
+        "required": []
+      },
+      "sample_input": {
+        "metrics": {
+          "reminder_job_schedule_clarity": 80,
+          "reminder_job_delivery_target": 65,
+          "reminder_job_failure_handling": 90
+        }
+      },
+      "output": {
+        "plugin": "cron-reminder-job-checker",
+        "tool": "cron_reminder_job_checker",
+        "kind": "score",
+        "result": "object (shape varies by kind, see README)",
+        "guardrails": "object \u2014 present on every result"
+      }
+    }
+  ],
+  "handler": {
+    "type": "score",
+    "config": {
+      "items": [
+        "reminder job schedule clarity",
+        "reminder job delivery target",
+        "reminder job failure handling",
+        "reminder job idempotency",
+        "reminder job owner named"
+      ]
+    }
+  },
+  "hermes": {
+    "skill": "SKILL.md in this folder (agentskills.io format)",
+    "plugin_manifest": "plugin.yaml in this folder (verified Hermes plugin format)",
+    "suggested_toolset": "cron"
+  },
+  "guardrails": {
+    "no_fabrication": true,
+    "draft_only_for_generative_tools": true,
+    "human_approval_required": true,
+    "no_auto_send": true,
+    "use_supplied_facts_only": true,
+    "no_credential_handling": true
+  },
+  "keywords": [
+    "scheduling & cron",
+    "hermes",
+    "score"
+  ]
+}

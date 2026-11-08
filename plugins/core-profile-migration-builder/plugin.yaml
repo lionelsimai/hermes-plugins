@@ -1,0 +1,7 @@
+name: core-profile-migration-builder
+version: 1.0.0
+description: "Profile Migration Builder for Hermes Agent: apply a score workflow to profile migration work — covers goal clarity, setup completeness and verification step, using supplied facts only."
+author: Lionel Sim
+kind: standalone
+provides_tools:
+  - core_profile_migration_builder

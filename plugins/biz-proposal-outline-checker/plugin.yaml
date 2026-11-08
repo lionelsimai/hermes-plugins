@@ -1,0 +1,7 @@
+name: biz-proposal-outline-checker
+version: 1.0.0
+description: "Proposal Outline Checker for Hermes Agent: apply a prioritize workflow to proposal outline work — covers facts supplied only, audience fit and evidence noted, using supplied facts only."
+author: Lionel Sim
+kind: standalone
+provides_tools:
+  - biz_proposal_outline_checker

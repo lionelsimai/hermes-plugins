@@ -1,0 +1,7 @@
+name: core-model-routing-planner
+version: 1.0.0
+description: "Model Routing Planner for Hermes Agent: apply a checklist workflow to model routing work — covers goal clarity, setup completeness and verification step, using supplied facts only."
+author: Lionel Sim
+kind: standalone
+provides_tools:
+  - core_model_routing_planner

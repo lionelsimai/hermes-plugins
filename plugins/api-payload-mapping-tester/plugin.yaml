@@ -1,0 +1,7 @@
+name: api-payload-mapping-tester
+version: 1.0.0
+description: "Payload Mapping Tester for Hermes Agent: apply a checklist workflow to payload mapping work — covers contract fit, auth handled safely and verification call, using supplied facts only."
+author: Lionel Sim
+kind: standalone
+provides_tools:
+  - api_payload_mapping_tester

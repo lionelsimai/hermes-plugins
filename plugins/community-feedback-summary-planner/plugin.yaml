@@ -1,0 +1,7 @@
+name: community-feedback-summary-planner
+version: 1.0.0
+description: "Feedback Summary Planner for Hermes Agent: apply a template workflow to feedback summary work — covers member fit, tone fit and follow up named, using supplied facts only."
+author: Lionel Sim
+kind: standalone
+provides_tools:
+  - community_feedback_summary_planner

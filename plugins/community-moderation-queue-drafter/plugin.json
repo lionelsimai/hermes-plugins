@@ -1,0 +1,103 @@
+{
+  "name": "community-moderation-queue-drafter",
+  "display_name": "Moderation Queue Drafter",
+  "description": "Moderation Queue Drafter for Hermes Agent: apply a plan workflow to moderation queue work \u2014 covers member fit, tone fit and follow up named, using supplied facts only.",
+  "category": "Community Ops",
+  "domain": "Hermes Agent",
+  "version": "1.0.0",
+  "author": {
+    "name": "Lionel Sim",
+    "url": "https://sg.linkedin.com/in/lionelshen"
+  },
+  "license": "MIT",
+  "tools": [
+    {
+      "name": "community_moderation_queue_drafter",
+      "description": "Moderation Queue Drafter for Hermes Agent: apply a plan workflow to moderation queue work \u2014 covers member fit, tone fit and follow up named, using supplied facts only.",
+      "kind": "plan",
+      "inputSchema": {
+        "type": "object",
+        "properties": {
+          "metrics": {
+            "type": "object"
+          },
+          "counts": {
+            "type": "object"
+          },
+          "amounts": {
+            "type": "object"
+          },
+          "series": {
+            "type": "array",
+            "items": {
+              "type": "number"
+            }
+          },
+          "text": {
+            "type": "string"
+          },
+          "completed": {
+            "type": "array",
+            "items": {
+              "type": "string"
+            }
+          },
+          "facts": {
+            "type": "object"
+          },
+          "items": {
+            "type": "array"
+          },
+          "goal": {
+            "type": "string"
+          },
+          "timeframe_days": {
+            "type": "integer"
+          }
+        },
+        "required": []
+      },
+      "sample_input": {
+        "goal": "Sample goal for this workflow",
+        "timeframe_days": 14
+      },
+      "output": {
+        "plugin": "community-moderation-queue-drafter",
+        "tool": "community_moderation_queue_drafter",
+        "kind": "plan",
+        "result": "object (shape varies by kind, see README)",
+        "guardrails": "object \u2014 present on every result"
+      }
+    }
+  ],
+  "handler": {
+    "type": "plan",
+    "config": {
+      "items": [
+        "moderation queue member fit",
+        "moderation queue tone fit",
+        "moderation queue approval gate",
+        "moderation queue safety check",
+        "moderation queue follow up named"
+      ]
+    }
+  },
+  "hermes": {
+    "skill": "SKILL.md in this folder (agentskills.io format)",
+    "plugin_manifest": "plugin.yaml in this folder (verified Hermes plugin format)",
+    "suggested_toolset": "messaging"
+  },
+  "guardrails": {
+    "no_fabrication": true,
+    "draft_only_for_generative_tools": true,
+    "human_approval_required": true,
+    "no_auto_send": true,
+    "use_supplied_facts_only": true,
+    "no_credential_handling": true
+  },
+  "keywords": [
+    "community ops",
+    "hermes",
+    "plan"
+  ]
+}

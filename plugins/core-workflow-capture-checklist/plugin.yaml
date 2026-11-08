@@ -1,0 +1,7 @@
+name: core-workflow-capture-checklist
+version: 1.0.0
+description: "Workflow Capture Checklist for Hermes Agent: apply a plan workflow to workflow capture work — covers goal clarity, setup completeness and verification step, using supplied facts only."
+author: Lionel Sim
+kind: standalone
+provides_tools:
+  - core_workflow_capture_checklist

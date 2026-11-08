@@ -1,0 +1,7 @@
+name: api-rate-limit-review-checker
+version: 1.0.0
+description: "Rate Limit Review Checker for Hermes Agent: apply a template workflow to rate limit review work — covers contract fit, auth handled safely and verification call, using supplied facts only."
+author: Lionel Sim
+kind: standalone
+provides_tools:
+  - api_rate_limit_review_checker

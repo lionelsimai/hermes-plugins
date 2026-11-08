@@ -1,0 +1,113 @@
+{
+  "name": "community-member-onboarding-summarizer",
+  "display_name": "Member Onboarding Summarizer",
+  "description": "Member Onboarding Summarizer for Hermes Agent: apply a analyze workflow to member onboarding work \u2014 covers member fit, tone fit and follow up named, using supplied facts only.",
+  "category": "Community Ops",
+  "domain": "Hermes Agent",
+  "version": "1.0.0",
+  "author": {
+    "name": "Lionel Sim",
+    "url": "https://sg.linkedin.com/in/lionelshen"
+  },
+  "license": "MIT",
+  "tools": [
+    {
+      "name": "community_member_onboarding_summarizer",
+      "description": "Member Onboarding Summarizer for Hermes Agent: apply a analyze workflow to member onboarding work \u2014 covers member fit, tone fit and follow up named, using supplied facts only.",
+      "kind": "analyze",
+      "inputSchema": {
+        "type": "object",
+        "properties": {
+          "metrics": {
+            "type": "object"
+          },
+          "counts": {
+            "type": "object"
+          },
+          "amounts": {
+            "type": "object"
+          },
+          "series": {
+            "type": "array",
+            "items": {
+              "type": "number"
+            }
+          },
+          "text": {
+            "type": "string"
+          },
+          "completed": {
+            "type": "array",
+            "items": {
+              "type": "string"
+            }
+          },
+          "facts": {
+            "type": "object"
+          },
+          "items": {
+            "type": "array"
+          },
+          "goal": {
+            "type": "string"
+          },
+          "timeframe_days": {
+            "type": "integer"
+          }
+        },
+        "required": []
+      },
+      "sample_input": {
+        "counts": {
+          "member_onboarding_member_fit": 40,
+          "member_onboarding_tone_fit": 25,
+          "member_onboarding_approval_gate": 10,
+          "member_onboarding_safety_check": 75
+        },
+        "series": [
+          3,
+          5,
+          4,
+          8
+        ]
+      },
+      "output": {
+        "plugin": "community-member-onboarding-summarizer",
+        "tool": "community_member_onboarding_summarizer",
+        "kind": "analyze",
+        "result": "object (shape varies by kind, see README)",
+        "guardrails": "object \u2014 present on every result"
+      }
+    }
+  ],
+  "handler": {
+    "type": "analyze",
+    "config": {
+      "items": [
+        "member onboarding member fit",
+        "member onboarding tone fit",
+        "member onboarding approval gate",
+        "member onboarding safety check",
+        "member onboarding follow up named"
+      ]
+    }
+  },
+  "hermes": {
+    "skill": "SKILL.md in this folder (agentskills.io format)",
+    "plugin_manifest": "plugin.yaml in this folder (verified Hermes plugin format)",
+    "suggested_toolset": "messaging"
+  },
+  "guardrails": {
+    "no_fabrication": true,
+    "draft_only_for_generative_tools": true,
+    "human_approval_required": true,
+    "no_auto_send": true,
+    "use_supplied_facts_only": true,
+    "no_credential_handling": true
+  },
+  "keywords": [
+    "community ops",
+    "hermes",
+    "analyze"
+  ]
+}

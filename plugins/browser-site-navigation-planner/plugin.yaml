@@ -1,0 +1,7 @@
+name: browser-site-navigation-planner
+version: 1.0.0
+description: "Site Navigation Planner for Hermes Agent: apply a template workflow to site navigation work — covers step clarity, fallback step and completion proof, using supplied facts only."
+author: Lionel Sim
+kind: standalone
+provides_tools:
+  - browser_site_navigation_planner

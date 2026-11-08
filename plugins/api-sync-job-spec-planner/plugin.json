@@ -1,0 +1,113 @@
+{
+  "name": "api-sync-job-spec-planner",
+  "display_name": "Sync Job Spec Planner",
+  "description": "Sync Job Spec Planner for Hermes Agent: apply a analyze workflow to sync job spec work \u2014 covers contract fit, auth handled safely and verification call, using supplied facts only.",
+  "category": "APIs & Integrations",
+  "domain": "Hermes Agent",
+  "version": "1.0.0",
+  "author": {
+    "name": "Lionel Sim",
+    "url": "https://sg.linkedin.com/in/lionelshen"
+  },
+  "license": "MIT",
+  "tools": [
+    {
+      "name": "api_sync_job_spec_planner",
+      "description": "Sync Job Spec Planner for Hermes Agent: apply a analyze workflow to sync job spec work \u2014 covers contract fit, auth handled safely and verification call, using supplied facts only.",
+      "kind": "analyze",
+      "inputSchema": {
+        "type": "object",
+        "properties": {
+          "metrics": {
+            "type": "object"
+          },
+          "counts": {
+            "type": "object"
+          },
+          "amounts": {
+            "type": "object"
+          },
+          "series": {
+            "type": "array",
+            "items": {
+              "type": "number"
+            }
+          },
+          "text": {
+            "type": "string"
+          },
+          "completed": {
+            "type": "array",
+            "items": {
+              "type": "string"
+            }
+          },
+          "facts": {
+            "type": "object"
+          },
+          "items": {
+            "type": "array"
+          },
+          "goal": {
+            "type": "string"
+          },
+          "timeframe_days": {
+            "type": "integer"
+          }
+        },
+        "required": []
+      },
+      "sample_input": {
+        "counts": {
+          "sync_job_spec_contract_fit": 40,
+          "sync_job_spec_auth_handled_safely": 25,
+          "sync_job_spec_error_cases_covered": 10,
+          "sync_job_spec_rate_limits_respected": 75
+        },
+        "series": [
+          3,
+          5,
+          4,
+          8
+        ]
+      },
+      "output": {
+        "plugin": "api-sync-job-spec-planner",
+        "tool": "api_sync_job_spec_planner",
+        "kind": "analyze",
+        "result": "object (shape varies by kind, see README)",
+        "guardrails": "object \u2014 present on every result"
+      }
+    }
+  ],
+  "handler": {
+    "type": "analyze",
+    "config": {
+      "items": [
+        "sync job spec contract fit",
+        "sync job spec auth handled safely",
+        "sync job spec error cases covered",
+        "sync job spec rate limits respected",
+        "sync job spec verification call"
+      ]
+    }
+  },
+  "hermes": {
+    "skill": "SKILL.md in this folder (agentskills.io format)",
+    "plugin_manifest": "plugin.yaml in this folder (verified Hermes plugin format)",
+    "suggested_toolset": "web"
+  },
+  "guardrails": {
+    "no_fabrication": true,
+    "draft_only_for_generative_tools": true,
+    "human_approval_required": true,
+    "no_auto_send": true,
+    "use_supplied_facts_only": true,
+    "no_credential_handling": true
+  },
+  "keywords": [
+    "apis & integrations",
+    "hermes",
+    "analyze"
+  ]
+}

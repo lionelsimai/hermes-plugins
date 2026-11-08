@@ -1,0 +1,106 @@
+{
+  "name": "api-integration-spec-tester",
+  "display_name": "Integration Spec Tester",
+  "description": "Integration Spec Tester for Hermes Agent: apply a score workflow to integration spec work \u2014 covers contract fit, auth handled safely and verification call, using supplied facts only.",
+  "category": "APIs & Integrations",
+  "domain": "Hermes Agent",
+  "version": "1.0.0",
+  "author": {
+    "name": "Lionel Sim",
+    "url": "https://sg.linkedin.com/in/lionelshen"
+  },
+  "license": "MIT",
+  "tools": [
+    {
+      "name": "api_integration_spec_tester",
+      "description": "Integration Spec Tester for Hermes Agent: apply a score workflow to integration spec work \u2014 covers contract fit, auth handled safely and verification call, using supplied facts only.",
+      "kind": "score",
+      "inputSchema": {
+        "type": "object",
+        "properties": {
+          "metrics": {
+            "type": "object"
+          },
+          "counts": {
+            "type": "object"
+          },
+          "amounts": {
+            "type": "object"
+          },
+          "series": {
+            "type": "array",
+            "items": {
+              "type": "number"
+            }
+          },
+          "text": {
+            "type": "string"
+          },
+          "completed": {
+            "type": "array",
+            "items": {
+              "type": "string"
+            }
+          },
+          "facts": {
+            "type": "object"
+          },
+          "items": {
+            "type": "array"
+          },
+          "goal": {
+            "type": "string"
+          },
+          "timeframe_days": {
+            "type": "integer"
+          }
+        },
+        "required": []
+      },
+      "sample_input": {
+        "metrics": {
+          "integration_spec_contract_fit": 80,
+          "integration_spec_auth_handled_safely": 65,
+          "integration_spec_error_cases_covered": 90
+        }
+      },
+      "output": {
+        "plugin": "api-integration-spec-tester",
+        "tool": "api_integration_spec_tester",
+        "kind": "score",
+        "result": "object (shape varies by kind, see README)",
+        "guardrails": "object \u2014 present on every result"
+      }
+    }
+  ],
+  "handler": {
+    "type": "score",
+    "config": {
+      "items": [
+        "integration spec contract fit",
+        "integration spec auth handled safely",
+        "integration spec error cases covered",
+        "integration spec rate limits respected",
+        "integration spec verification call"
+      ]
+    }
+  },
+  "hermes": {
+    "skill": "SKILL.md in this folder (agentskills.io format)",
+    "plugin_manifest": "plugin.yaml in this folder (verified Hermes plugin format)",
+    "suggested_toolset": "web"
+  },
+  "guardrails": {
+    "no_fabrication": true,
+    "draft_only_for_generative_tools": true,
+    "human_approval_required": true,
+    "no_auto_send": true,
+    "use_supplied_facts_only": true,
+    "no_credential_handling": true
+  },
+  "keywords": [
+    "apis & integrations",
+    "hermes",
+    "score"
+  ]
+}

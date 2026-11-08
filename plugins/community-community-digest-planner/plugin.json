@@ -1,0 +1,106 @@
+{
+  "name": "community-community-digest-planner",
+  "display_name": "Community Digest Planner",
+  "description": "Community Digest Planner for Hermes Agent: apply a score workflow to community digest work \u2014 covers member fit, tone fit and follow up named, using supplied facts only.",
+  "category": "Community Ops",
+  "domain": "Hermes Agent",
+  "version": "1.0.0",
+  "author": {
+    "name": "Lionel Sim",
+    "url": "https://sg.linkedin.com/in/lionelshen"
+  },
+  "license": "MIT",
+  "tools": [
+    {
+      "name": "community_community_digest_planner",
+      "description": "Community Digest Planner for Hermes Agent: apply a score workflow to community digest work \u2014 covers member fit, tone fit and follow up named, using supplied facts only.",
+      "kind": "score",
+      "inputSchema": {
+        "type": "object",
+        "properties": {
+          "metrics": {
+            "type": "object"
+          },
+          "counts": {
+            "type": "object"
+          },
+          "amounts": {
+            "type": "object"
+          },
+          "series": {
+            "type": "array",
+            "items": {
+              "type": "number"
+            }
+          },
+          "text": {
+            "type": "string"
+          },
+          "completed": {
+            "type": "array",
+            "items": {
+              "type": "string"
+            }
+          },
+          "facts": {
+            "type": "object"
+          },
+          "items": {
+            "type": "array"
+          },
+          "goal": {
+            "type": "string"
+          },
+          "timeframe_days": {
+            "type": "integer"
+          }
+        },
+        "required": []
+      },
+      "sample_input": {
+        "metrics": {
+          "community_digest_member_fit": 80,
+          "community_digest_tone_fit": 65,
+          "community_digest_approval_gate": 90
+        }
+      },
+      "output": {
+        "plugin": "community-community-digest-planner",
+        "tool": "community_community_digest_planner",
+        "kind": "score",
+        "result": "object (shape varies by kind, see README)",
+        "guardrails": "object \u2014 present on every result"
+      }
+    }
+  ],
+  "handler": {
+    "type": "score",
+    "config": {
+      "items": [
+        "community digest member fit",
+        "community digest tone fit",
+        "community digest approval gate",
+        "community digest safety check",
+        "community digest follow up named"
+      ]
+    }
+  },
+  "hermes": {
+    "skill": "SKILL.md in this folder (agentskills.io format)",
+    "plugin_manifest": "plugin.yaml in this folder (verified Hermes plugin format)",
+    "suggested_toolset": "messaging"
+  },
+  "guardrails": {
+    "no_fabrication": true,
+    "draft_only_for_generative_tools": true,
+    "human_approval_required": true,
+    "no_auto_send": true,
+    "use_supplied_facts_only": true,
+    "no_credential_handling": true
+  },
+  "keywords": [
+    "community ops",
+    "hermes",
+    "score"
+  ]
+}

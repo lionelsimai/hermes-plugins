@@ -1,0 +1,7 @@
+name: browser-screenshot-review-planner
+version: 1.0.0
+description: "Screenshot Review Planner for Hermes Agent: apply a classify workflow to screenshot review work — covers step clarity, fallback step and completion proof, using supplied facts only."
+author: Lionel Sim
+kind: standalone
+provides_tools:
+  - browser_screenshot_review_planner

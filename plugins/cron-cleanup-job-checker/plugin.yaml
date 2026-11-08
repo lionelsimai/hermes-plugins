@@ -1,0 +1,7 @@
+name: cron-cleanup-job-checker
+version: 1.0.0
+description: "Cleanup Job Checker for Hermes Agent: apply a prioritize workflow to cleanup job work — covers schedule clarity, delivery target and owner named, using supplied facts only."
+author: Lionel Sim
+kind: standalone
+provides_tools:
+  - cron_cleanup_job_checker

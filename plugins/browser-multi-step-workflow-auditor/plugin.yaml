@@ -1,0 +1,7 @@
+name: browser-multi-step-workflow-auditor
+version: 1.0.0
+description: "Multi Step Workflow Auditor for Hermes Agent: apply a classify workflow to multi step workflow work — covers step clarity, fallback step and completion proof, using supplied facts only."
+author: Lionel Sim
+kind: standalone
+provides_tools:
+  - browser_multi_step_workflow_auditor

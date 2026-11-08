@@ -1,0 +1,113 @@
+{
+  "name": "biz-lead-list-check-reviewer",
+  "display_name": "Lead List Check Reviewer",
+  "description": "Lead List Check Reviewer for Hermes Agent: apply a analyze workflow to lead list check work \u2014 covers facts supplied only, audience fit and evidence noted, using supplied facts only.",
+  "category": "Business & GTM Ops",
+  "domain": "Hermes Agent",
+  "version": "1.0.0",
+  "author": {
+    "name": "Lionel Sim",
+    "url": "https://sg.linkedin.com/in/lionelshen"
+  },
+  "license": "MIT",
+  "tools": [
+    {
+      "name": "biz_lead_list_check_reviewer",
+      "description": "Lead List Check Reviewer for Hermes Agent: apply a analyze workflow to lead list check work \u2014 covers facts supplied only, audience fit and evidence noted, using supplied facts only.",
+      "kind": "analyze",
+      "inputSchema": {
+        "type": "object",
+        "properties": {
+          "metrics": {
+            "type": "object"
+          },
+          "counts": {
+            "type": "object"
+          },
+          "amounts": {
+            "type": "object"
+          },
+          "series": {
+            "type": "array",
+            "items": {
+              "type": "number"
+            }
+          },
+          "text": {
+            "type": "string"
+          },
+          "completed": {
+            "type": "array",
+            "items": {
+              "type": "string"
+            }
+          },
+          "facts": {
+            "type": "object"
+          },
+          "items": {
+            "type": "array"
+          },
+          "goal": {
+            "type": "string"
+          },
+          "timeframe_days": {
+            "type": "integer"
+          }
+        },
+        "required": []
+      },
+      "sample_input": {
+        "counts": {
+          "lead_list_check_facts_supplied_only": 40,
+          "lead_list_check_audience_fit": 25,
+          "lead_list_check_approval_gate": 10,
+          "lead_list_check_next_step_clarity": 75
+        },
+        "series": [
+          3,
+          5,
+          4,
+          8
+        ]
+      },
+      "output": {
+        "plugin": "biz-lead-list-check-reviewer",
+        "tool": "biz_lead_list_check_reviewer",
+        "kind": "analyze",
+        "result": "object (shape varies by kind, see README)",
+        "guardrails": "object \u2014 present on every result"
+      }
+    }
+  ],
+  "handler": {
+    "type": "analyze",
+    "config": {
+      "items": [
+        "lead list check facts supplied only",
+        "lead list check audience fit",
+        "lead list check approval gate",
+        "lead list check next step clarity",
+        "lead list check evidence noted"
+      ]
+    }
+  },
+  "hermes": {
+    "skill": "SKILL.md in this folder (agentskills.io format)",
+    "plugin_manifest": "plugin.yaml in this folder (verified Hermes plugin format)",
+    "suggested_toolset": "web"
+  },
+  "guardrails": {
+    "no_fabrication": true,
+    "draft_only_for_generative_tools": true,
+    "human_approval_required": true,
+    "no_auto_send": true,
+    "use_supplied_facts_only": true,
+    "no_credential_handling": true
+  },
+  "keywords": [
+    "business & gtm ops",
+    "hermes",
+    "analyze"
+  ]
+}

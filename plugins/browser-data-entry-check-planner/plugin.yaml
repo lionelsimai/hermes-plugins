@@ -1,0 +1,7 @@
+name: browser-data-entry-check-planner
+version: 1.0.0
+description: "Data Entry Check Planner for Hermes Agent: apply a prioritize workflow to data entry check work — covers step clarity, fallback step and completion proof, using supplied facts only."
+author: Lionel Sim
+kind: standalone
+provides_tools:
+  - browser_data_entry_check_planner

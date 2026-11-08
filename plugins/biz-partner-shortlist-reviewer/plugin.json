@@ -1,0 +1,106 @@
+{
+  "name": "biz-partner-shortlist-reviewer",
+  "display_name": "Partner Shortlist Reviewer",
+  "description": "Partner Shortlist Reviewer for Hermes Agent: apply a score workflow to partner shortlist work \u2014 covers facts supplied only, audience fit and evidence noted, using supplied facts only.",
+  "category": "Business & GTM Ops",
+  "domain": "Hermes Agent",
+  "version": "1.0.0",
+  "author": {
+    "name": "Lionel Sim",
+    "url": "https://sg.linkedin.com/in/lionelshen"
+  },
+  "license": "MIT",
+  "tools": [
+    {
+      "name": "biz_partner_shortlist_reviewer",
+      "description": "Partner Shortlist Reviewer for Hermes Agent: apply a score workflow to partner shortlist work \u2014 covers facts supplied only, audience fit and evidence noted, using supplied facts only.",
+      "kind": "score",
+      "inputSchema": {
+        "type": "object",
+        "properties": {
+          "metrics": {
+            "type": "object"
+          },
+          "counts": {
+            "type": "object"
+          },
+          "amounts": {
+            "type": "object"
+          },
+          "series": {
+            "type": "array",
+            "items": {
+              "type": "number"
+            }
+          },
+          "text": {
+            "type": "string"
+          },
+          "completed": {
+            "type": "array",
+            "items": {
+              "type": "string"
+            }
+          },
+          "facts": {
+            "type": "object"
+          },
+          "items": {
+            "type": "array"
+          },
+          "goal": {
+            "type": "string"
+          },
+          "timeframe_days": {
+            "type": "integer"
+          }
+        },
+        "required": []
+      },
+      "sample_input": {
+        "metrics": {
+          "partner_shortlist_facts_supplied_only": 80,
+          "partner_shortlist_audience_fit": 65,
+          "partner_shortlist_approval_gate": 90
+        }
+      },
+      "output": {
+        "plugin": "biz-partner-shortlist-reviewer",
+        "tool": "biz_partner_shortlist_reviewer",
+        "kind": "score",
+        "result": "object (shape varies by kind, see README)",
+        "guardrails": "object \u2014 present on every result"
+      }
+    }
+  ],
+  "handler": {
+    "type": "score",
+    "config": {
+      "items": [
+        "partner shortlist facts supplied only",
+        "partner shortlist audience fit",
+        "partner shortlist approval gate",
+        "partner shortlist next step clarity",
+        "partner shortlist evidence noted"
+      ]
+    }
+  },
+  "hermes": {
+    "skill": "SKILL.md in this folder (agentskills.io format)",
+    "plugin_manifest": "plugin.yaml in this folder (verified Hermes plugin format)",
+    "suggested_toolset": "web"
+  },
+  "guardrails": {
+    "no_fabrication": true,
+    "draft_only_for_generative_tools": true,
+    "human_approval_required": true,
+    "no_auto_send": true,
+    "use_supplied_facts_only": true,
+    "no_credential_handling": true
+  },
+  "keywords": [
+    "business & gtm ops",
+    "hermes",
+    "score"
+  ]
+}

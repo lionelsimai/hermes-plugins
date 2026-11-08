@@ -1,0 +1,7 @@
+name: core-skill-draft-optimizer
+version: 1.0.0
+description: "Skill Draft Optimizer for Hermes Agent: apply a audit workflow to skill draft work — covers goal clarity, setup completeness and verification step, using supplied facts only."
+author: Lionel Sim
+kind: standalone
+provides_tools:
+  - core_skill_draft_optimizer

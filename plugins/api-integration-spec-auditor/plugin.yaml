@@ -1,0 +1,7 @@
+name: api-integration-spec-auditor
+version: 1.0.0
+description: "Integration Spec Auditor for Hermes Agent: apply a analyze workflow to integration spec work — covers contract fit, auth handled safely and verification call, using supplied facts only."
+author: Lionel Sim
+kind: standalone
+provides_tools:
+  - api_integration_spec_auditor

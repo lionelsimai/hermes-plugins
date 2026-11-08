@@ -1,0 +1,7 @@
+name: cron-digest-job-planner
+version: 1.0.0
+description: "Digest Job Planner for Hermes Agent: apply a score workflow to digest job work — covers schedule clarity, delivery target and owner named, using supplied facts only."
+author: Lionel Sim
+kind: standalone
+provides_tools:
+  - cron_digest_job_planner

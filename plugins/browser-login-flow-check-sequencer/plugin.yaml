@@ -1,0 +1,7 @@
+name: browser-login-flow-check-sequencer
+version: 1.0.0
+description: "Login Flow Check Sequencer for Hermes Agent: apply a classify workflow to login flow check work — covers step clarity, fallback step and completion proof, using supplied facts only."
+author: Lionel Sim
+kind: standalone
+provides_tools:
+  - browser_login_flow_check_sequencer

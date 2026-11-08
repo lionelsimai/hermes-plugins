@@ -1,0 +1,102 @@
+{
+  "name": "api-error-handling-plan-tester",
+  "display_name": "Error Handling Plan Tester",
+  "description": "Error Handling Plan Tester for Hermes Agent: apply a audit workflow to error handling plan work \u2014 covers contract fit, auth handled safely and verification call, using supplied facts only.",
+  "category": "APIs & Integrations",
+  "domain": "Hermes Agent",
+  "version": "1.0.0",
+  "author": {
+    "name": "Lionel Sim",
+    "url": "https://sg.linkedin.com/in/lionelshen"
+  },
+  "license": "MIT",
+  "tools": [
+    {
+      "name": "api_error_handling_plan_tester",
+      "description": "Error Handling Plan Tester for Hermes Agent: apply a audit workflow to error handling plan work \u2014 covers contract fit, auth handled safely and verification call, using supplied facts only.",
+      "kind": "audit",
+      "inputSchema": {
+        "type": "object",
+        "properties": {
+          "metrics": {
+            "type": "object"
+          },
+          "counts": {
+            "type": "object"
+          },
+          "amounts": {
+            "type": "object"
+          },
+          "series": {
+            "type": "array",
+            "items": {
+              "type": "number"
+            }
+          },
+          "text": {
+            "type": "string"
+          },
+          "completed": {
+            "type": "array",
+            "items": {
+              "type": "string"
+            }
+          },
+          "facts": {
+            "type": "object"
+          },
+          "items": {
+            "type": "array"
+          },
+          "goal": {
+            "type": "string"
+          },
+          "timeframe_days": {
+            "type": "integer"
+          }
+        },
+        "required": []
+      },
+      "sample_input": {
+        "text": "This sample covers error handling plan contract fit and error handling plan auth handled safely in detail."
+      },
+      "output": {
+        "plugin": "api-error-handling-plan-tester",
+        "tool": "api_error_handling_plan_tester",
+        "kind": "audit",
+        "result": "object (shape varies by kind, see README)",
+        "guardrails": "object \u2014 present on every result"
+      }
+    }
+  ],
+  "handler": {
+    "type": "audit",
+    "config": {
+      "items": [
+        "error handling plan contract fit",
+        "error handling plan auth handled safely",
+        "error handling plan error cases covered",
+        "error handling plan rate limits respected",
+        "error handling plan verification call"
+      ]
+    }
+  },
+  "hermes": {
+    "skill": "SKILL.md in this folder (agentskills.io format)",
+    "plugin_manifest": "plugin.yaml in this folder (verified Hermes plugin format)",
+    "suggested_toolset": "web"
+  },
+  "guardrails": {
+    "no_fabrication": true,
+    "draft_only_for_generative_tools": true,
+    "human_approval_required": true,
+    "no_auto_send": true,
+    "use_supplied_facts_only": true,
+    "no_credential_handling": true
+  },
+  "keywords": [
+    "apis & integrations",
+    "hermes",
+    "audit"
+  ]
+}

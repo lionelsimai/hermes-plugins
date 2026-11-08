@@ -1,0 +1,113 @@
+{
+  "name": "browser-booking-flow-planner",
+  "display_name": "Booking Flow Planner",
+  "description": "Booking Flow Planner for Hermes Agent: apply a analyze workflow to booking flow work \u2014 covers step clarity, fallback step and completion proof, using supplied facts only.",
+  "category": "Browser Automation",
+  "domain": "Hermes Agent",
+  "version": "1.0.0",
+  "author": {
+    "name": "Lionel Sim",
+    "url": "https://sg.linkedin.com/in/lionelshen"
+  },
+  "license": "MIT",
+  "tools": [
+    {
+      "name": "browser_booking_flow_planner",
+      "description": "Booking Flow Planner for Hermes Agent: apply a analyze workflow to booking flow work \u2014 covers step clarity, fallback step and completion proof, using supplied facts only.",
+      "kind": "analyze",
+      "inputSchema": {
+        "type": "object",
+        "properties": {
+          "metrics": {
+            "type": "object"
+          },
+          "counts": {
+            "type": "object"
+          },
+          "amounts": {
+            "type": "object"
+          },
+          "series": {
+            "type": "array",
+            "items": {
+              "type": "number"
+            }
+          },
+          "text": {
+            "type": "string"
+          },
+          "completed": {
+            "type": "array",
+            "items": {
+              "type": "string"
+            }
+          },
+          "facts": {
+            "type": "object"
+          },
+          "items": {
+            "type": "array"
+          },
+          "goal": {
+            "type": "string"
+          },
+          "timeframe_days": {
+            "type": "integer"
+          }
+        },
+        "required": []
+      },
+      "sample_input": {
+        "counts": {
+          "booking_flow_step_clarity": 40,
+          "booking_flow_fallback_step": 25,
+          "booking_flow_data_accuracy": 10,
+          "booking_flow_confirmation_gate": 75
+        },
+        "series": [
+          3,
+          5,
+          4,
+          8
+        ]
+      },
+      "output": {
+        "plugin": "browser-booking-flow-planner",
+        "tool": "browser_booking_flow_planner",
+        "kind": "analyze",
+        "result": "object (shape varies by kind, see README)",
+        "guardrails": "object \u2014 present on every result"
+      }
+    }
+  ],
+  "handler": {
+    "type": "analyze",
+    "config": {
+      "items": [
+        "booking flow step clarity",
+        "booking flow fallback step",
+        "booking flow data accuracy",
+        "booking flow confirmation gate",
+        "booking flow completion proof"
+      ]
+    }
+  },
+  "hermes": {
+    "skill": "SKILL.md in this folder (agentskills.io format)",
+    "plugin_manifest": "plugin.yaml in this folder (verified Hermes plugin format)",
+    "suggested_toolset": "browser"
+  },
+  "guardrails": {
+    "no_fabrication": true,
+    "draft_only_for_generative_tools": true,
+    "human_approval_required": true,
+    "no_auto_send": true,
+    "use_supplied_facts_only": true,
+    "no_credential_handling": true
+  },
+  "keywords": [
+    "browser automation",
+    "hermes",
+    "analyze"
+  ]
+}

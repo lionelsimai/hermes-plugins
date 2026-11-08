@@ -1,0 +1,7 @@
+name: biz-partner-shortlist-planner
+version: 1.0.0
+description: "Partner Shortlist Planner for Hermes Agent: apply a prioritize workflow to partner shortlist work — covers facts supplied only, audience fit and evidence noted, using supplied facts only."
+author: Lionel Sim
+kind: standalone
+provides_tools:
+  - biz_partner_shortlist_planner

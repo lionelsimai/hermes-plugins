@@ -1,0 +1,113 @@
+{
+  "name": "core-onboarding-flow-planner",
+  "display_name": "Onboarding Flow Planner",
+  "description": "Onboarding Flow Planner for Hermes Agent: apply a prioritize workflow to onboarding flow work \u2014 covers goal clarity, setup completeness and verification step, using supplied facts only.",
+  "category": "Core Agent Ops & Skill Authoring",
+  "domain": "Hermes Agent",
+  "version": "1.0.0",
+  "author": {
+    "name": "Lionel Sim",
+    "url": "https://sg.linkedin.com/in/lionelshen"
+  },
+  "license": "MIT",
+  "tools": [
+    {
+      "name": "core_onboarding_flow_planner",
+      "description": "Onboarding Flow Planner for Hermes Agent: apply a prioritize workflow to onboarding flow work \u2014 covers goal clarity, setup completeness and verification step, using supplied facts only.",
+      "kind": "prioritize",
+      "inputSchema": {
+        "type": "object",
+        "properties": {
+          "metrics": {
+            "type": "object"
+          },
+          "counts": {
+            "type": "object"
+          },
+          "amounts": {
+            "type": "object"
+          },
+          "series": {
+            "type": "array",
+            "items": {
+              "type": "number"
+            }
+          },
+          "text": {
+            "type": "string"
+          },
+          "completed": {
+            "type": "array",
+            "items": {
+              "type": "string"
+            }
+          },
+          "facts": {
+            "type": "object"
+          },
+          "items": {
+            "type": "array"
+          },
+          "goal": {
+            "type": "string"
+          },
+          "timeframe_days": {
+            "type": "integer"
+          }
+        },
+        "required": []
+      },
+      "sample_input": {
+        "items": [
+          {
+            "name": "Sample task A",
+            "impact": 8,
+            "effort": 3
+          },
+          {
+            "name": "Sample task B",
+            "impact": 6,
+            "effort": 1
+          }
+        ]
+      },
+      "output": {
+        "plugin": "core-onboarding-flow-planner",
+        "tool": "core_onboarding_flow_planner",
+        "kind": "prioritize",
+        "result": "object (shape varies by kind, see README)",
+        "guardrails": "object \u2014 present on every result"
+      }
+    }
+  ],
+  "handler": {
+    "type": "prioritize",
+    "config": {
+      "items": [
+        "onboarding flow goal clarity",
+        "onboarding flow setup completeness",
+        "onboarding flow toolset fit",
+        "onboarding flow guardrail coverage",
+        "onboarding flow verification step"
+      ]
+    }
+  },
+  "hermes": {
+    "skill": "SKILL.md in this folder (agentskills.io format)",
+    "plugin_manifest": "plugin.yaml in this folder (verified Hermes plugin format)",
+    "suggested_toolset": "skills"
+  },
+  "guardrails": {
+    "no_fabrication": true,
+    "draft_only_for_generative_tools": true,
+    "human_approval_required": true,
+    "no_auto_send": true,
+    "use_supplied_facts_only": true,
+    "no_credential_handling": true
+  },
+  "keywords": [
+    "core agent ops & skill authoring",
+    "hermes",
+    "prioritize"
+  ]
+}

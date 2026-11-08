@@ -1,0 +1,105 @@
+{
+  "name": "browser-form-fill-plan-reporter",
+  "display_name": "Form Fill Plan Reporter",
+  "description": "Form Fill Plan Reporter for Hermes Agent: apply a checklist workflow to form fill plan work \u2014 covers step clarity, fallback step and completion proof, using supplied facts only.",
+  "category": "Browser Automation",
+  "domain": "Hermes Agent",
+  "version": "1.0.0",
+  "author": {
+    "name": "Lionel Sim",
+    "url": "https://sg.linkedin.com/in/lionelshen"
+  },
+  "license": "MIT",
+  "tools": [
+    {
+      "name": "browser_form_fill_plan_reporter",
+      "description": "Form Fill Plan Reporter for Hermes Agent: apply a checklist workflow to form fill plan work \u2014 covers step clarity, fallback step and completion proof, using supplied facts only.",
+      "kind": "checklist",
+      "inputSchema": {
+        "type": "object",
+        "properties": {
+          "metrics": {
+            "type": "object"
+          },
+          "counts": {
+            "type": "object"
+          },
+          "amounts": {
+            "type": "object"
+          },
+          "series": {
+            "type": "array",
+            "items": {
+              "type": "number"
+            }
+          },
+          "text": {
+            "type": "string"
+          },
+          "completed": {
+            "type": "array",
+            "items": {
+              "type": "string"
+            }
+          },
+          "facts": {
+            "type": "object"
+          },
+          "items": {
+            "type": "array"
+          },
+          "goal": {
+            "type": "string"
+          },
+          "timeframe_days": {
+            "type": "integer"
+          }
+        },
+        "required": []
+      },
+      "sample_input": {
+        "completed": [
+          "form fill plan step clarity",
+          "form fill plan fallback step"
+        ]
+      },
+      "output": {
+        "plugin": "browser-form-fill-plan-reporter",
+        "tool": "browser_form_fill_plan_reporter",
+        "kind": "checklist",
+        "result": "object (shape varies by kind, see README)",
+        "guardrails": "object \u2014 present on every result"
+      }
+    }
+  ],
+  "handler": {
+    "type": "checklist",
+    "config": {
+      "items": [
+        "form fill plan step clarity",
+        "form fill plan fallback step",
+        "form fill plan data accuracy",
+        "form fill plan confirmation gate",
+        "form fill plan completion proof"
+      ]
+    }
+  },
+  "hermes": {
+    "skill": "SKILL.md in this folder (agentskills.io format)",
+    "plugin_manifest": "plugin.yaml in this folder (verified Hermes plugin format)",
+    "suggested_toolset": "browser"
+  },
+  "guardrails": {
+    "no_fabrication": true,
+    "draft_only_for_generative_tools": true,
+    "human_approval_required": true,
+    "no_auto_send": true,
+    "use_supplied_facts_only": true,
+    "no_credential_handling": true
+  },
+  "keywords": [
+    "browser automation",
+    "hermes",
+    "checklist"
+  ]
+}

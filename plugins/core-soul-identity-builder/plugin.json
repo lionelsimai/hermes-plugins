@@ -1,0 +1,102 @@
+{
+  "name": "core-soul-identity-builder",
+  "display_name": "Soul Identity Builder",
+  "description": "Soul Identity Builder for Hermes Agent: apply a classify workflow to SOUL identity work \u2014 covers goal clarity, setup completeness and verification step, using supplied facts only.",
+  "category": "Core Agent Ops & Skill Authoring",
+  "domain": "Hermes Agent",
+  "version": "1.0.0",
+  "author": {
+    "name": "Lionel Sim",
+    "url": "https://sg.linkedin.com/in/lionelshen"
+  },
+  "license": "MIT",
+  "tools": [
+    {
+      "name": "core_soul_identity_builder",
+      "description": "Soul Identity Builder for Hermes Agent: apply a classify workflow to SOUL identity work \u2014 covers goal clarity, setup completeness and verification step, using supplied facts only.",
+      "kind": "classify",
+      "inputSchema": {
+        "type": "object",
+        "properties": {
+          "metrics": {
+            "type": "object"
+          },
+          "counts": {
+            "type": "object"
+          },
+          "amounts": {
+            "type": "object"
+          },
+          "series": {
+            "type": "array",
+            "items": {
+              "type": "number"
+            }
+          },
+          "text": {
+            "type": "string"
+          },
+          "completed": {
+            "type": "array",
+            "items": {
+              "type": "string"
+            }
+          },
+          "facts": {
+            "type": "object"
+          },
+          "items": {
+            "type": "array"
+          },
+          "goal": {
+            "type": "string"
+          },
+          "timeframe_days": {
+            "type": "integer"
+          }
+        },
+        "required": []
+      },
+      "sample_input": {
+        "text": "Please review: this concerns SOUL identity goal clarity and SOUL identity toolset fit."
+      },
+      "output": {
+        "plugin": "core-soul-identity-builder",
+        "tool": "core_soul_identity_builder",
+        "kind": "classify",
+        "result": "object (shape varies by kind, see README)",
+        "guardrails": "object \u2014 present on every result"
+      }
+    }
+  ],
+  "handler": {
+    "type": "classify",
+    "config": {
+      "items": [
+        "SOUL identity goal clarity",
+        "SOUL identity setup completeness",
+        "SOUL identity toolset fit",
+        "SOUL identity guardrail coverage",
+        "SOUL identity verification step"
+      ]
+    }
+  },
+  "hermes": {
+    "skill": "SKILL.md in this folder (agentskills.io format)",
+    "plugin_manifest": "plugin.yaml in this folder (verified Hermes plugin format)",
+    "suggested_toolset": "skills"
+  },
+  "guardrails": {
+    "no_fabrication": true,
+    "draft_only_for_generative_tools": true,
+    "human_approval_required": true,
+    "no_auto_send": true,
+    "use_supplied_facts_only": true,
+    "no_credential_handling": true
+  },
+  "keywords": [
+    "core agent ops & skill authoring",
+    "hermes",
+    "classify"
+  ]
+}

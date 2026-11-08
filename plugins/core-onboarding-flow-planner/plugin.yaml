@@ -1,0 +1,7 @@
+name: core-onboarding-flow-planner
+version: 1.0.0
+description: "Onboarding Flow Planner for Hermes Agent: apply a prioritize workflow to onboarding flow work — covers goal clarity, setup completeness and verification step, using supplied facts only."
+author: Lionel Sim
+kind: standalone
+provides_tools:
+  - core_onboarding_flow_planner

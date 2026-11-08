@@ -1,0 +1,7 @@
+name: biz-partner-shortlist-scorer
+version: 1.0.0
+description: "Partner Shortlist Scorer for Hermes Agent: apply a checklist workflow to partner shortlist work — covers facts supplied only, audience fit and evidence noted, using supplied facts only."
+author: Lionel Sim
+kind: standalone
+provides_tools:
+  - biz_partner_shortlist_scorer

@@ -1,0 +1,7 @@
+name: api-webhook-plan-mapper
+version: 1.0.0
+description: "Webhook Plan Mapper for Hermes Agent: apply a checklist workflow to webhook plan work — covers contract fit, auth handled safely and verification call, using supplied facts only."
+author: Lionel Sim
+kind: standalone
+provides_tools:
+  - api_webhook_plan_mapper

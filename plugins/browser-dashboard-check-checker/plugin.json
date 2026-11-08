@@ -1,0 +1,105 @@
+{
+  "name": "browser-dashboard-check-checker",
+  "display_name": "Dashboard Check Checker",
+  "description": "Dashboard Check Checker for Hermes Agent: apply a checklist workflow to dashboard check work \u2014 covers step clarity, fallback step and completion proof, using supplied facts only.",
+  "category": "Browser Automation",
+  "domain": "Hermes Agent",
+  "version": "1.0.0",
+  "author": {
+    "name": "Lionel Sim",
+    "url": "https://sg.linkedin.com/in/lionelshen"
+  },
+  "license": "MIT",
+  "tools": [
+    {
+      "name": "browser_dashboard_check_checker",
+      "description": "Dashboard Check Checker for Hermes Agent: apply a checklist workflow to dashboard check work \u2014 covers step clarity, fallback step and completion proof, using supplied facts only.",
+      "kind": "checklist",
+      "inputSchema": {
+        "type": "object",
+        "properties": {
+          "metrics": {
+            "type": "object"
+          },
+          "counts": {
+            "type": "object"
+          },
+          "amounts": {
+            "type": "object"
+          },
+          "series": {
+            "type": "array",
+            "items": {
+              "type": "number"
+            }
+          },
+          "text": {
+            "type": "string"
+          },
+          "completed": {
+            "type": "array",
+            "items": {
+              "type": "string"
+            }
+          },
+          "facts": {
+            "type": "object"
+          },
+          "items": {
+            "type": "array"
+          },
+          "goal": {
+            "type": "string"
+          },
+          "timeframe_days": {
+            "type": "integer"
+          }
+        },
+        "required": []
+      },
+      "sample_input": {
+        "completed": [
+          "dashboard check step clarity",
+          "dashboard check fallback step"
+        ]
+      },
+      "output": {
+        "plugin": "browser-dashboard-check-checker",
+        "tool": "browser_dashboard_check_checker",
+        "kind": "checklist",
+        "result": "object (shape varies by kind, see README)",
+        "guardrails": "object \u2014 present on every result"
+      }
+    }
+  ],
+  "handler": {
+    "type": "checklist",
+    "config": {
+      "items": [
+        "dashboard check step clarity",
+        "dashboard check fallback step",
+        "dashboard check data accuracy",
+        "dashboard check confirmation gate",
+        "dashboard check completion proof"
+      ]
+    }
+  },
+  "hermes": {
+    "skill": "SKILL.md in this folder (agentskills.io format)",
+    "plugin_manifest": "plugin.yaml in this folder (verified Hermes plugin format)",
+    "suggested_toolset": "browser"
+  },
+  "guardrails": {
+    "no_fabrication": true,
+    "draft_only_for_generative_tools": true,
+    "human_approval_required": true,
+    "no_auto_send": true,
+    "use_supplied_facts_only": true,
+    "no_credential_handling": true
+  },
+  "keywords": [
+    "browser automation",
+    "hermes",
+    "checklist"
+  ]
+}

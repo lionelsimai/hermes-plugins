@@ -1,0 +1,7 @@
+name: core-skill-review-optimizer
+version: 1.0.0
+description: "Skill Review Optimizer for Hermes Agent: apply a template workflow to skill review work — covers goal clarity, setup completeness and verification step, using supplied facts only."
+author: Lionel Sim
+kind: standalone
+provides_tools:
+  - core_skill_review_optimizer

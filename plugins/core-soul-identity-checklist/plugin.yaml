@@ -1,0 +1,7 @@
+name: core-soul-identity-checklist
+version: 1.0.0
+description: "Soul Identity Checklist for Hermes Agent: apply a prioritize workflow to SOUL identity work — covers goal clarity, setup completeness and verification step, using supplied facts only."
+author: Lionel Sim
+kind: standalone
+provides_tools:
+  - core_soul_identity_checklist

@@ -1,0 +1,7 @@
+name: biz-proposal-outline-planner
+version: 1.0.0
+description: "Proposal Outline Planner for Hermes Agent: apply a checklist workflow to proposal outline work — covers facts supplied only, audience fit and evidence noted, using supplied facts only."
+author: Lionel Sim
+kind: standalone
+provides_tools:
+  - biz_proposal_outline_planner

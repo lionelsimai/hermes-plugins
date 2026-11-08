@@ -1,0 +1,102 @@
+{
+  "name": "core-skill-draft-checklist",
+  "display_name": "Skill Draft Checklist",
+  "description": "Skill Draft Checklist for Hermes Agent: apply a classify workflow to skill draft work \u2014 covers goal clarity, setup completeness and verification step, using supplied facts only.",
+  "category": "Core Agent Ops & Skill Authoring",
+  "domain": "Hermes Agent",
+  "version": "1.0.0",
+  "author": {
+    "name": "Lionel Sim",
+    "url": "https://sg.linkedin.com/in/lionelshen"
+  },
+  "license": "MIT",
+  "tools": [
+    {
+      "name": "core_skill_draft_checklist",
+      "description": "Skill Draft Checklist for Hermes Agent: apply a classify workflow to skill draft work \u2014 covers goal clarity, setup completeness and verification step, using supplied facts only.",
+      "kind": "classify",
+      "inputSchema": {
+        "type": "object",
+        "properties": {
+          "metrics": {
+            "type": "object"
+          },
+          "counts": {
+            "type": "object"
+          },
+          "amounts": {
+            "type": "object"
+          },
+          "series": {
+            "type": "array",
+            "items": {
+              "type": "number"
+            }
+          },
+          "text": {
+            "type": "string"
+          },
+          "completed": {
+            "type": "array",
+            "items": {
+              "type": "string"
+            }
+          },
+          "facts": {
+            "type": "object"
+          },
+          "items": {
+            "type": "array"
+          },
+          "goal": {
+            "type": "string"
+          },
+          "timeframe_days": {
+            "type": "integer"
+          }
+        },
+        "required": []
+      },
+      "sample_input": {
+        "text": "Please review: this concerns skill draft goal clarity and skill draft toolset fit."
+      },
+      "output": {
+        "plugin": "core-skill-draft-checklist",
+        "tool": "core_skill_draft_checklist",
+        "kind": "classify",
+        "result": "object (shape varies by kind, see README)",
+        "guardrails": "object \u2014 present on every result"
+      }
+    }
+  ],
+  "handler": {
+    "type": "classify",
+    "config": {
+      "items": [
+        "skill draft goal clarity",
+        "skill draft setup completeness",
+        "skill draft toolset fit",
+        "skill draft guardrail coverage",
+        "skill draft verification step"
+      ]
+    }
+  },
+  "hermes": {
+    "skill": "SKILL.md in this folder (agentskills.io format)",
+    "plugin_manifest": "plugin.yaml in this folder (verified Hermes plugin format)",
+    "suggested_toolset": "skills"
+  },
+  "guardrails": {
+    "no_fabrication": true,
+    "draft_only_for_generative_tools": true,
+    "human_approval_required": true,
+    "no_auto_send": true,
+    "use_supplied_facts_only": true,
+    "no_credential_handling": true
+  },
+  "keywords": [
+    "core agent ops & skill authoring",
+    "hermes",
+    "classify"
+  ]
+}

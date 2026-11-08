@@ -1,0 +1,7 @@
+name: browser-dashboard-check-sequencer
+version: 1.0.0
+description: "Dashboard Check Sequencer for Hermes Agent: apply a analyze workflow to dashboard check work — covers step clarity, fallback step and completion proof, using supplied facts only."
+author: Lionel Sim
+kind: standalone
+provides_tools:
+  - browser_dashboard_check_sequencer

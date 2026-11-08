@@ -1,0 +1,28 @@
+{
+  "name": "hermes-plugins",
+  "version": "1.0.0",
+  "description": "1,000 plugins for Hermes Agent (Nous Research) by Lionel Sim (The AI Capitol / Hermes AI Agent Singapore Community): agent ops, memory, terminal, files, web, browser, gateway, cron, MCP, multi-agent, RAG, safety \u2014 deterministic, guardrailed, drafts only, no auto-send.",
+  "author": {
+    "name": "Lionel Sim",
+    "url": "https://sg.linkedin.com/in/lionelshen"
+  },
+  "homepage": "",
+  "license": "MIT",
+  "keywords": [
+    "hermes",
+    "hermes-agent",
+    "nous-research",
+    "agents",
+    "mcp",
+    "plugin",
+    "skills"
+  ],
+  "mcpServers": {
+    "hermes-plugins": {
+      "command": "python3",
+      "args": [
+        "${CLAUDE_PLUGIN_ROOT}/mcp_server.py"
+      ]
+    }
+  }
+}

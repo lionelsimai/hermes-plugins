@@ -1,0 +1,7 @@
+name: core-agent-profile-planner
+version: 1.0.0
+description: "Agent Profile Planner for Hermes Agent: apply a template workflow to agent profile work — covers goal clarity, setup completeness and verification step, using supplied facts only."
+author: Lionel Sim
+kind: standalone
+provides_tools:
+  - core_agent_profile_planner

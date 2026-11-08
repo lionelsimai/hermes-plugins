@@ -1,0 +1,7 @@
+name: core-session-setup-optimizer
+version: 1.0.0
+description: "Session Setup Optimizer for Hermes Agent: apply a checklist workflow to session setup work — covers goal clarity, setup completeness and verification step, using supplied facts only."
+author: Lionel Sim
+kind: standalone
+provides_tools:
+  - core_session_setup_optimizer

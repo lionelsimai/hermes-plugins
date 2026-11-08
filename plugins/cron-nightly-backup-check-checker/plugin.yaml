@@ -1,0 +1,7 @@
+name: cron-nightly-backup-check-checker
+version: 1.0.0
+description: "Nightly Backup Check Checker for Hermes Agent: apply a plan workflow to nightly backup check work — covers schedule clarity, delivery target and owner named, using supplied facts only."
+author: Lionel Sim
+kind: standalone
+provides_tools:
+  - cron_nightly_backup_check_checker

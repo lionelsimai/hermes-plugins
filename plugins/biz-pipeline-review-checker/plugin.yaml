@@ -1,0 +1,7 @@
+name: biz-pipeline-review-checker
+version: 1.0.0
+description: "Pipeline Review Checker for Hermes Agent: apply a classify workflow to pipeline review work — covers facts supplied only, audience fit and evidence noted, using supplied facts only."
+author: Lionel Sim
+kind: standalone
+provides_tools:
+  - biz_pipeline_review_checker

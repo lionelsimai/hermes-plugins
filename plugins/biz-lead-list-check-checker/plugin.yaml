@@ -1,0 +1,7 @@
+name: biz-lead-list-check-checker
+version: 1.0.0
+description: "Lead List Check Checker for Hermes Agent: apply a score workflow to lead list check work — covers facts supplied only, audience fit and evidence noted, using supplied facts only."
+author: Lionel Sim
+kind: standalone
+provides_tools:
+  - biz_lead_list_check_checker

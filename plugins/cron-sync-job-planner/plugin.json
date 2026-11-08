@@ -1,0 +1,105 @@
+{
+  "name": "cron-sync-job-planner",
+  "display_name": "Sync Job Planner",
+  "description": "Sync Job Planner for Hermes Agent: apply a template workflow to sync job work \u2014 covers schedule clarity, delivery target and owner named, using supplied facts only.",
+  "category": "Scheduling & Cron",
+  "domain": "Hermes Agent",
+  "version": "1.0.0",
+  "author": {
+    "name": "Lionel Sim",
+    "url": "https://sg.linkedin.com/in/lionelshen"
+  },
+  "license": "MIT",
+  "tools": [
+    {
+      "name": "cron_sync_job_planner",
+      "description": "Sync Job Planner for Hermes Agent: apply a template workflow to sync job work \u2014 covers schedule clarity, delivery target and owner named, using supplied facts only.",
+      "kind": "template",
+      "inputSchema": {
+        "type": "object",
+        "properties": {
+          "metrics": {
+            "type": "object"
+          },
+          "counts": {
+            "type": "object"
+          },
+          "amounts": {
+            "type": "object"
+          },
+          "series": {
+            "type": "array",
+            "items": {
+              "type": "number"
+            }
+          },
+          "text": {
+            "type": "string"
+          },
+          "completed": {
+            "type": "array",
+            "items": {
+              "type": "string"
+            }
+          },
+          "facts": {
+            "type": "object"
+          },
+          "items": {
+            "type": "array"
+          },
+          "goal": {
+            "type": "string"
+          },
+          "timeframe_days": {
+            "type": "integer"
+          }
+        },
+        "required": []
+      },
+      "sample_input": {
+        "facts": {
+          "sync_job_schedule_clarity": "Sample supplied fact",
+          "sync_job_delivery_target": "Second supplied fact"
+        }
+      },
+      "output": {
+        "plugin": "cron-sync-job-planner",
+        "tool": "cron_sync_job_planner",
+        "kind": "template",
+        "result": "object (shape varies by kind, see README)",
+        "guardrails": "object \u2014 present on every result"
+      }
+    }
+  ],
+  "handler": {
+    "type": "template",
+    "config": {
+      "items": [
+        "sync job schedule clarity",
+        "sync job delivery target",
+        "sync job failure handling",
+        "sync job idempotency",
+        "sync job owner named"
+      ]
+    }
+  },
+  "hermes": {
+    "skill": "SKILL.md in this folder (agentskills.io format)",
+    "plugin_manifest": "plugin.yaml in this folder (verified Hermes plugin format)",
+    "suggested_toolset": "cron"
+  },
+  "guardrails": {
+    "no_fabrication": true,
+    "draft_only_for_generative_tools": true,
+    "human_approval_required": true,
+    "no_auto_send": true,
+    "use_supplied_facts_only": true,
+    "no_credential_handling": true
+  },
+  "keywords": [
+    "scheduling & cron",
+    "hermes",
+    "template"
+  ]
+}
