@@ -1,0 +1,7 @@
+name: memory-session-recall-planner
+version: 1.0.0
+description: "Session Recall Planner for Hermes Agent: apply a template workflow to session recall work — covers fact accuracy, size budget fit and source noted, using supplied facts only."
+author: Lionel Sim
+kind: standalone
+provides_tools:
+  - memory_session_recall_planner

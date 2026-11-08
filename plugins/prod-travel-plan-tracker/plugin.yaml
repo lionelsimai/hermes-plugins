@@ -1,0 +1,7 @@
+name: prod-travel-plan-tracker
+version: 1.0.0
+description: "Travel Plan Tracker for Hermes Agent: apply a audit workflow to travel plan work — covers priority clarity, time realism and owner named, using supplied facts only."
+author: Lionel Sim
+kind: standalone
+provides_tools:
+  - prod_travel_plan_tracker

@@ -1,0 +1,7 @@
+name: multi-research-delegation-merger
+version: 1.0.0
+description: "Research Delegation Merger for Hermes Agent: apply a prioritize workflow to research delegation work — covers scope clarity, independence of subtasks and verification step, using supplied facts only."
+author: Lionel Sim
+kind: standalone
+provides_tools:
+  - multi_research_delegation_merger

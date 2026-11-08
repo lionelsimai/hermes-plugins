@@ -1,0 +1,7 @@
+name: memory-user-profile-facts-summarizer
+version: 1.0.0
+description: "User Profile Facts Summarizer for Hermes Agent: apply a score workflow to user profile facts work — covers fact accuracy, size budget fit and source noted, using supplied facts only."
+author: Lionel Sim
+kind: standalone
+provides_tools:
+  - memory_user_profile_facts_summarizer

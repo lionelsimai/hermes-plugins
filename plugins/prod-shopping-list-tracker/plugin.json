@@ -1,0 +1,105 @@
+{
+  "name": "prod-shopping-list-tracker",
+  "display_name": "Shopping List Tracker",
+  "description": "Shopping List Tracker for Hermes Agent: apply a template workflow to shopping list work \u2014 covers priority clarity, time realism and owner named, using supplied facts only.",
+  "category": "Personal Productivity",
+  "domain": "Hermes Agent",
+  "version": "1.0.0",
+  "author": {
+    "name": "Lionel Sim",
+    "url": "https://sg.linkedin.com/in/lionelshen"
+  },
+  "license": "MIT",
+  "tools": [
+    {
+      "name": "prod_shopping_list_tracker",
+      "description": "Shopping List Tracker for Hermes Agent: apply a template workflow to shopping list work \u2014 covers priority clarity, time realism and owner named, using supplied facts only.",
+      "kind": "template",
+      "inputSchema": {
+        "type": "object",
+        "properties": {
+          "metrics": {
+            "type": "object"
+          },
+          "counts": {
+            "type": "object"
+          },
+          "amounts": {
+            "type": "object"
+          },
+          "series": {
+            "type": "array",
+            "items": {
+              "type": "number"
+            }
+          },
+          "text": {
+            "type": "string"
+          },
+          "completed": {
+            "type": "array",
+            "items": {
+              "type": "string"
+            }
+          },
+          "facts": {
+            "type": "object"
+          },
+          "items": {
+            "type": "array"
+          },
+          "goal": {
+            "type": "string"
+          },
+          "timeframe_days": {
+            "type": "integer"
+          }
+        },
+        "required": []
+      },
+      "sample_input": {
+        "facts": {
+          "shopping_list_priority_clarity": "Sample supplied fact",
+          "shopping_list_time_realism": "Second supplied fact"
+        }
+      },
+      "output": {
+        "plugin": "prod-shopping-list-tracker",
+        "tool": "prod_shopping_list_tracker",
+        "kind": "template",
+        "result": "object (shape varies by kind, see README)",
+        "guardrails": "object \u2014 present on every result"
+      }
+    }
+  ],
+  "handler": {
+    "type": "template",
+    "config": {
+      "items": [
+        "shopping list priority clarity",
+        "shopping list time realism",
+        "shopping list next action named",
+        "shopping list review cadence",
+        "shopping list owner named"
+      ]
+    }
+  },
+  "hermes": {
+    "skill": "SKILL.md in this folder (agentskills.io format)",
+    "plugin_manifest": "plugin.yaml in this folder (verified Hermes plugin format)",
+    "suggested_toolset": "skills"
+  },
+  "guardrails": {
+    "no_fabrication": true,
+    "draft_only_for_generative_tools": true,
+    "human_approval_required": true,
+    "no_auto_send": true,
+    "use_supplied_facts_only": true,
+    "no_credential_handling": true
+  },
+  "keywords": [
+    "personal productivity",
+    "hermes",
+    "template"
+  ]
+}

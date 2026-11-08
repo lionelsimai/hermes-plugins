@@ -1,0 +1,7 @@
+name: multi-subagent-brief-checker
+version: 1.0.0
+description: "Subagent Brief Checker for Hermes Agent: apply a classify workflow to subagent brief work — covers scope clarity, independence of subtasks and verification step, using supplied facts only."
+author: Lionel Sim
+kind: standalone
+provides_tools:
+  - multi_subagent_brief_checker

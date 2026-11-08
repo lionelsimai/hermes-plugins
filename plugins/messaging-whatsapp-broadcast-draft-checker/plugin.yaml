@@ -1,0 +1,7 @@
+name: messaging-whatsapp-broadcast-draft-checker
+version: 1.0.0
+description: "Whatsapp Broadcast Draft Checker for Hermes Agent: apply a score workflow to whatsapp broadcast draft work — covers audience fit, tone fit and platform fit, using supplied facts only."
+author: Lionel Sim
+kind: standalone
+provides_tools:
+  - messaging_whatsapp_broadcast_draft_checker

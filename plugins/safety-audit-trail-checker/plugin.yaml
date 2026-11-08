@@ -1,0 +1,7 @@
+name: safety-audit-trail-checker
+version: 1.0.0
+description: "Audit Trail Checker for Hermes Agent: apply a analyze workflow to audit trail work — covers risk identified, approval required and audit logged, using supplied facts only."
+author: Lionel Sim
+kind: standalone
+provides_tools:
+  - safety_audit_trail_checker

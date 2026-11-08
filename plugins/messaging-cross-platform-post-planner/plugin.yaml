@@ -1,0 +1,7 @@
+name: messaging-cross-platform-post-planner
+version: 1.0.0
+description: "Cross Platform Post Planner for Hermes Agent: apply a analyze workflow to cross platform post work — covers audience fit, tone fit and platform fit, using supplied facts only."
+author: Lionel Sim
+kind: standalone
+provides_tools:
+  - messaging_cross_platform_post_planner

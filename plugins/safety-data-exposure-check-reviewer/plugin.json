@@ -1,0 +1,113 @@
+{
+  "name": "safety-data-exposure-check-reviewer",
+  "display_name": "Data Exposure Check Reviewer",
+  "description": "Data Exposure Check Reviewer for Hermes Agent: apply a analyze workflow to data exposure check work \u2014 covers risk identified, approval required and audit logged, using supplied facts only.",
+  "category": "Safety, Approvals & Guardrails",
+  "domain": "Hermes Agent",
+  "version": "1.0.0",
+  "author": {
+    "name": "Lionel Sim",
+    "url": "https://sg.linkedin.com/in/lionelshen"
+  },
+  "license": "MIT",
+  "tools": [
+    {
+      "name": "safety_data_exposure_check_reviewer",
+      "description": "Data Exposure Check Reviewer for Hermes Agent: apply a analyze workflow to data exposure check work \u2014 covers risk identified, approval required and audit logged, using supplied facts only.",
+      "kind": "analyze",
+      "inputSchema": {
+        "type": "object",
+        "properties": {
+          "metrics": {
+            "type": "object"
+          },
+          "counts": {
+            "type": "object"
+          },
+          "amounts": {
+            "type": "object"
+          },
+          "series": {
+            "type": "array",
+            "items": {
+              "type": "number"
+            }
+          },
+          "text": {
+            "type": "string"
+          },
+          "completed": {
+            "type": "array",
+            "items": {
+              "type": "string"
+            }
+          },
+          "facts": {
+            "type": "object"
+          },
+          "items": {
+            "type": "array"
+          },
+          "goal": {
+            "type": "string"
+          },
+          "timeframe_days": {
+            "type": "integer"
+          }
+        },
+        "required": []
+      },
+      "sample_input": {
+        "counts": {
+          "data_exposure_check_risk_identified": 40,
+          "data_exposure_check_approval_required": 25,
+          "data_exposure_check_least_privilege": 10,
+          "data_exposure_check_reversibility": 75
+        },
+        "series": [
+          3,
+          5,
+          4,
+          8
+        ]
+      },
+      "output": {
+        "plugin": "safety-data-exposure-check-reviewer",
+        "tool": "safety_data_exposure_check_reviewer",
+        "kind": "analyze",
+        "result": "object (shape varies by kind, see README)",
+        "guardrails": "object \u2014 present on every result"
+      }
+    }
+  ],
+  "handler": {
+    "type": "analyze",
+    "config": {
+      "items": [
+        "data exposure check risk identified",
+        "data exposure check approval required",
+        "data exposure check least privilege",
+        "data exposure check reversibility",
+        "data exposure check audit logged"
+      ]
+    }
+  },
+  "hermes": {
+    "skill": "SKILL.md in this folder (agentskills.io format)",
+    "plugin_manifest": "plugin.yaml in this folder (verified Hermes plugin format)",
+    "suggested_toolset": "skills"
+  },
+  "guardrails": {
+    "no_fabrication": true,
+    "draft_only_for_generative_tools": true,
+    "human_approval_required": true,
+    "no_auto_send": true,
+    "use_supplied_facts_only": true,
+    "no_credential_handling": true
+  },
+  "keywords": [
+    "safety, approvals & guardrails",
+    "hermes",
+    "analyze"
+  ]
+}

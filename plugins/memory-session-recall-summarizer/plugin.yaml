@@ -1,0 +1,7 @@
+name: memory-session-recall-summarizer
+version: 1.0.0
+description: "Session Recall Summarizer for Hermes Agent: apply a score workflow to session recall work — covers fact accuracy, size budget fit and source noted, using supplied facts only."
+author: Lionel Sim
+kind: standalone
+provides_tools:
+  - memory_session_recall_summarizer

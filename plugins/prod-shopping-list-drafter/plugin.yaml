@@ -1,0 +1,7 @@
+name: prod-shopping-list-drafter
+version: 1.0.0
+description: "Shopping List Drafter for Hermes Agent: apply a analyze workflow to shopping list work — covers priority clarity, time realism and owner named, using supplied facts only."
+author: Lionel Sim
+kind: standalone
+provides_tools:
+  - prod_shopping_list_drafter

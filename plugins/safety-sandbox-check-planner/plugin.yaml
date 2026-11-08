@@ -1,0 +1,7 @@
+name: safety-sandbox-check-planner
+version: 1.0.0
+description: "Sandbox Check Planner for Hermes Agent: apply a score workflow to sandbox check work — covers risk identified, approval required and audit logged, using supplied facts only."
+author: Lionel Sim
+kind: standalone
+provides_tools:
+  - safety_sandbox_check_planner

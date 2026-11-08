@@ -1,0 +1,7 @@
+name: prod-learning-plan-reviewer
+version: 1.0.0
+description: "Learning Plan Reviewer for Hermes Agent: apply a plan workflow to learning plan work — covers priority clarity, time realism and owner named, using supplied facts only."
+author: Lionel Sim
+kind: standalone
+provides_tools:
+  - prod_learning_plan_reviewer

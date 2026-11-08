@@ -1,0 +1,7 @@
+name: prod-habit-tracker-tracker
+version: 1.0.0
+description: "Habit Tracker Tracker for Hermes Agent: apply a plan workflow to habit tracker work — covers priority clarity, time realism and owner named, using supplied facts only."
+author: Lionel Sim
+kind: standalone
+provides_tools:
+  - prod_habit_tracker_tracker

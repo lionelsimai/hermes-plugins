@@ -1,0 +1,7 @@
+name: prod-decision-log-planner
+version: 1.0.0
+description: "Decision Log Planner for Hermes Agent: apply a audit workflow to decision log work — covers priority clarity, time realism and owner named, using supplied facts only."
+author: Lionel Sim
+kind: standalone
+provides_tools:
+  - prod_decision_log_planner

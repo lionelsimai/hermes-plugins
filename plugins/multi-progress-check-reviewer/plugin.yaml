@@ -1,0 +1,7 @@
+name: multi-progress-check-reviewer
+version: 1.0.0
+description: "Progress Check Reviewer for Hermes Agent: apply a score workflow to progress check work — covers scope clarity, independence of subtasks and verification step, using supplied facts only."
+author: Lionel Sim
+kind: standalone
+provides_tools:
+  - multi_progress_check_reviewer

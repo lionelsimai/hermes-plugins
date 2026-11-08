@@ -1,0 +1,7 @@
+name: multi-parallel-workstream-checker
+version: 1.0.0
+description: "Parallel Workstream Checker for Hermes Agent: apply a checklist workflow to parallel workstream work — covers scope clarity, independence of subtasks and verification step, using supplied facts only."
+author: Lionel Sim
+kind: standalone
+provides_tools:
+  - multi_parallel_workstream_checker

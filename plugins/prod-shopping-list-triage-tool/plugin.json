@@ -1,0 +1,106 @@
+{
+  "name": "prod-shopping-list-triage-tool",
+  "display_name": "Shopping List Triage Tool",
+  "description": "Shopping List Triage Tool for Hermes Agent: apply a score workflow to shopping list work \u2014 covers priority clarity, time realism and owner named, using supplied facts only.",
+  "category": "Personal Productivity",
+  "domain": "Hermes Agent",
+  "version": "1.0.0",
+  "author": {
+    "name": "Lionel Sim",
+    "url": "https://sg.linkedin.com/in/lionelshen"
+  },
+  "license": "MIT",
+  "tools": [
+    {
+      "name": "prod_shopping_list_triage_tool",
+      "description": "Shopping List Triage Tool for Hermes Agent: apply a score workflow to shopping list work \u2014 covers priority clarity, time realism and owner named, using supplied facts only.",
+      "kind": "score",
+      "inputSchema": {
+        "type": "object",
+        "properties": {
+          "metrics": {
+            "type": "object"
+          },
+          "counts": {
+            "type": "object"
+          },
+          "amounts": {
+            "type": "object"
+          },
+          "series": {
+            "type": "array",
+            "items": {
+              "type": "number"
+            }
+          },
+          "text": {
+            "type": "string"
+          },
+          "completed": {
+            "type": "array",
+            "items": {
+              "type": "string"
+            }
+          },
+          "facts": {
+            "type": "object"
+          },
+          "items": {
+            "type": "array"
+          },
+          "goal": {
+            "type": "string"
+          },
+          "timeframe_days": {
+            "type": "integer"
+          }
+        },
+        "required": []
+      },
+      "sample_input": {
+        "metrics": {
+          "shopping_list_priority_clarity": 80,
+          "shopping_list_time_realism": 65,
+          "shopping_list_next_action_named": 90
+        }
+      },
+      "output": {
+        "plugin": "prod-shopping-list-triage-tool",
+        "tool": "prod_shopping_list_triage_tool",
+        "kind": "score",
+        "result": "object (shape varies by kind, see README)",
+        "guardrails": "object \u2014 present on every result"
+      }
+    }
+  ],
+  "handler": {
+    "type": "score",
+    "config": {
+      "items": [
+        "shopping list priority clarity",
+        "shopping list time realism",
+        "shopping list next action named",
+        "shopping list review cadence",
+        "shopping list owner named"
+      ]
+    }
+  },
+  "hermes": {
+    "skill": "SKILL.md in this folder (agentskills.io format)",
+    "plugin_manifest": "plugin.yaml in this folder (verified Hermes plugin format)",
+    "suggested_toolset": "skills"
+  },
+  "guardrails": {
+    "no_fabrication": true,
+    "draft_only_for_generative_tools": true,
+    "human_approval_required": true,
+    "no_auto_send": true,
+    "use_supplied_facts_only": true,
+    "no_credential_handling": true
+  },
+  "keywords": [
+    "personal productivity",
+    "hermes",
+    "score"
+  ]
+}

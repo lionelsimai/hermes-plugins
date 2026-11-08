@@ -1,0 +1,113 @@
+{
+  "name": "multi-task-split-plan-checker",
+  "display_name": "Task Split Plan Checker",
+  "description": "Task Split Plan Checker for Hermes Agent: apply a prioritize workflow to task split plan work \u2014 covers scope clarity, independence of subtasks and verification step, using supplied facts only.",
+  "category": "Multi-Agent & Delegation",
+  "domain": "Hermes Agent",
+  "version": "1.0.0",
+  "author": {
+    "name": "Lionel Sim",
+    "url": "https://sg.linkedin.com/in/lionelshen"
+  },
+  "license": "MIT",
+  "tools": [
+    {
+      "name": "multi_task_split_plan_checker",
+      "description": "Task Split Plan Checker for Hermes Agent: apply a prioritize workflow to task split plan work \u2014 covers scope clarity, independence of subtasks and verification step, using supplied facts only.",
+      "kind": "prioritize",
+      "inputSchema": {
+        "type": "object",
+        "properties": {
+          "metrics": {
+            "type": "object"
+          },
+          "counts": {
+            "type": "object"
+          },
+          "amounts": {
+            "type": "object"
+          },
+          "series": {
+            "type": "array",
+            "items": {
+              "type": "number"
+            }
+          },
+          "text": {
+            "type": "string"
+          },
+          "completed": {
+            "type": "array",
+            "items": {
+              "type": "string"
+            }
+          },
+          "facts": {
+            "type": "object"
+          },
+          "items": {
+            "type": "array"
+          },
+          "goal": {
+            "type": "string"
+          },
+          "timeframe_days": {
+            "type": "integer"
+          }
+        },
+        "required": []
+      },
+      "sample_input": {
+        "items": [
+          {
+            "name": "Sample task A",
+            "impact": 8,
+            "effort": 3
+          },
+          {
+            "name": "Sample task B",
+            "impact": 6,
+            "effort": 1
+          }
+        ]
+      },
+      "output": {
+        "plugin": "multi-task-split-plan-checker",
+        "tool": "multi_task_split_plan_checker",
+        "kind": "prioritize",
+        "result": "object (shape varies by kind, see README)",
+        "guardrails": "object \u2014 present on every result"
+      }
+    }
+  ],
+  "handler": {
+    "type": "prioritize",
+    "config": {
+      "items": [
+        "task split plan scope clarity",
+        "task split plan independence of subtasks",
+        "task split plan merge criteria",
+        "task split plan context budget",
+        "task split plan verification step"
+      ]
+    }
+  },
+  "hermes": {
+    "skill": "SKILL.md in this folder (agentskills.io format)",
+    "plugin_manifest": "plugin.yaml in this folder (verified Hermes plugin format)",
+    "suggested_toolset": "delegation"
+  },
+  "guardrails": {
+    "no_fabrication": true,
+    "draft_only_for_generative_tools": true,
+    "human_approval_required": true,
+    "no_auto_send": true,
+    "use_supplied_facts_only": true,
+    "no_credential_handling": true
+  },
+  "keywords": [
+    "multi-agent & delegation",
+    "hermes",
+    "prioritize"
+  ]
+}

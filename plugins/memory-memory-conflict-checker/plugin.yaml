@@ -1,0 +1,7 @@
+name: memory-memory-conflict-checker
+version: 1.0.0
+description: "Memory Conflict Checker for Hermes Agent: apply a prioritize workflow to memory conflict work — covers fact accuracy, size budget fit and source noted, using supplied facts only."
+author: Lionel Sim
+kind: standalone
+provides_tools:
+  - memory_memory_conflict_checker

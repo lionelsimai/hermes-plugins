@@ -1,0 +1,106 @@
+{
+  "name": "messaging-dm-triage-planner",
+  "display_name": "Dm Triage Planner",
+  "description": "Dm Triage Planner for Hermes Agent: apply a score workflow to dm triage work \u2014 covers audience fit, tone fit and platform fit, using supplied facts only.",
+  "category": "Messaging & Gateway",
+  "domain": "Hermes Agent",
+  "version": "1.0.0",
+  "author": {
+    "name": "Lionel Sim",
+    "url": "https://sg.linkedin.com/in/lionelshen"
+  },
+  "license": "MIT",
+  "tools": [
+    {
+      "name": "messaging_dm_triage_planner",
+      "description": "Dm Triage Planner for Hermes Agent: apply a score workflow to dm triage work \u2014 covers audience fit, tone fit and platform fit, using supplied facts only.",
+      "kind": "score",
+      "inputSchema": {
+        "type": "object",
+        "properties": {
+          "metrics": {
+            "type": "object"
+          },
+          "counts": {
+            "type": "object"
+          },
+          "amounts": {
+            "type": "object"
+          },
+          "series": {
+            "type": "array",
+            "items": {
+              "type": "number"
+            }
+          },
+          "text": {
+            "type": "string"
+          },
+          "completed": {
+            "type": "array",
+            "items": {
+              "type": "string"
+            }
+          },
+          "facts": {
+            "type": "object"
+          },
+          "items": {
+            "type": "array"
+          },
+          "goal": {
+            "type": "string"
+          },
+          "timeframe_days": {
+            "type": "integer"
+          }
+        },
+        "required": []
+      },
+      "sample_input": {
+        "metrics": {
+          "dm_triage_audience_fit": 80,
+          "dm_triage_tone_fit": 65,
+          "dm_triage_length_fit": 90
+        }
+      },
+      "output": {
+        "plugin": "messaging-dm-triage-planner",
+        "tool": "messaging_dm_triage_planner",
+        "kind": "score",
+        "result": "object (shape varies by kind, see README)",
+        "guardrails": "object \u2014 present on every result"
+      }
+    }
+  ],
+  "handler": {
+    "type": "score",
+    "config": {
+      "items": [
+        "dm triage audience fit",
+        "dm triage tone fit",
+        "dm triage length fit",
+        "dm triage approval gate",
+        "dm triage platform fit"
+      ]
+    }
+  },
+  "hermes": {
+    "skill": "SKILL.md in this folder (agentskills.io format)",
+    "plugin_manifest": "plugin.yaml in this folder (verified Hermes plugin format)",
+    "suggested_toolset": "messaging"
+  },
+  "guardrails": {
+    "no_fabrication": true,
+    "draft_only_for_generative_tools": true,
+    "human_approval_required": true,
+    "no_auto_send": true,
+    "use_supplied_facts_only": true,
+    "no_credential_handling": true
+  },
+  "keywords": [
+    "messaging & gateway",
+    "hermes",
+    "score"
+  ]
+}

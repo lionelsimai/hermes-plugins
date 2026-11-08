@@ -1,0 +1,7 @@
+name: memory-preference-notes-curator
+version: 1.0.0
+description: "Preference Notes Curator for Hermes Agent: apply a score workflow to preference notes work — covers fact accuracy, size budget fit and source noted, using supplied facts only."
+author: Lionel Sim
+kind: standalone
+provides_tools:
+  - memory_preference_notes_curator

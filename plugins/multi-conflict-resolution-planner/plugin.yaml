@@ -1,0 +1,7 @@
+name: multi-conflict-resolution-planner
+version: 1.0.0
+description: "Conflict Resolution Planner for Hermes Agent: apply a prioritize workflow to conflict resolution work — covers scope clarity, independence of subtasks and verification step, using supplied facts only."
+author: Lionel Sim
+kind: standalone
+provides_tools:
+  - multi_conflict_resolution_planner

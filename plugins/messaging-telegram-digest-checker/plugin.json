@@ -1,0 +1,105 @@
+{
+  "name": "messaging-telegram-digest-checker",
+  "display_name": "Telegram Digest Checker",
+  "description": "Telegram Digest Checker for Hermes Agent: apply a checklist workflow to telegram digest work \u2014 covers audience fit, tone fit and platform fit, using supplied facts only.",
+  "category": "Messaging & Gateway",
+  "domain": "Hermes Agent",
+  "version": "1.0.0",
+  "author": {
+    "name": "Lionel Sim",
+    "url": "https://sg.linkedin.com/in/lionelshen"
+  },
+  "license": "MIT",
+  "tools": [
+    {
+      "name": "messaging_telegram_digest_checker",
+      "description": "Telegram Digest Checker for Hermes Agent: apply a checklist workflow to telegram digest work \u2014 covers audience fit, tone fit and platform fit, using supplied facts only.",
+      "kind": "checklist",
+      "inputSchema": {
+        "type": "object",
+        "properties": {
+          "metrics": {
+            "type": "object"
+          },
+          "counts": {
+            "type": "object"
+          },
+          "amounts": {
+            "type": "object"
+          },
+          "series": {
+            "type": "array",
+            "items": {
+              "type": "number"
+            }
+          },
+          "text": {
+            "type": "string"
+          },
+          "completed": {
+            "type": "array",
+            "items": {
+              "type": "string"
+            }
+          },
+          "facts": {
+            "type": "object"
+          },
+          "items": {
+            "type": "array"
+          },
+          "goal": {
+            "type": "string"
+          },
+          "timeframe_days": {
+            "type": "integer"
+          }
+        },
+        "required": []
+      },
+      "sample_input": {
+        "completed": [
+          "telegram digest audience fit",
+          "telegram digest tone fit"
+        ]
+      },
+      "output": {
+        "plugin": "messaging-telegram-digest-checker",
+        "tool": "messaging_telegram_digest_checker",
+        "kind": "checklist",
+        "result": "object (shape varies by kind, see README)",
+        "guardrails": "object \u2014 present on every result"
+      }
+    }
+  ],
+  "handler": {
+    "type": "checklist",
+    "config": {
+      "items": [
+        "telegram digest audience fit",
+        "telegram digest tone fit",
+        "telegram digest length fit",
+        "telegram digest approval gate",
+        "telegram digest platform fit"
+      ]
+    }
+  },
+  "hermes": {
+    "skill": "SKILL.md in this folder (agentskills.io format)",
+    "plugin_manifest": "plugin.yaml in this folder (verified Hermes plugin format)",
+    "suggested_toolset": "messaging"
+  },
+  "guardrails": {
+    "no_fabrication": true,
+    "draft_only_for_generative_tools": true,
+    "human_approval_required": true,
+    "no_auto_send": true,
+    "use_supplied_facts_only": true,
+    "no_credential_handling": true
+  },
+  "keywords": [
+    "messaging & gateway",
+    "hermes",
+    "checklist"
+  ]
+}

@@ -1,0 +1,7 @@
+name: multi-result-merge-planner
+version: 1.0.0
+description: "Result Merge Planner for Hermes Agent: apply a analyze workflow to result merge work — covers scope clarity, independence of subtasks and verification step, using supplied facts only."
+author: Lionel Sim
+kind: standalone
+provides_tools:
+  - multi_result_merge_planner

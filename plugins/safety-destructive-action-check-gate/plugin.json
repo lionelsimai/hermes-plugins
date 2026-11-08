@@ -1,0 +1,106 @@
+{
+  "name": "safety-destructive-action-check-gate",
+  "display_name": "Destructive Action Check Gate",
+  "description": "Destructive Action Check Gate for Hermes Agent: apply a score workflow to destructive action check work \u2014 covers risk identified, approval required and audit logged, using supplied facts only.",
+  "category": "Safety, Approvals & Guardrails",
+  "domain": "Hermes Agent",
+  "version": "1.0.0",
+  "author": {
+    "name": "Lionel Sim",
+    "url": "https://sg.linkedin.com/in/lionelshen"
+  },
+  "license": "MIT",
+  "tools": [
+    {
+      "name": "safety_destructive_action_check_gate",
+      "description": "Destructive Action Check Gate for Hermes Agent: apply a score workflow to destructive action check work \u2014 covers risk identified, approval required and audit logged, using supplied facts only.",
+      "kind": "score",
+      "inputSchema": {
+        "type": "object",
+        "properties": {
+          "metrics": {
+            "type": "object"
+          },
+          "counts": {
+            "type": "object"
+          },
+          "amounts": {
+            "type": "object"
+          },
+          "series": {
+            "type": "array",
+            "items": {
+              "type": "number"
+            }
+          },
+          "text": {
+            "type": "string"
+          },
+          "completed": {
+            "type": "array",
+            "items": {
+              "type": "string"
+            }
+          },
+          "facts": {
+            "type": "object"
+          },
+          "items": {
+            "type": "array"
+          },
+          "goal": {
+            "type": "string"
+          },
+          "timeframe_days": {
+            "type": "integer"
+          }
+        },
+        "required": []
+      },
+      "sample_input": {
+        "metrics": {
+          "destructive_action_check_risk_identified": 80,
+          "destructive_action_check_approval_required": 65,
+          "destructive_action_check_least_privilege": 90
+        }
+      },
+      "output": {
+        "plugin": "safety-destructive-action-check-gate",
+        "tool": "safety_destructive_action_check_gate",
+        "kind": "score",
+        "result": "object (shape varies by kind, see README)",
+        "guardrails": "object \u2014 present on every result"
+      }
+    }
+  ],
+  "handler": {
+    "type": "score",
+    "config": {
+      "items": [
+        "destructive action check risk identified",
+        "destructive action check approval required",
+        "destructive action check least privilege",
+        "destructive action check reversibility",
+        "destructive action check audit logged"
+      ]
+    }
+  },
+  "hermes": {
+    "skill": "SKILL.md in this folder (agentskills.io format)",
+    "plugin_manifest": "plugin.yaml in this folder (verified Hermes plugin format)",
+    "suggested_toolset": "skills"
+  },
+  "guardrails": {
+    "no_fabrication": true,
+    "draft_only_for_generative_tools": true,
+    "human_approval_required": true,
+    "no_auto_send": true,
+    "use_supplied_facts_only": true,
+    "no_credential_handling": true
+  },
+  "keywords": [
+    "safety, approvals & guardrails",
+    "hermes",
+    "score"
+  ]
+}

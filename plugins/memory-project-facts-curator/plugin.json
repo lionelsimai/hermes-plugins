@@ -1,0 +1,113 @@
+{
+  "name": "memory-project-facts-curator",
+  "display_name": "Project Facts Curator",
+  "description": "Project Facts Curator for Hermes Agent: apply a analyze workflow to project facts work \u2014 covers fact accuracy, size budget fit and source noted, using supplied facts only.",
+  "category": "Memory & Context",
+  "domain": "Hermes Agent",
+  "version": "1.0.0",
+  "author": {
+    "name": "Lionel Sim",
+    "url": "https://sg.linkedin.com/in/lionelshen"
+  },
+  "license": "MIT",
+  "tools": [
+    {
+      "name": "memory_project_facts_curator",
+      "description": "Project Facts Curator for Hermes Agent: apply a analyze workflow to project facts work \u2014 covers fact accuracy, size budget fit and source noted, using supplied facts only.",
+      "kind": "analyze",
+      "inputSchema": {
+        "type": "object",
+        "properties": {
+          "metrics": {
+            "type": "object"
+          },
+          "counts": {
+            "type": "object"
+          },
+          "amounts": {
+            "type": "object"
+          },
+          "series": {
+            "type": "array",
+            "items": {
+              "type": "number"
+            }
+          },
+          "text": {
+            "type": "string"
+          },
+          "completed": {
+            "type": "array",
+            "items": {
+              "type": "string"
+            }
+          },
+          "facts": {
+            "type": "object"
+          },
+          "items": {
+            "type": "array"
+          },
+          "goal": {
+            "type": "string"
+          },
+          "timeframe_days": {
+            "type": "integer"
+          }
+        },
+        "required": []
+      },
+      "sample_input": {
+        "counts": {
+          "project_facts_fact_accuracy": 40,
+          "project_facts_size_budget_fit": 25,
+          "project_facts_staleness": 10,
+          "project_facts_duplication": 75
+        },
+        "series": [
+          3,
+          5,
+          4,
+          8
+        ]
+      },
+      "output": {
+        "plugin": "memory-project-facts-curator",
+        "tool": "memory_project_facts_curator",
+        "kind": "analyze",
+        "result": "object (shape varies by kind, see README)",
+        "guardrails": "object \u2014 present on every result"
+      }
+    }
+  ],
+  "handler": {
+    "type": "analyze",
+    "config": {
+      "items": [
+        "project facts fact accuracy",
+        "project facts size budget fit",
+        "project facts staleness",
+        "project facts duplication",
+        "project facts source noted"
+      ]
+    }
+  },
+  "hermes": {
+    "skill": "SKILL.md in this folder (agentskills.io format)",
+    "plugin_manifest": "plugin.yaml in this folder (verified Hermes plugin format)",
+    "suggested_toolset": "memory"
+  },
+  "guardrails": {
+    "no_fabrication": true,
+    "draft_only_for_generative_tools": true,
+    "human_approval_required": true,
+    "no_auto_send": true,
+    "use_supplied_facts_only": true,
+    "no_credential_handling": true
+  },
+  "keywords": [
+    "memory & context",
+    "hermes",
+    "analyze"
+  ]
+}

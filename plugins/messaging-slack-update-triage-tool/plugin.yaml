@@ -1,0 +1,7 @@
+name: messaging-slack-update-triage-tool
+version: 1.0.0
+description: "Slack Update Triage Tool for Hermes Agent: apply a checklist workflow to slack update work — covers audience fit, tone fit and platform fit, using supplied facts only."
+author: Lionel Sim
+kind: standalone
+provides_tools:
+  - messaging_slack_update_triage_tool

@@ -1,0 +1,7 @@
+name: safety-command-approval-gate
+version: 1.0.0
+description: "Command Approval Gate for Hermes Agent: apply a analyze workflow to command approval work — covers risk identified, approval required and audit logged, using supplied facts only."
+author: Lionel Sim
+kind: standalone
+provides_tools:
+  - safety_command_approval_gate

@@ -1,0 +1,7 @@
+name: rag-citation-check-reviewer
+version: 1.0.0
+description: "Citation Check Reviewer for Hermes Agent: apply a classify workflow to citation check work — covers source fidelity, retrieval relevance and gap honesty, using supplied facts only."
+author: Lionel Sim
+kind: standalone
+provides_tools:
+  - rag_citation_check_reviewer

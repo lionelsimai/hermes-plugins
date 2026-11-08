@@ -1,0 +1,7 @@
+name: prod-shopping-list-triage-tool
+version: 1.0.0
+description: "Shopping List Triage Tool for Hermes Agent: apply a score workflow to shopping list work — covers priority clarity, time realism and owner named, using supplied facts only."
+author: Lionel Sim
+kind: standalone
+provides_tools:
+  - prod_shopping_list_triage_tool

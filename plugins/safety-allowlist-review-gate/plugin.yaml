@@ -1,0 +1,7 @@
+name: safety-allowlist-review-gate
+version: 1.0.0
+description: "Allowlist Review Gate for Hermes Agent: apply a prioritize workflow to allowlist review work — covers risk identified, approval required and audit logged, using supplied facts only."
+author: Lionel Sim
+kind: standalone
+provides_tools:
+  - safety_allowlist_review_gate

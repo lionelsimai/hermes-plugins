@@ -1,0 +1,113 @@
+{
+  "name": "rag-chunking-plan-analyzer",
+  "display_name": "Chunking Plan Analyzer",
+  "description": "Chunking Plan Analyzer for Hermes Agent: apply a prioritize workflow to chunking plan work \u2014 covers source fidelity, retrieval relevance and gap honesty, using supplied facts only.",
+  "category": "Knowledge & RAG",
+  "domain": "Hermes Agent",
+  "version": "1.0.0",
+  "author": {
+    "name": "Lionel Sim",
+    "url": "https://sg.linkedin.com/in/lionelshen"
+  },
+  "license": "MIT",
+  "tools": [
+    {
+      "name": "rag_chunking_plan_analyzer",
+      "description": "Chunking Plan Analyzer for Hermes Agent: apply a prioritize workflow to chunking plan work \u2014 covers source fidelity, retrieval relevance and gap honesty, using supplied facts only.",
+      "kind": "prioritize",
+      "inputSchema": {
+        "type": "object",
+        "properties": {
+          "metrics": {
+            "type": "object"
+          },
+          "counts": {
+            "type": "object"
+          },
+          "amounts": {
+            "type": "object"
+          },
+          "series": {
+            "type": "array",
+            "items": {
+              "type": "number"
+            }
+          },
+          "text": {
+            "type": "string"
+          },
+          "completed": {
+            "type": "array",
+            "items": {
+              "type": "string"
+            }
+          },
+          "facts": {
+            "type": "object"
+          },
+          "items": {
+            "type": "array"
+          },
+          "goal": {
+            "type": "string"
+          },
+          "timeframe_days": {
+            "type": "integer"
+          }
+        },
+        "required": []
+      },
+      "sample_input": {
+        "items": [
+          {
+            "name": "Sample task A",
+            "impact": 8,
+            "effort": 3
+          },
+          {
+            "name": "Sample task B",
+            "impact": 6,
+            "effort": 1
+          }
+        ]
+      },
+      "output": {
+        "plugin": "rag-chunking-plan-analyzer",
+        "tool": "rag_chunking_plan_analyzer",
+        "kind": "prioritize",
+        "result": "object (shape varies by kind, see README)",
+        "guardrails": "object \u2014 present on every result"
+      }
+    }
+  ],
+  "handler": {
+    "type": "prioritize",
+    "config": {
+      "items": [
+        "chunking plan source fidelity",
+        "chunking plan retrieval relevance",
+        "chunking plan citation coverage",
+        "chunking plan freshness",
+        "chunking plan gap honesty"
+      ]
+    }
+  },
+  "hermes": {
+    "skill": "SKILL.md in this folder (agentskills.io format)",
+    "plugin_manifest": "plugin.yaml in this folder (verified Hermes plugin format)",
+    "suggested_toolset": "memory"
+  },
+  "guardrails": {
+    "no_fabrication": true,
+    "draft_only_for_generative_tools": true,
+    "human_approval_required": true,
+    "no_auto_send": true,
+    "use_supplied_facts_only": true,
+    "no_credential_handling": true
+  },
+  "keywords": [
+    "knowledge & rag",
+    "hermes",
+    "prioritize"
+  ]
+}

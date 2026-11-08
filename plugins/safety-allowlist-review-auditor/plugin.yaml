@@ -1,0 +1,7 @@
+name: safety-allowlist-review-auditor
+version: 1.0.0
+description: "Allowlist Review Auditor for Hermes Agent: apply a checklist workflow to allowlist review work — covers risk identified, approval required and audit logged, using supplied facts only."
+author: Lionel Sim
+kind: standalone
+provides_tools:
+  - safety_allowlist_review_auditor

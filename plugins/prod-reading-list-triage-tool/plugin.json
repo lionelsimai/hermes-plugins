@@ -1,0 +1,105 @@
+{
+  "name": "prod-reading-list-triage-tool",
+  "display_name": "Reading List Triage Tool",
+  "description": "Reading List Triage Tool for Hermes Agent: apply a checklist workflow to reading list work \u2014 covers priority clarity, time realism and owner named, using supplied facts only.",
+  "category": "Personal Productivity",
+  "domain": "Hermes Agent",
+  "version": "1.0.0",
+  "author": {
+    "name": "Lionel Sim",
+    "url": "https://sg.linkedin.com/in/lionelshen"
+  },
+  "license": "MIT",
+  "tools": [
+    {
+      "name": "prod_reading_list_triage_tool",
+      "description": "Reading List Triage Tool for Hermes Agent: apply a checklist workflow to reading list work \u2014 covers priority clarity, time realism and owner named, using supplied facts only.",
+      "kind": "checklist",
+      "inputSchema": {
+        "type": "object",
+        "properties": {
+          "metrics": {
+            "type": "object"
+          },
+          "counts": {
+            "type": "object"
+          },
+          "amounts": {
+            "type": "object"
+          },
+          "series": {
+            "type": "array",
+            "items": {
+              "type": "number"
+            }
+          },
+          "text": {
+            "type": "string"
+          },
+          "completed": {
+            "type": "array",
+            "items": {
+              "type": "string"
+            }
+          },
+          "facts": {
+            "type": "object"
+          },
+          "items": {
+            "type": "array"
+          },
+          "goal": {
+            "type": "string"
+          },
+          "timeframe_days": {
+            "type": "integer"
+          }
+        },
+        "required": []
+      },
+      "sample_input": {
+        "completed": [
+          "reading list priority clarity",
+          "reading list time realism"
+        ]
+      },
+      "output": {
+        "plugin": "prod-reading-list-triage-tool",
+        "tool": "prod_reading_list_triage_tool",
+        "kind": "checklist",
+        "result": "object (shape varies by kind, see README)",
+        "guardrails": "object \u2014 present on every result"
+      }
+    }
+  ],
+  "handler": {
+    "type": "checklist",
+    "config": {
+      "items": [
+        "reading list priority clarity",
+        "reading list time realism",
+        "reading list next action named",
+        "reading list review cadence",
+        "reading list owner named"
+      ]
+    }
+  },
+  "hermes": {
+    "skill": "SKILL.md in this folder (agentskills.io format)",
+    "plugin_manifest": "plugin.yaml in this folder (verified Hermes plugin format)",
+    "suggested_toolset": "skills"
+  },
+  "guardrails": {
+    "no_fabrication": true,
+    "draft_only_for_generative_tools": true,
+    "human_approval_required": true,
+    "no_auto_send": true,
+    "use_supplied_facts_only": true,
+    "no_credential_handling": true
+  },
+  "keywords": [
+    "personal productivity",
+    "hermes",
+    "checklist"
+  ]
+}

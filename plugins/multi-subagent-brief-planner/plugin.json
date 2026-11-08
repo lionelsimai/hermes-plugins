@@ -1,0 +1,105 @@
+{
+  "name": "multi-subagent-brief-planner",
+  "display_name": "Subagent Brief Planner",
+  "description": "Subagent Brief Planner for Hermes Agent: apply a checklist workflow to subagent brief work \u2014 covers scope clarity, independence of subtasks and verification step, using supplied facts only.",
+  "category": "Multi-Agent & Delegation",
+  "domain": "Hermes Agent",
+  "version": "1.0.0",
+  "author": {
+    "name": "Lionel Sim",
+    "url": "https://sg.linkedin.com/in/lionelshen"
+  },
+  "license": "MIT",
+  "tools": [
+    {
+      "name": "multi_subagent_brief_planner",
+      "description": "Subagent Brief Planner for Hermes Agent: apply a checklist workflow to subagent brief work \u2014 covers scope clarity, independence of subtasks and verification step, using supplied facts only.",
+      "kind": "checklist",
+      "inputSchema": {
+        "type": "object",
+        "properties": {
+          "metrics": {
+            "type": "object"
+          },
+          "counts": {
+            "type": "object"
+          },
+          "amounts": {
+            "type": "object"
+          },
+          "series": {
+            "type": "array",
+            "items": {
+              "type": "number"
+            }
+          },
+          "text": {
+            "type": "string"
+          },
+          "completed": {
+            "type": "array",
+            "items": {
+              "type": "string"
+            }
+          },
+          "facts": {
+            "type": "object"
+          },
+          "items": {
+            "type": "array"
+          },
+          "goal": {
+            "type": "string"
+          },
+          "timeframe_days": {
+            "type": "integer"
+          }
+        },
+        "required": []
+      },
+      "sample_input": {
+        "completed": [
+          "subagent brief scope clarity",
+          "subagent brief independence of subtasks"
+        ]
+      },
+      "output": {
+        "plugin": "multi-subagent-brief-planner",
+        "tool": "multi_subagent_brief_planner",
+        "kind": "checklist",
+        "result": "object (shape varies by kind, see README)",
+        "guardrails": "object \u2014 present on every result"
+      }
+    }
+  ],
+  "handler": {
+    "type": "checklist",
+    "config": {
+      "items": [
+        "subagent brief scope clarity",
+        "subagent brief independence of subtasks",
+        "subagent brief merge criteria",
+        "subagent brief context budget",
+        "subagent brief verification step"
+      ]
+    }
+  },
+  "hermes": {
+    "skill": "SKILL.md in this folder (agentskills.io format)",
+    "plugin_manifest": "plugin.yaml in this folder (verified Hermes plugin format)",
+    "suggested_toolset": "delegation"
+  },
+  "guardrails": {
+    "no_fabrication": true,
+    "draft_only_for_generative_tools": true,
+    "human_approval_required": true,
+    "no_auto_send": true,
+    "use_supplied_facts_only": true,
+    "no_credential_handling": true
+  },
+  "keywords": [
+    "multi-agent & delegation",
+    "hermes",
+    "checklist"
+  ]
+}

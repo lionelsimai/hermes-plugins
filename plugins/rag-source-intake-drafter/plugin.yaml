@@ -1,0 +1,7 @@
+name: rag-source-intake-drafter
+version: 1.0.0
+description: "Source Intake Drafter for Hermes Agent: apply a checklist workflow to source intake work — covers source fidelity, retrieval relevance and gap honesty, using supplied facts only."
+author: Lionel Sim
+kind: standalone
+provides_tools:
+  - rag_source_intake_drafter

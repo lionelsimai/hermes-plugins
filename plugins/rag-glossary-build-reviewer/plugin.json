@@ -1,0 +1,113 @@
+{
+  "name": "rag-glossary-build-reviewer",
+  "display_name": "Glossary Build Reviewer",
+  "description": "Glossary Build Reviewer for Hermes Agent: apply a analyze workflow to glossary build work \u2014 covers source fidelity, retrieval relevance and gap honesty, using supplied facts only.",
+  "category": "Knowledge & RAG",
+  "domain": "Hermes Agent",
+  "version": "1.0.0",
+  "author": {
+    "name": "Lionel Sim",
+    "url": "https://sg.linkedin.com/in/lionelshen"
+  },
+  "license": "MIT",
+  "tools": [
+    {
+      "name": "rag_glossary_build_reviewer",
+      "description": "Glossary Build Reviewer for Hermes Agent: apply a analyze workflow to glossary build work \u2014 covers source fidelity, retrieval relevance and gap honesty, using supplied facts only.",
+      "kind": "analyze",
+      "inputSchema": {
+        "type": "object",
+        "properties": {
+          "metrics": {
+            "type": "object"
+          },
+          "counts": {
+            "type": "object"
+          },
+          "amounts": {
+            "type": "object"
+          },
+          "series": {
+            "type": "array",
+            "items": {
+              "type": "number"
+            }
+          },
+          "text": {
+            "type": "string"
+          },
+          "completed": {
+            "type": "array",
+            "items": {
+              "type": "string"
+            }
+          },
+          "facts": {
+            "type": "object"
+          },
+          "items": {
+            "type": "array"
+          },
+          "goal": {
+            "type": "string"
+          },
+          "timeframe_days": {
+            "type": "integer"
+          }
+        },
+        "required": []
+      },
+      "sample_input": {
+        "counts": {
+          "glossary_build_source_fidelity": 40,
+          "glossary_build_retrieval_relevance": 25,
+          "glossary_build_citation_coverage": 10,
+          "glossary_build_freshness": 75
+        },
+        "series": [
+          3,
+          5,
+          4,
+          8
+        ]
+      },
+      "output": {
+        "plugin": "rag-glossary-build-reviewer",
+        "tool": "rag_glossary_build_reviewer",
+        "kind": "analyze",
+        "result": "object (shape varies by kind, see README)",
+        "guardrails": "object \u2014 present on every result"
+      }
+    }
+  ],
+  "handler": {
+    "type": "analyze",
+    "config": {
+      "items": [
+        "glossary build source fidelity",
+        "glossary build retrieval relevance",
+        "glossary build citation coverage",
+        "glossary build freshness",
+        "glossary build gap honesty"
+      ]
+    }
+  },
+  "hermes": {
+    "skill": "SKILL.md in this folder (agentskills.io format)",
+    "plugin_manifest": "plugin.yaml in this folder (verified Hermes plugin format)",
+    "suggested_toolset": "memory"
+  },
+  "guardrails": {
+    "no_fabrication": true,
+    "draft_only_for_generative_tools": true,
+    "human_approval_required": true,
+    "no_auto_send": true,
+    "use_supplied_facts_only": true,
+    "no_credential_handling": true
+  },
+  "keywords": [
+    "knowledge & rag",
+    "hermes",
+    "analyze"
+  ]
+}

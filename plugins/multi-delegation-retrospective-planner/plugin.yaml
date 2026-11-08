@@ -1,0 +1,7 @@
+name: multi-delegation-retrospective-planner
+version: 1.0.0
+description: "Delegation Retrospective Planner for Hermes Agent: apply a checklist workflow to delegation retrospective work — covers scope clarity, independence of subtasks and verification step, using supplied facts only."
+author: Lionel Sim
+kind: standalone
+provides_tools:
+  - multi_delegation_retrospective_planner

@@ -1,0 +1,7 @@
+name: rag-glossary-build-checker
+version: 1.0.0
+description: "Glossary Build Checker for Hermes Agent: apply a template workflow to glossary build work — covers source fidelity, retrieval relevance and gap honesty, using supplied facts only."
+author: Lionel Sim
+kind: standalone
+provides_tools:
+  - rag_glossary_build_checker

@@ -1,0 +1,102 @@
+{
+  "name": "memory-memory-conflict-auditor",
+  "display_name": "Memory Conflict Auditor",
+  "description": "Memory Conflict Auditor for Hermes Agent: apply a audit workflow to memory conflict work \u2014 covers fact accuracy, size budget fit and source noted, using supplied facts only.",
+  "category": "Memory & Context",
+  "domain": "Hermes Agent",
+  "version": "1.0.0",
+  "author": {
+    "name": "Lionel Sim",
+    "url": "https://sg.linkedin.com/in/lionelshen"
+  },
+  "license": "MIT",
+  "tools": [
+    {
+      "name": "memory_memory_conflict_auditor",
+      "description": "Memory Conflict Auditor for Hermes Agent: apply a audit workflow to memory conflict work \u2014 covers fact accuracy, size budget fit and source noted, using supplied facts only.",
+      "kind": "audit",
+      "inputSchema": {
+        "type": "object",
+        "properties": {
+          "metrics": {
+            "type": "object"
+          },
+          "counts": {
+            "type": "object"
+          },
+          "amounts": {
+            "type": "object"
+          },
+          "series": {
+            "type": "array",
+            "items": {
+              "type": "number"
+            }
+          },
+          "text": {
+            "type": "string"
+          },
+          "completed": {
+            "type": "array",
+            "items": {
+              "type": "string"
+            }
+          },
+          "facts": {
+            "type": "object"
+          },
+          "items": {
+            "type": "array"
+          },
+          "goal": {
+            "type": "string"
+          },
+          "timeframe_days": {
+            "type": "integer"
+          }
+        },
+        "required": []
+      },
+      "sample_input": {
+        "text": "This sample covers memory conflict fact accuracy and memory conflict size budget fit in detail."
+      },
+      "output": {
+        "plugin": "memory-memory-conflict-auditor",
+        "tool": "memory_memory_conflict_auditor",
+        "kind": "audit",
+        "result": "object (shape varies by kind, see README)",
+        "guardrails": "object \u2014 present on every result"
+      }
+    }
+  ],
+  "handler": {
+    "type": "audit",
+    "config": {
+      "items": [
+        "memory conflict fact accuracy",
+        "memory conflict size budget fit",
+        "memory conflict staleness",
+        "memory conflict duplication",
+        "memory conflict source noted"
+      ]
+    }
+  },
+  "hermes": {
+    "skill": "SKILL.md in this folder (agentskills.io format)",
+    "plugin_manifest": "plugin.yaml in this folder (verified Hermes plugin format)",
+    "suggested_toolset": "memory"
+  },
+  "guardrails": {
+    "no_fabrication": true,
+    "draft_only_for_generative_tools": true,
+    "human_approval_required": true,
+    "no_auto_send": true,
+    "use_supplied_facts_only": true,
+    "no_credential_handling": true
+  },
+  "keywords": [
+    "memory & context",
+    "hermes",
+    "audit"
+  ]
+}

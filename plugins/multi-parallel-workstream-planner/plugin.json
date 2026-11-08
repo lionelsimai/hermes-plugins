@@ -1,0 +1,103 @@
+{
+  "name": "multi-parallel-workstream-planner",
+  "display_name": "Parallel Workstream Planner",
+  "description": "Parallel Workstream Planner for Hermes Agent: apply a plan workflow to parallel workstream work \u2014 covers scope clarity, independence of subtasks and verification step, using supplied facts only.",
+  "category": "Multi-Agent & Delegation",
+  "domain": "Hermes Agent",
+  "version": "1.0.0",
+  "author": {
+    "name": "Lionel Sim",
+    "url": "https://sg.linkedin.com/in/lionelshen"
+  },
+  "license": "MIT",
+  "tools": [
+    {
+      "name": "multi_parallel_workstream_planner",
+      "description": "Parallel Workstream Planner for Hermes Agent: apply a plan workflow to parallel workstream work \u2014 covers scope clarity, independence of subtasks and verification step, using supplied facts only.",
+      "kind": "plan",
+      "inputSchema": {
+        "type": "object",
+        "properties": {
+          "metrics": {
+            "type": "object"
+          },
+          "counts": {
+            "type": "object"
+          },
+          "amounts": {
+            "type": "object"
+          },
+          "series": {
+            "type": "array",
+            "items": {
+              "type": "number"
+            }
+          },
+          "text": {
+            "type": "string"
+          },
+          "completed": {
+            "type": "array",
+            "items": {
+              "type": "string"
+            }
+          },
+          "facts": {
+            "type": "object"
+          },
+          "items": {
+            "type": "array"
+          },
+          "goal": {
+            "type": "string"
+          },
+          "timeframe_days": {
+            "type": "integer"
+          }
+        },
+        "required": []
+      },
+      "sample_input": {
+        "goal": "Sample goal for this workflow",
+        "timeframe_days": 14
+      },
+      "output": {
+        "plugin": "multi-parallel-workstream-planner",
+        "tool": "multi_parallel_workstream_planner",
+        "kind": "plan",
+        "result": "object (shape varies by kind, see README)",
+        "guardrails": "object \u2014 present on every result"
+      }
+    }
+  ],
+  "handler": {
+    "type": "plan",
+    "config": {
+      "items": [
+        "parallel workstream scope clarity",
+        "parallel workstream independence of subtasks",
+        "parallel workstream merge criteria",
+        "parallel workstream context budget",
+        "parallel workstream verification step"
+      ]
+    }
+  },
+  "hermes": {
+    "skill": "SKILL.md in this folder (agentskills.io format)",
+    "plugin_manifest": "plugin.yaml in this folder (verified Hermes plugin format)",
+    "suggested_toolset": "delegation"
+  },
+  "guardrails": {
+    "no_fabrication": true,
+    "draft_only_for_generative_tools": true,
+    "human_approval_required": true,
+    "no_auto_send": true,
+    "use_supplied_facts_only": true,
+    "no_credential_handling": true
+  },
+  "keywords": [
+    "multi-agent & delegation",
+    "hermes",
+    "plan"
+  ]
+}

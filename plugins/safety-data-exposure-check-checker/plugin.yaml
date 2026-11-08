@@ -1,0 +1,7 @@
+name: safety-data-exposure-check-checker
+version: 1.0.0
+description: "Data Exposure Check Checker for Hermes Agent: apply a audit workflow to data exposure check work — covers risk identified, approval required and audit logged, using supplied facts only."
+author: Lionel Sim
+kind: standalone
+provides_tools:
+  - safety_data_exposure_check_checker

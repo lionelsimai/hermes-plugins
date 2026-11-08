@@ -1,0 +1,102 @@
+{
+  "name": "memory-stale-memory-checker",
+  "display_name": "Stale Memory Checker",
+  "description": "Stale Memory Checker for Hermes Agent: apply a classify workflow to stale memory work \u2014 covers fact accuracy, size budget fit and source noted, using supplied facts only.",
+  "category": "Memory & Context",
+  "domain": "Hermes Agent",
+  "version": "1.0.0",
+  "author": {
+    "name": "Lionel Sim",
+    "url": "https://sg.linkedin.com/in/lionelshen"
+  },
+  "license": "MIT",
+  "tools": [
+    {
+      "name": "memory_stale_memory_checker",
+      "description": "Stale Memory Checker for Hermes Agent: apply a classify workflow to stale memory work \u2014 covers fact accuracy, size budget fit and source noted, using supplied facts only.",
+      "kind": "classify",
+      "inputSchema": {
+        "type": "object",
+        "properties": {
+          "metrics": {
+            "type": "object"
+          },
+          "counts": {
+            "type": "object"
+          },
+          "amounts": {
+            "type": "object"
+          },
+          "series": {
+            "type": "array",
+            "items": {
+              "type": "number"
+            }
+          },
+          "text": {
+            "type": "string"
+          },
+          "completed": {
+            "type": "array",
+            "items": {
+              "type": "string"
+            }
+          },
+          "facts": {
+            "type": "object"
+          },
+          "items": {
+            "type": "array"
+          },
+          "goal": {
+            "type": "string"
+          },
+          "timeframe_days": {
+            "type": "integer"
+          }
+        },
+        "required": []
+      },
+      "sample_input": {
+        "text": "Please review: this concerns stale memory fact accuracy and stale memory staleness."
+      },
+      "output": {
+        "plugin": "memory-stale-memory-checker",
+        "tool": "memory_stale_memory_checker",
+        "kind": "classify",
+        "result": "object (shape varies by kind, see README)",
+        "guardrails": "object \u2014 present on every result"
+      }
+    }
+  ],
+  "handler": {
+    "type": "classify",
+    "config": {
+      "items": [
+        "stale memory fact accuracy",
+        "stale memory size budget fit",
+        "stale memory staleness",
+        "stale memory duplication",
+        "stale memory source noted"
+      ]
+    }
+  },
+  "hermes": {
+    "skill": "SKILL.md in this folder (agentskills.io format)",
+    "plugin_manifest": "plugin.yaml in this folder (verified Hermes plugin format)",
+    "suggested_toolset": "memory"
+  },
+  "guardrails": {
+    "no_fabrication": true,
+    "draft_only_for_generative_tools": true,
+    "human_approval_required": true,
+    "no_auto_send": true,
+    "use_supplied_facts_only": true,
+    "no_credential_handling": true
+  },
+  "keywords": [
+    "memory & context",
+    "hermes",
+    "classify"
+  ]
+}

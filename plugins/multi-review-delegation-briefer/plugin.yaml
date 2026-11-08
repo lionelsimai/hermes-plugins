@@ -1,0 +1,7 @@
+name: multi-review-delegation-briefer
+version: 1.0.0
+description: "Review Delegation Briefer for Hermes Agent: apply a checklist workflow to review delegation work — covers scope clarity, independence of subtasks and verification step, using supplied facts only."
+author: Lionel Sim
+kind: standalone
+provides_tools:
+  - multi_review_delegation_briefer

@@ -1,0 +1,7 @@
+name: prod-focus-block-drafter
+version: 1.0.0
+description: "Focus Block Drafter for Hermes Agent: apply a audit workflow to focus block work — covers priority clarity, time realism and owner named, using supplied facts only."
+author: Lionel Sim
+kind: standalone
+provides_tools:
+  - prod_focus_block_drafter

@@ -1,0 +1,102 @@
+{
+  "name": "prod-travel-plan-reviewer",
+  "display_name": "Travel Plan Reviewer",
+  "description": "Travel Plan Reviewer for Hermes Agent: apply a classify workflow to travel plan work \u2014 covers priority clarity, time realism and owner named, using supplied facts only.",
+  "category": "Personal Productivity",
+  "domain": "Hermes Agent",
+  "version": "1.0.0",
+  "author": {
+    "name": "Lionel Sim",
+    "url": "https://sg.linkedin.com/in/lionelshen"
+  },
+  "license": "MIT",
+  "tools": [
+    {
+      "name": "prod_travel_plan_reviewer",
+      "description": "Travel Plan Reviewer for Hermes Agent: apply a classify workflow to travel plan work \u2014 covers priority clarity, time realism and owner named, using supplied facts only.",
+      "kind": "classify",
+      "inputSchema": {
+        "type": "object",
+        "properties": {
+          "metrics": {
+            "type": "object"
+          },
+          "counts": {
+            "type": "object"
+          },
+          "amounts": {
+            "type": "object"
+          },
+          "series": {
+            "type": "array",
+            "items": {
+              "type": "number"
+            }
+          },
+          "text": {
+            "type": "string"
+          },
+          "completed": {
+            "type": "array",
+            "items": {
+              "type": "string"
+            }
+          },
+          "facts": {
+            "type": "object"
+          },
+          "items": {
+            "type": "array"
+          },
+          "goal": {
+            "type": "string"
+          },
+          "timeframe_days": {
+            "type": "integer"
+          }
+        },
+        "required": []
+      },
+      "sample_input": {
+        "text": "Please review: this concerns travel plan priority clarity and travel plan next action named."
+      },
+      "output": {
+        "plugin": "prod-travel-plan-reviewer",
+        "tool": "prod_travel_plan_reviewer",
+        "kind": "classify",
+        "result": "object (shape varies by kind, see README)",
+        "guardrails": "object \u2014 present on every result"
+      }
+    }
+  ],
+  "handler": {
+    "type": "classify",
+    "config": {
+      "items": [
+        "travel plan priority clarity",
+        "travel plan time realism",
+        "travel plan next action named",
+        "travel plan review cadence",
+        "travel plan owner named"
+      ]
+    }
+  },
+  "hermes": {
+    "skill": "SKILL.md in this folder (agentskills.io format)",
+    "plugin_manifest": "plugin.yaml in this folder (verified Hermes plugin format)",
+    "suggested_toolset": "skills"
+  },
+  "guardrails": {
+    "no_fabrication": true,
+    "draft_only_for_generative_tools": true,
+    "human_approval_required": true,
+    "no_auto_send": true,
+    "use_supplied_facts_only": true,
+    "no_credential_handling": true
+  },
+  "keywords": [
+    "personal productivity",
+    "hermes",
+    "classify"
+  ]
+}

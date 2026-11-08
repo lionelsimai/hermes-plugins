@@ -1,0 +1,7 @@
+name: messaging-voice-memo-note-triage-tool
+version: 1.0.0
+description: "Voice Memo Note Triage Tool for Hermes Agent: apply a prioritize workflow to voice memo note work — covers audience fit, tone fit and platform fit, using supplied facts only."
+author: Lionel Sim
+kind: standalone
+provides_tools:
+  - messaging_voice_memo_note_triage_tool

@@ -1,0 +1,7 @@
+name: safety-secret-handling-check-planner
+version: 1.0.0
+description: "Secret Handling Check Planner for Hermes Agent: apply a audit workflow to secret handling check work — covers risk identified, approval required and audit logged, using supplied facts only."
+author: Lionel Sim
+kind: standalone
+provides_tools:
+  - safety_secret_handling_check_planner

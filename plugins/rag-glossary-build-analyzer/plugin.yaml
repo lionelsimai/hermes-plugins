@@ -1,0 +1,7 @@
+name: rag-glossary-build-analyzer
+version: 1.0.0
+description: "Glossary Build Analyzer for Hermes Agent: apply a audit workflow to glossary build work — covers source fidelity, retrieval relevance and gap honesty, using supplied facts only."
+author: Lionel Sim
+kind: standalone
+provides_tools:
+  - rag_glossary_build_analyzer

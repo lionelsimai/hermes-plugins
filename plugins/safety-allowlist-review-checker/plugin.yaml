@@ -1,0 +1,7 @@
+name: safety-allowlist-review-checker
+version: 1.0.0
+description: "Allowlist Review Checker for Hermes Agent: apply a template workflow to allowlist review work — covers risk identified, approval required and audit logged, using supplied facts only."
+author: Lionel Sim
+kind: standalone
+provides_tools:
+  - safety_allowlist_review_checker

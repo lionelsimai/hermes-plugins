@@ -1,0 +1,7 @@
+name: safety-prompt-injection-review-planner
+version: 1.0.0
+description: "Prompt Injection Review Planner for Hermes Agent: apply a checklist workflow to prompt injection review work — covers risk identified, approval required and audit logged, using supplied facts only."
+author: Lionel Sim
+kind: standalone
+provides_tools:
+  - safety_prompt_injection_review_planner

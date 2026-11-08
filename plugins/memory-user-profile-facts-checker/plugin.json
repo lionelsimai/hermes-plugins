@@ -1,0 +1,105 @@
+{
+  "name": "memory-user-profile-facts-checker",
+  "display_name": "User Profile Facts Checker",
+  "description": "User Profile Facts Checker for Hermes Agent: apply a checklist workflow to user profile facts work \u2014 covers fact accuracy, size budget fit and source noted, using supplied facts only.",
+  "category": "Memory & Context",
+  "domain": "Hermes Agent",
+  "version": "1.0.0",
+  "author": {
+    "name": "Lionel Sim",
+    "url": "https://sg.linkedin.com/in/lionelshen"
+  },
+  "license": "MIT",
+  "tools": [
+    {
+      "name": "memory_user_profile_facts_checker",
+      "description": "User Profile Facts Checker for Hermes Agent: apply a checklist workflow to user profile facts work \u2014 covers fact accuracy, size budget fit and source noted, using supplied facts only.",
+      "kind": "checklist",
+      "inputSchema": {
+        "type": "object",
+        "properties": {
+          "metrics": {
+            "type": "object"
+          },
+          "counts": {
+            "type": "object"
+          },
+          "amounts": {
+            "type": "object"
+          },
+          "series": {
+            "type": "array",
+            "items": {
+              "type": "number"
+            }
+          },
+          "text": {
+            "type": "string"
+          },
+          "completed": {
+            "type": "array",
+            "items": {
+              "type": "string"
+            }
+          },
+          "facts": {
+            "type": "object"
+          },
+          "items": {
+            "type": "array"
+          },
+          "goal": {
+            "type": "string"
+          },
+          "timeframe_days": {
+            "type": "integer"
+          }
+        },
+        "required": []
+      },
+      "sample_input": {
+        "completed": [
+          "user profile facts fact accuracy",
+          "user profile facts size budget fit"
+        ]
+      },
+      "output": {
+        "plugin": "memory-user-profile-facts-checker",
+        "tool": "memory_user_profile_facts_checker",
+        "kind": "checklist",
+        "result": "object (shape varies by kind, see README)",
+        "guardrails": "object \u2014 present on every result"
+      }
+    }
+  ],
+  "handler": {
+    "type": "checklist",
+    "config": {
+      "items": [
+        "user profile facts fact accuracy",
+        "user profile facts size budget fit",
+        "user profile facts staleness",
+        "user profile facts duplication",
+        "user profile facts source noted"
+      ]
+    }
+  },
+  "hermes": {
+    "skill": "SKILL.md in this folder (agentskills.io format)",
+    "plugin_manifest": "plugin.yaml in this folder (verified Hermes plugin format)",
+    "suggested_toolset": "memory"
+  },
+  "guardrails": {
+    "no_fabrication": true,
+    "draft_only_for_generative_tools": true,
+    "human_approval_required": true,
+    "no_auto_send": true,
+    "use_supplied_facts_only": true,
+    "no_credential_handling": true
+  },
+  "keywords": [
+    "memory & context",
+    "hermes",
+    "checklist"
+  ]
+}

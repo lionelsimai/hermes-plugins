@@ -1,0 +1,7 @@
+name: rag-faq-draft-analyzer
+version: 1.0.0
+description: "Faq Draft Analyzer for Hermes Agent: apply a score workflow to faq draft work — covers source fidelity, retrieval relevance and gap honesty, using supplied facts only."
+author: Lionel Sim
+kind: standalone
+provides_tools:
+  - rag_faq_draft_analyzer

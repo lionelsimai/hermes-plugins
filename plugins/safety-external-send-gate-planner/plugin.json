@@ -1,0 +1,105 @@
+{
+  "name": "safety-external-send-gate-planner",
+  "display_name": "External Send Gate Planner",
+  "description": "External Send Gate Planner for Hermes Agent: apply a template workflow to external send gate work \u2014 covers risk identified, approval required and audit logged, using supplied facts only.",
+  "category": "Safety, Approvals & Guardrails",
+  "domain": "Hermes Agent",
+  "version": "1.0.0",
+  "author": {
+    "name": "Lionel Sim",
+    "url": "https://sg.linkedin.com/in/lionelshen"
+  },
+  "license": "MIT",
+  "tools": [
+    {
+      "name": "safety_external_send_gate_planner",
+      "description": "External Send Gate Planner for Hermes Agent: apply a template workflow to external send gate work \u2014 covers risk identified, approval required and audit logged, using supplied facts only.",
+      "kind": "template",
+      "inputSchema": {
+        "type": "object",
+        "properties": {
+          "metrics": {
+            "type": "object"
+          },
+          "counts": {
+            "type": "object"
+          },
+          "amounts": {
+            "type": "object"
+          },
+          "series": {
+            "type": "array",
+            "items": {
+              "type": "number"
+            }
+          },
+          "text": {
+            "type": "string"
+          },
+          "completed": {
+            "type": "array",
+            "items": {
+              "type": "string"
+            }
+          },
+          "facts": {
+            "type": "object"
+          },
+          "items": {
+            "type": "array"
+          },
+          "goal": {
+            "type": "string"
+          },
+          "timeframe_days": {
+            "type": "integer"
+          }
+        },
+        "required": []
+      },
+      "sample_input": {
+        "facts": {
+          "external_send_gate_risk_identified": "Sample supplied fact",
+          "external_send_gate_approval_required": "Second supplied fact"
+        }
+      },
+      "output": {
+        "plugin": "safety-external-send-gate-planner",
+        "tool": "safety_external_send_gate_planner",
+        "kind": "template",
+        "result": "object (shape varies by kind, see README)",
+        "guardrails": "object \u2014 present on every result"
+      }
+    }
+  ],
+  "handler": {
+    "type": "template",
+    "config": {
+      "items": [
+        "external send gate risk identified",
+        "external send gate approval required",
+        "external send gate least privilege",
+        "external send gate reversibility",
+        "external send gate audit logged"
+      ]
+    }
+  },
+  "hermes": {
+    "skill": "SKILL.md in this folder (agentskills.io format)",
+    "plugin_manifest": "plugin.yaml in this folder (verified Hermes plugin format)",
+    "suggested_toolset": "skills"
+  },
+  "guardrails": {
+    "no_fabrication": true,
+    "draft_only_for_generative_tools": true,
+    "human_approval_required": true,
+    "no_auto_send": true,
+    "use_supplied_facts_only": true,
+    "no_credential_handling": true
+  },
+  "keywords": [
+    "safety, approvals & guardrails",
+    "hermes",
+    "template"
+  ]
+}

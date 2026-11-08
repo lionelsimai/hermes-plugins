@@ -1,0 +1,7 @@
+name: safety-audit-trail-auditor
+version: 1.0.0
+description: "Audit Trail Auditor for Hermes Agent: apply a template workflow to audit trail work — covers risk identified, approval required and audit logged, using supplied facts only."
+author: Lionel Sim
+kind: standalone
+provides_tools:
+  - safety_audit_trail_auditor

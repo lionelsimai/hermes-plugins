@@ -1,0 +1,7 @@
+name: prod-travel-plan-reviewer
+version: 1.0.0
+description: "Travel Plan Reviewer for Hermes Agent: apply a classify workflow to travel plan work — covers priority clarity, time realism and owner named, using supplied facts only."
+author: Lionel Sim
+kind: standalone
+provides_tools:
+  - prod_travel_plan_reviewer

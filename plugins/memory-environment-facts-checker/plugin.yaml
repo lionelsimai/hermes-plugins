@@ -1,0 +1,7 @@
+name: memory-environment-facts-checker
+version: 1.0.0
+description: "Environment Facts Checker for Hermes Agent: apply a score workflow to environment facts work — covers fact accuracy, size budget fit and source noted, using supplied facts only."
+author: Lionel Sim
+kind: standalone
+provides_tools:
+  - memory_environment_facts_checker

@@ -1,0 +1,7 @@
+name: memory-stale-memory-summarizer
+version: 1.0.0
+description: "Stale Memory Summarizer for Hermes Agent: apply a analyze workflow to stale memory work — covers fact accuracy, size budget fit and source noted, using supplied facts only."
+author: Lionel Sim
+kind: standalone
+provides_tools:
+  - memory_stale_memory_summarizer

@@ -1,0 +1,106 @@
+{
+  "name": "memory-user-profile-facts-summarizer",
+  "display_name": "User Profile Facts Summarizer",
+  "description": "User Profile Facts Summarizer for Hermes Agent: apply a score workflow to user profile facts work \u2014 covers fact accuracy, size budget fit and source noted, using supplied facts only.",
+  "category": "Memory & Context",
+  "domain": "Hermes Agent",
+  "version": "1.0.0",
+  "author": {
+    "name": "Lionel Sim",
+    "url": "https://sg.linkedin.com/in/lionelshen"
+  },
+  "license": "MIT",
+  "tools": [
+    {
+      "name": "memory_user_profile_facts_summarizer",
+      "description": "User Profile Facts Summarizer for Hermes Agent: apply a score workflow to user profile facts work \u2014 covers fact accuracy, size budget fit and source noted, using supplied facts only.",
+      "kind": "score",
+      "inputSchema": {
+        "type": "object",
+        "properties": {
+          "metrics": {
+            "type": "object"
+          },
+          "counts": {
+            "type": "object"
+          },
+          "amounts": {
+            "type": "object"
+          },
+          "series": {
+            "type": "array",
+            "items": {
+              "type": "number"
+            }
+          },
+          "text": {
+            "type": "string"
+          },
+          "completed": {
+            "type": "array",
+            "items": {
+              "type": "string"
+            }
+          },
+          "facts": {
+            "type": "object"
+          },
+          "items": {
+            "type": "array"
+          },
+          "goal": {
+            "type": "string"
+          },
+          "timeframe_days": {
+            "type": "integer"
+          }
+        },
+        "required": []
+      },
+      "sample_input": {
+        "metrics": {
+          "user_profile_facts_fact_accuracy": 80,
+          "user_profile_facts_size_budget_fit": 65,
+          "user_profile_facts_staleness": 90
+        }
+      },
+      "output": {
+        "plugin": "memory-user-profile-facts-summarizer",
+        "tool": "memory_user_profile_facts_summarizer",
+        "kind": "score",
+        "result": "object (shape varies by kind, see README)",
+        "guardrails": "object \u2014 present on every result"
+      }
+    }
+  ],
+  "handler": {
+    "type": "score",
+    "config": {
+      "items": [
+        "user profile facts fact accuracy",
+        "user profile facts size budget fit",
+        "user profile facts staleness",
+        "user profile facts duplication",
+        "user profile facts source noted"
+      ]
+    }
+  },
+  "hermes": {
+    "skill": "SKILL.md in this folder (agentskills.io format)",
+    "plugin_manifest": "plugin.yaml in this folder (verified Hermes plugin format)",
+    "suggested_toolset": "memory"
+  },
+  "guardrails": {
+    "no_fabrication": true,
+    "draft_only_for_generative_tools": true,
+    "human_approval_required": true,
+    "no_auto_send": true,
+    "use_supplied_facts_only": true,
+    "no_credential_handling": true
+  },
+  "keywords": [
+    "memory & context",
+    "hermes",
+    "score"
+  ]
+}

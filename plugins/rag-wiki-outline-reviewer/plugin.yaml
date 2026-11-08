@@ -1,0 +1,7 @@
+name: rag-wiki-outline-reviewer
+version: 1.0.0
+description: "Wiki Outline Reviewer for Hermes Agent: apply a checklist workflow to wiki outline work — covers source fidelity, retrieval relevance and gap honesty, using supplied facts only."
+author: Lionel Sim
+kind: standalone
+provides_tools:
+  - rag_wiki_outline_reviewer

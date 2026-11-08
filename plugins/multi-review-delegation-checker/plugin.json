@@ -1,0 +1,113 @@
+{
+  "name": "multi-review-delegation-checker",
+  "display_name": "Review Delegation Checker",
+  "description": "Review Delegation Checker for Hermes Agent: apply a analyze workflow to review delegation work \u2014 covers scope clarity, independence of subtasks and verification step, using supplied facts only.",
+  "category": "Multi-Agent & Delegation",
+  "domain": "Hermes Agent",
+  "version": "1.0.0",
+  "author": {
+    "name": "Lionel Sim",
+    "url": "https://sg.linkedin.com/in/lionelshen"
+  },
+  "license": "MIT",
+  "tools": [
+    {
+      "name": "multi_review_delegation_checker",
+      "description": "Review Delegation Checker for Hermes Agent: apply a analyze workflow to review delegation work \u2014 covers scope clarity, independence of subtasks and verification step, using supplied facts only.",
+      "kind": "analyze",
+      "inputSchema": {
+        "type": "object",
+        "properties": {
+          "metrics": {
+            "type": "object"
+          },
+          "counts": {
+            "type": "object"
+          },
+          "amounts": {
+            "type": "object"
+          },
+          "series": {
+            "type": "array",
+            "items": {
+              "type": "number"
+            }
+          },
+          "text": {
+            "type": "string"
+          },
+          "completed": {
+            "type": "array",
+            "items": {
+              "type": "string"
+            }
+          },
+          "facts": {
+            "type": "object"
+          },
+          "items": {
+            "type": "array"
+          },
+          "goal": {
+            "type": "string"
+          },
+          "timeframe_days": {
+            "type": "integer"
+          }
+        },
+        "required": []
+      },
+      "sample_input": {
+        "counts": {
+          "review_delegation_scope_clarity": 40,
+          "review_delegation_independence_of_subtasks": 25,
+          "review_delegation_merge_criteria": 10,
+          "review_delegation_context_budget": 75
+        },
+        "series": [
+          3,
+          5,
+          4,
+          8
+        ]
+      },
+      "output": {
+        "plugin": "multi-review-delegation-checker",
+        "tool": "multi_review_delegation_checker",
+        "kind": "analyze",
+        "result": "object (shape varies by kind, see README)",
+        "guardrails": "object \u2014 present on every result"
+      }
+    }
+  ],
+  "handler": {
+    "type": "analyze",
+    "config": {
+      "items": [
+        "review delegation scope clarity",
+        "review delegation independence of subtasks",
+        "review delegation merge criteria",
+        "review delegation context budget",
+        "review delegation verification step"
+      ]
+    }
+  },
+  "hermes": {
+    "skill": "SKILL.md in this folder (agentskills.io format)",
+    "plugin_manifest": "plugin.yaml in this folder (verified Hermes plugin format)",
+    "suggested_toolset": "delegation"
+  },
+  "guardrails": {
+    "no_fabrication": true,
+    "draft_only_for_generative_tools": true,
+    "human_approval_required": true,
+    "no_auto_send": true,
+    "use_supplied_facts_only": true,
+    "no_credential_handling": true
+  },
+  "keywords": [
+    "multi-agent & delegation",
+    "hermes",
+    "analyze"
+  ]
+}

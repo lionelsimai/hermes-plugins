@@ -1,0 +1,7 @@
+name: safety-destructive-action-check-gate
+version: 1.0.0
+description: "Destructive Action Check Gate for Hermes Agent: apply a score workflow to destructive action check work — covers risk identified, approval required and audit logged, using supplied facts only."
+author: Lionel Sim
+kind: standalone
+provides_tools:
+  - safety_destructive_action_check_gate

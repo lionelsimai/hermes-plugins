@@ -1,0 +1,7 @@
+name: prod-travel-plan-planner
+version: 1.0.0
+description: "Travel Plan Planner for Hermes Agent: apply a template workflow to travel plan work — covers priority clarity, time realism and owner named, using supplied facts only."
+author: Lionel Sim
+kind: standalone
+provides_tools:
+  - prod_travel_plan_planner

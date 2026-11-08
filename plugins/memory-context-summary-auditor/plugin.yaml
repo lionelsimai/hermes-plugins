@@ -1,0 +1,7 @@
+name: memory-context-summary-auditor
+version: 1.0.0
+description: "Context Summary Auditor for Hermes Agent: apply a score workflow to context summary work — covers fact accuracy, size budget fit and source noted, using supplied facts only."
+author: Lionel Sim
+kind: standalone
+provides_tools:
+  - memory_context_summary_auditor

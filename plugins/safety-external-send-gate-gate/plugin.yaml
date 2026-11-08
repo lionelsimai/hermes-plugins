@@ -1,0 +1,7 @@
+name: safety-external-send-gate-gate
+version: 1.0.0
+description: "External Send Gate Gate for Hermes Agent: apply a plan workflow to external send gate work — covers risk identified, approval required and audit logged, using supplied facts only."
+author: Lionel Sim
+kind: standalone
+provides_tools:
+  - safety_external_send_gate_gate

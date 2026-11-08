@@ -1,0 +1,7 @@
+name: memory-session-memory-summarizer
+version: 1.0.0
+description: "Session Memory Summarizer for Hermes Agent: apply a analyze workflow to session memory work — covers fact accuracy, size budget fit and source noted, using supplied facts only."
+author: Lionel Sim
+kind: standalone
+provides_tools:
+  - memory_session_memory_summarizer

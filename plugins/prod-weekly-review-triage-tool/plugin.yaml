@@ -1,0 +1,7 @@
+name: prod-weekly-review-triage-tool
+version: 1.0.0
+description: "Weekly Review Triage Tool for Hermes Agent: apply a prioritize workflow to weekly review work — covers priority clarity, time realism and owner named, using supplied facts only."
+author: Lionel Sim
+kind: standalone
+provides_tools:
+  - prod_weekly_review_triage_tool

@@ -1,0 +1,7 @@
+name: rag-freshness-review-checker
+version: 1.0.0
+description: "Freshness Review Checker for Hermes Agent: apply a prioritize workflow to freshness review work — covers source fidelity, retrieval relevance and gap honesty, using supplied facts only."
+author: Lionel Sim
+kind: standalone
+provides_tools:
+  - rag_freshness_review_checker

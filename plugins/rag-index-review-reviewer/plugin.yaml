@@ -1,0 +1,7 @@
+name: rag-index-review-reviewer
+version: 1.0.0
+description: "Index Review Reviewer for Hermes Agent: apply a template workflow to index review work — covers source fidelity, retrieval relevance and gap honesty, using supplied facts only."
+author: Lionel Sim
+kind: standalone
+provides_tools:
+  - rag_index_review_reviewer

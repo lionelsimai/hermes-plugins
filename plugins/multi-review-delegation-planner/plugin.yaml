@@ -1,0 +1,7 @@
+name: multi-review-delegation-planner
+version: 1.0.0
+description: "Review Delegation Planner for Hermes Agent: apply a score workflow to review delegation work — covers scope clarity, independence of subtasks and verification step, using supplied facts only."
+author: Lionel Sim
+kind: standalone
+provides_tools:
+  - multi_review_delegation_planner

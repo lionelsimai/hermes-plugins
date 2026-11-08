@@ -1,0 +1,102 @@
+{
+  "name": "rag-glossary-build-drafter",
+  "display_name": "Glossary Build Drafter",
+  "description": "Glossary Build Drafter for Hermes Agent: apply a classify workflow to glossary build work \u2014 covers source fidelity, retrieval relevance and gap honesty, using supplied facts only.",
+  "category": "Knowledge & RAG",
+  "domain": "Hermes Agent",
+  "version": "1.0.0",
+  "author": {
+    "name": "Lionel Sim",
+    "url": "https://sg.linkedin.com/in/lionelshen"
+  },
+  "license": "MIT",
+  "tools": [
+    {
+      "name": "rag_glossary_build_drafter",
+      "description": "Glossary Build Drafter for Hermes Agent: apply a classify workflow to glossary build work \u2014 covers source fidelity, retrieval relevance and gap honesty, using supplied facts only.",
+      "kind": "classify",
+      "inputSchema": {
+        "type": "object",
+        "properties": {
+          "metrics": {
+            "type": "object"
+          },
+          "counts": {
+            "type": "object"
+          },
+          "amounts": {
+            "type": "object"
+          },
+          "series": {
+            "type": "array",
+            "items": {
+              "type": "number"
+            }
+          },
+          "text": {
+            "type": "string"
+          },
+          "completed": {
+            "type": "array",
+            "items": {
+              "type": "string"
+            }
+          },
+          "facts": {
+            "type": "object"
+          },
+          "items": {
+            "type": "array"
+          },
+          "goal": {
+            "type": "string"
+          },
+          "timeframe_days": {
+            "type": "integer"
+          }
+        },
+        "required": []
+      },
+      "sample_input": {
+        "text": "Please review: this concerns glossary build source fidelity and glossary build citation coverage."
+      },
+      "output": {
+        "plugin": "rag-glossary-build-drafter",
+        "tool": "rag_glossary_build_drafter",
+        "kind": "classify",
+        "result": "object (shape varies by kind, see README)",
+        "guardrails": "object \u2014 present on every result"
+      }
+    }
+  ],
+  "handler": {
+    "type": "classify",
+    "config": {
+      "items": [
+        "glossary build source fidelity",
+        "glossary build retrieval relevance",
+        "glossary build citation coverage",
+        "glossary build freshness",
+        "glossary build gap honesty"
+      ]
+    }
+  },
+  "hermes": {
+    "skill": "SKILL.md in this folder (agentskills.io format)",
+    "plugin_manifest": "plugin.yaml in this folder (verified Hermes plugin format)",
+    "suggested_toolset": "memory"
+  },
+  "guardrails": {
+    "no_fabrication": true,
+    "draft_only_for_generative_tools": true,
+    "human_approval_required": true,
+    "no_auto_send": true,
+    "use_supplied_facts_only": true,
+    "no_credential_handling": true
+  },
+  "keywords": [
+    "knowledge & rag",
+    "hermes",
+    "classify"
+  ]
+}

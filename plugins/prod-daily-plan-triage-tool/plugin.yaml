@@ -1,0 +1,7 @@
+name: prod-daily-plan-triage-tool
+version: 1.0.0
+description: "Daily Plan Triage Tool for Hermes Agent: apply a score workflow to daily plan work — covers priority clarity, time realism and owner named, using supplied facts only."
+author: Lionel Sim
+kind: standalone
+provides_tools:
+  - prod_daily_plan_triage_tool

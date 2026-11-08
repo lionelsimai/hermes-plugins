@@ -1,0 +1,7 @@
+name: rag-retrieval-test-checker
+version: 1.0.0
+description: "Retrieval Test Checker for Hermes Agent: apply a plan workflow to retrieval test work — covers source fidelity, retrieval relevance and gap honesty, using supplied facts only."
+author: Lionel Sim
+kind: standalone
+provides_tools:
+  - rag_retrieval_test_checker

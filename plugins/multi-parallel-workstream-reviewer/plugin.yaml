@@ -1,0 +1,7 @@
+name: multi-parallel-workstream-reviewer
+version: 1.0.0
+description: "Parallel Workstream Reviewer for Hermes Agent: apply a template workflow to parallel workstream work — covers scope clarity, independence of subtasks and verification step, using supplied facts only."
+author: Lionel Sim
+kind: standalone
+provides_tools:
+  - multi_parallel_workstream_reviewer

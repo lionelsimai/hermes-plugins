@@ -1,0 +1,105 @@
+{
+  "name": "rag-wiki-outline-drafter",
+  "display_name": "Wiki Outline Drafter",
+  "description": "Wiki Outline Drafter for Hermes Agent: apply a template workflow to wiki outline work \u2014 covers source fidelity, retrieval relevance and gap honesty, using supplied facts only.",
+  "category": "Knowledge & RAG",
+  "domain": "Hermes Agent",
+  "version": "1.0.0",
+  "author": {
+    "name": "Lionel Sim",
+    "url": "https://sg.linkedin.com/in/lionelshen"
+  },
+  "license": "MIT",
+  "tools": [
+    {
+      "name": "rag_wiki_outline_drafter",
+      "description": "Wiki Outline Drafter for Hermes Agent: apply a template workflow to wiki outline work \u2014 covers source fidelity, retrieval relevance and gap honesty, using supplied facts only.",
+      "kind": "template",
+      "inputSchema": {
+        "type": "object",
+        "properties": {
+          "metrics": {
+            "type": "object"
+          },
+          "counts": {
+            "type": "object"
+          },
+          "amounts": {
+            "type": "object"
+          },
+          "series": {
+            "type": "array",
+            "items": {
+              "type": "number"
+            }
+          },
+          "text": {
+            "type": "string"
+          },
+          "completed": {
+            "type": "array",
+            "items": {
+              "type": "string"
+            }
+          },
+          "facts": {
+            "type": "object"
+          },
+          "items": {
+            "type": "array"
+          },
+          "goal": {
+            "type": "string"
+          },
+          "timeframe_days": {
+            "type": "integer"
+          }
+        },
+        "required": []
+      },
+      "sample_input": {
+        "facts": {
+          "wiki_outline_source_fidelity": "Sample supplied fact",
+          "wiki_outline_retrieval_relevance": "Second supplied fact"
+        }
+      },
+      "output": {
+        "plugin": "rag-wiki-outline-drafter",
+        "tool": "rag_wiki_outline_drafter",
+        "kind": "template",
+        "result": "object (shape varies by kind, see README)",
+        "guardrails": "object \u2014 present on every result"
+      }
+    }
+  ],
+  "handler": {
+    "type": "template",
+    "config": {
+      "items": [
+        "wiki outline source fidelity",
+        "wiki outline retrieval relevance",
+        "wiki outline citation coverage",
+        "wiki outline freshness",
+        "wiki outline gap honesty"
+      ]
+    }
+  },
+  "hermes": {
+    "skill": "SKILL.md in this folder (agentskills.io format)",
+    "plugin_manifest": "plugin.yaml in this folder (verified Hermes plugin format)",
+    "suggested_toolset": "memory"
+  },
+  "guardrails": {
+    "no_fabrication": true,
+    "draft_only_for_generative_tools": true,
+    "human_approval_required": true,
+    "no_auto_send": true,
+    "use_supplied_facts_only": true,
+    "no_credential_handling": true
+  },
+  "keywords": [
+    "knowledge & rag",
+    "hermes",
+    "template"
+  ]
+}

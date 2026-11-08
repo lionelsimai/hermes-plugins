@@ -1,0 +1,102 @@
+{
+  "name": "messaging-signal-note-checker",
+  "display_name": "Signal Note Checker",
+  "description": "Signal Note Checker for Hermes Agent: apply a audit workflow to signal note work \u2014 covers audience fit, tone fit and platform fit, using supplied facts only.",
+  "category": "Messaging & Gateway",
+  "domain": "Hermes Agent",
+  "version": "1.0.0",
+  "author": {
+    "name": "Lionel Sim",
+    "url": "https://sg.linkedin.com/in/lionelshen"
+  },
+  "license": "MIT",
+  "tools": [
+    {
+      "name": "messaging_signal_note_checker",
+      "description": "Signal Note Checker for Hermes Agent: apply a audit workflow to signal note work \u2014 covers audience fit, tone fit and platform fit, using supplied facts only.",
+      "kind": "audit",
+      "inputSchema": {
+        "type": "object",
+        "properties": {
+          "metrics": {
+            "type": "object"
+          },
+          "counts": {
+            "type": "object"
+          },
+          "amounts": {
+            "type": "object"
+          },
+          "series": {
+            "type": "array",
+            "items": {
+              "type": "number"
+            }
+          },
+          "text": {
+            "type": "string"
+          },
+          "completed": {
+            "type": "array",
+            "items": {
+              "type": "string"
+            }
+          },
+          "facts": {
+            "type": "object"
+          },
+          "items": {
+            "type": "array"
+          },
+          "goal": {
+            "type": "string"
+          },
+          "timeframe_days": {
+            "type": "integer"
+          }
+        },
+        "required": []
+      },
+      "sample_input": {
+        "text": "This sample covers signal note audience fit and signal note tone fit in detail."
+      },
+      "output": {
+        "plugin": "messaging-signal-note-checker",
+        "tool": "messaging_signal_note_checker",
+        "kind": "audit",
+        "result": "object (shape varies by kind, see README)",
+        "guardrails": "object \u2014 present on every result"
+      }
+    }
+  ],
+  "handler": {
+    "type": "audit",
+    "config": {
+      "items": [
+        "signal note audience fit",
+        "signal note tone fit",
+        "signal note length fit",
+        "signal note approval gate",
+        "signal note platform fit"
+      ]
+    }
+  },
+  "hermes": {
+    "skill": "SKILL.md in this folder (agentskills.io format)",
+    "plugin_manifest": "plugin.yaml in this folder (verified Hermes plugin format)",
+    "suggested_toolset": "messaging"
+  },
+  "guardrails": {
+    "no_fabrication": true,
+    "draft_only_for_generative_tools": true,
+    "human_approval_required": true,
+    "no_auto_send": true,
+    "use_supplied_facts_only": true,
+    "no_credential_handling": true
+  },
+  "keywords": [
+    "messaging & gateway",
+    "hermes",
+    "audit"
+  ]
+}

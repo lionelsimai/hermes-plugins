@@ -1,0 +1,7 @@
+name: memory-lesson-learned-auditor
+version: 1.0.0
+description: "Lesson Learned Auditor for Hermes Agent: apply a analyze workflow to lesson learned work — covers fact accuracy, size budget fit and source noted, using supplied facts only."
+author: Lionel Sim
+kind: standalone
+provides_tools:
+  - memory_lesson_learned_auditor

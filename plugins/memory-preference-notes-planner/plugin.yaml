@@ -1,0 +1,7 @@
+name: memory-preference-notes-planner
+version: 1.0.0
+description: "Preference Notes Planner for Hermes Agent: apply a classify workflow to preference notes work — covers fact accuracy, size budget fit and source noted, using supplied facts only."
+author: Lionel Sim
+kind: standalone
+provides_tools:
+  - memory_preference_notes_planner

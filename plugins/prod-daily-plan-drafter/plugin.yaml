@@ -1,0 +1,7 @@
+name: prod-daily-plan-drafter
+version: 1.0.0
+description: "Daily Plan Drafter for Hermes Agent: apply a analyze workflow to daily plan work — covers priority clarity, time realism and owner named, using supplied facts only."
+author: Lionel Sim
+kind: standalone
+provides_tools:
+  - prod_daily_plan_drafter

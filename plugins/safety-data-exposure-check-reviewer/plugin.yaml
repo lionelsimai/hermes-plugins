@@ -1,0 +1,7 @@
+name: safety-data-exposure-check-reviewer
+version: 1.0.0
+description: "Data Exposure Check Reviewer for Hermes Agent: apply a analyze workflow to data exposure check work — covers risk identified, approval required and audit logged, using supplied facts only."
+author: Lionel Sim
+kind: standalone
+provides_tools:
+  - safety_data_exposure_check_reviewer

@@ -1,0 +1,7 @@
+name: prod-task-list-triage-drafter
+version: 1.0.0
+description: "Task List Triage Drafter for Hermes Agent: apply a score workflow to task list triage work — covers priority clarity, time realism and owner named, using supplied facts only."
+author: Lionel Sim
+kind: standalone
+provides_tools:
+  - prod_task_list_triage_drafter

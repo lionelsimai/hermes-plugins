@@ -1,0 +1,113 @@
+{
+  "name": "rag-retrieval-test-reviewer",
+  "display_name": "Retrieval Test Reviewer",
+  "description": "Retrieval Test Reviewer for Hermes Agent: apply a prioritize workflow to retrieval test work \u2014 covers source fidelity, retrieval relevance and gap honesty, using supplied facts only.",
+  "category": "Knowledge & RAG",
+  "domain": "Hermes Agent",
+  "version": "1.0.0",
+  "author": {
+    "name": "Lionel Sim",
+    "url": "https://sg.linkedin.com/in/lionelshen"
+  },
+  "license": "MIT",
+  "tools": [
+    {
+      "name": "rag_retrieval_test_reviewer",
+      "description": "Retrieval Test Reviewer for Hermes Agent: apply a prioritize workflow to retrieval test work \u2014 covers source fidelity, retrieval relevance and gap honesty, using supplied facts only.",
+      "kind": "prioritize",
+      "inputSchema": {
+        "type": "object",
+        "properties": {
+          "metrics": {
+            "type": "object"
+          },
+          "counts": {
+            "type": "object"
+          },
+          "amounts": {
+            "type": "object"
+          },
+          "series": {
+            "type": "array",
+            "items": {
+              "type": "number"
+            }
+          },
+          "text": {
+            "type": "string"
+          },
+          "completed": {
+            "type": "array",
+            "items": {
+              "type": "string"
+            }
+          },
+          "facts": {
+            "type": "object"
+          },
+          "items": {
+            "type": "array"
+          },
+          "goal": {
+            "type": "string"
+          },
+          "timeframe_days": {
+            "type": "integer"
+          }
+        },
+        "required": []
+      },
+      "sample_input": {
+        "items": [
+          {
+            "name": "Sample task A",
+            "impact": 8,
+            "effort": 3
+          },
+          {
+            "name": "Sample task B",
+            "impact": 6,
+            "effort": 1
+          }
+        ]
+      },
+      "output": {
+        "plugin": "rag-retrieval-test-reviewer",
+        "tool": "rag_retrieval_test_reviewer",
+        "kind": "prioritize",
+        "result": "object (shape varies by kind, see README)",
+        "guardrails": "object \u2014 present on every result"
+      }
+    }
+  ],
+  "handler": {
+    "type": "prioritize",
+    "config": {
+      "items": [
+        "retrieval test source fidelity",
+        "retrieval test retrieval relevance",
+        "retrieval test citation coverage",
+        "retrieval test freshness",
+        "retrieval test gap honesty"
+      ]
+    }
+  },
+  "hermes": {
+    "skill": "SKILL.md in this folder (agentskills.io format)",
+    "plugin_manifest": "plugin.yaml in this folder (verified Hermes plugin format)",
+    "suggested_toolset": "memory"
+  },
+  "guardrails": {
+    "no_fabrication": true,
+    "draft_only_for_generative_tools": true,
+    "human_approval_required": true,
+    "no_auto_send": true,
+    "use_supplied_facts_only": true,
+    "no_credential_handling": true
+  },
+  "keywords": [
+    "knowledge & rag",
+    "hermes",
+    "prioritize"
+  ]
+}

@@ -1,0 +1,7 @@
+name: rag-source-intake-planner
+version: 1.0.0
+description: "Source Intake Planner for Hermes Agent: apply a plan workflow to source intake work — covers source fidelity, retrieval relevance and gap honesty, using supplied facts only."
+author: Lionel Sim
+kind: standalone
+provides_tools:
+  - rag_source_intake_planner

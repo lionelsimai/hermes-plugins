@@ -1,0 +1,113 @@
+{
+  "name": "memory-context-summary-curator",
+  "display_name": "Context Summary Curator",
+  "description": "Context Summary Curator for Hermes Agent: apply a prioritize workflow to context summary work \u2014 covers fact accuracy, size budget fit and source noted, using supplied facts only.",
+  "category": "Memory & Context",
+  "domain": "Hermes Agent",
+  "version": "1.0.0",
+  "author": {
+    "name": "Lionel Sim",
+    "url": "https://sg.linkedin.com/in/lionelshen"
+  },
+  "license": "MIT",
+  "tools": [
+    {
+      "name": "memory_context_summary_curator",
+      "description": "Context Summary Curator for Hermes Agent: apply a prioritize workflow to context summary work \u2014 covers fact accuracy, size budget fit and source noted, using supplied facts only.",
+      "kind": "prioritize",
+      "inputSchema": {
+        "type": "object",
+        "properties": {
+          "metrics": {
+            "type": "object"
+          },
+          "counts": {
+            "type": "object"
+          },
+          "amounts": {
+            "type": "object"
+          },
+          "series": {
+            "type": "array",
+            "items": {
+              "type": "number"
+            }
+          },
+          "text": {
+            "type": "string"
+          },
+          "completed": {
+            "type": "array",
+            "items": {
+              "type": "string"
+            }
+          },
+          "facts": {
+            "type": "object"
+          },
+          "items": {
+            "type": "array"
+          },
+          "goal": {
+            "type": "string"
+          },
+          "timeframe_days": {
+            "type": "integer"
+          }
+        },
+        "required": []
+      },
+      "sample_input": {
+        "items": [
+          {
+            "name": "Sample task A",
+            "impact": 8,
+            "effort": 3
+          },
+          {
+            "name": "Sample task B",
+            "impact": 6,
+            "effort": 1
+          }
+        ]
+      },
+      "output": {
+        "plugin": "memory-context-summary-curator",
+        "tool": "memory_context_summary_curator",
+        "kind": "prioritize",
+        "result": "object (shape varies by kind, see README)",
+        "guardrails": "object \u2014 present on every result"
+      }
+    }
+  ],
+  "handler": {
+    "type": "prioritize",
+    "config": {
+      "items": [
+        "context summary fact accuracy",
+        "context summary size budget fit",
+        "context summary staleness",
+        "context summary duplication",
+        "context summary source noted"
+      ]
+    }
+  },
+  "hermes": {
+    "skill": "SKILL.md in this folder (agentskills.io format)",
+    "plugin_manifest": "plugin.yaml in this folder (verified Hermes plugin format)",
+    "suggested_toolset": "memory"
+  },
+  "guardrails": {
+    "no_fabrication": true,
+    "draft_only_for_generative_tools": true,
+    "human_approval_required": true,
+    "no_auto_send": true,
+    "use_supplied_facts_only": true,
+    "no_credential_handling": true
+  },
+  "keywords": [
+    "memory & context",
+    "hermes",
+    "prioritize"
+  ]
+}
