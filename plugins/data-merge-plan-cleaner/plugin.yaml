@@ -1,0 +1,7 @@
+name: data-merge-plan-cleaner
+version: 1.0.0
+description: "Merge Plan Cleaner for Hermes Agent: apply a classify workflow to merge plan work — covers data completeness, column consistency and format fit, using supplied facts only."
+author: Lionel Sim
+kind: standalone
+provides_tools:
+  - data_merge_plan_cleaner

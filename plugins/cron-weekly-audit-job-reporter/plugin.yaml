@@ -1,0 +1,7 @@
+name: cron-weekly-audit-job-reporter
+version: 1.0.0
+description: "Weekly Audit Job Reporter for Hermes Agent: apply a audit workflow to weekly audit job work — covers schedule clarity, delivery target and owner named, using supplied facts only."
+author: Lionel Sim
+kind: standalone
+provides_tools:
+  - cron_weekly_audit_job_reporter

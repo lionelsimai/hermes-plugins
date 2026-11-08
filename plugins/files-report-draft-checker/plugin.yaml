@@ -1,0 +1,7 @@
+name: files-report-draft-checker
+version: 1.0.0
+description: "Report Draft Checker for Hermes Agent: apply a audit workflow to report draft work — covers format fit, completeness and output location, using supplied facts only."
+author: Lionel Sim
+kind: standalone
+provides_tools:
+  - files_report_draft_checker

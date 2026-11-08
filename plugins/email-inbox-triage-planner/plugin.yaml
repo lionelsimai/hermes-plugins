@@ -1,0 +1,7 @@
+name: email-inbox-triage-planner
+version: 1.0.0
+description: "Inbox Triage Planner for Hermes Agent: apply a analyze workflow to inbox triage work — covers priority accuracy, tone fit and next step clarity, using supplied facts only."
+author: Lionel Sim
+kind: standalone
+provides_tools:
+  - email_inbox_triage_planner

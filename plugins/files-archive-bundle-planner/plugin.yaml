@@ -1,0 +1,7 @@
+name: files-archive-bundle-planner
+version: 1.0.0
+description: "Archive Bundle Planner for Hermes Agent: apply a classify workflow to archive bundle work — covers format fit, completeness and output location, using supplied facts only."
+author: Lionel Sim
+kind: standalone
+provides_tools:
+  - files_archive_bundle_planner

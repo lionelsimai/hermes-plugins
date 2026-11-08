@@ -1,0 +1,7 @@
+name: files-markdown-note-planner
+version: 1.0.0
+description: "Markdown Note Planner for Hermes Agent: apply a prioritize workflow to markdown note work — covers format fit, completeness and output location, using supplied facts only."
+author: Lionel Sim
+kind: standalone
+provides_tools:
+  - files_markdown_note_planner

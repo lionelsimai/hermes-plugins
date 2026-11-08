@@ -1,0 +1,113 @@
+{
+  "name": "mcp-tool-schema-draft-planner",
+  "display_name": "Tool Schema Draft Planner",
+  "description": "Tool Schema Draft Planner for Hermes Agent: apply a analyze workflow to tool schema draft work \u2014 covers schema validity, description clarity and error behaviour, using supplied facts only.",
+  "category": "MCP Tooling",
+  "domain": "Hermes Agent",
+  "version": "1.0.0",
+  "author": {
+    "name": "Lionel Sim",
+    "url": "https://sg.linkedin.com/in/lionelshen"
+  },
+  "license": "MIT",
+  "tools": [
+    {
+      "name": "mcp_tool_schema_draft_planner",
+      "description": "Tool Schema Draft Planner for Hermes Agent: apply a analyze workflow to tool schema draft work \u2014 covers schema validity, description clarity and error behaviour, using supplied facts only.",
+      "kind": "analyze",
+      "inputSchema": {
+        "type": "object",
+        "properties": {
+          "metrics": {
+            "type": "object"
+          },
+          "counts": {
+            "type": "object"
+          },
+          "amounts": {
+            "type": "object"
+          },
+          "series": {
+            "type": "array",
+            "items": {
+              "type": "number"
+            }
+          },
+          "text": {
+            "type": "string"
+          },
+          "completed": {
+            "type": "array",
+            "items": {
+              "type": "string"
+            }
+          },
+          "facts": {
+            "type": "object"
+          },
+          "items": {
+            "type": "array"
+          },
+          "goal": {
+            "type": "string"
+          },
+          "timeframe_days": {
+            "type": "integer"
+          }
+        },
+        "required": []
+      },
+      "sample_input": {
+        "counts": {
+          "tool_schema_draft_schema_validity": 40,
+          "tool_schema_draft_description_clarity": 25,
+          "tool_schema_draft_least_privilege": 10,
+          "tool_schema_draft_test_coverage": 75
+        },
+        "series": [
+          3,
+          5,
+          4,
+          8
+        ]
+      },
+      "output": {
+        "plugin": "mcp-tool-schema-draft-planner",
+        "tool": "mcp_tool_schema_draft_planner",
+        "kind": "analyze",
+        "result": "object (shape varies by kind, see README)",
+        "guardrails": "object \u2014 present on every result"
+      }
+    }
+  ],
+  "handler": {
+    "type": "analyze",
+    "config": {
+      "items": [
+        "tool schema draft schema validity",
+        "tool schema draft description clarity",
+        "tool schema draft least privilege",
+        "tool schema draft test coverage",
+        "tool schema draft error behaviour"
+      ]
+    }
+  },
+  "hermes": {
+    "skill": "SKILL.md in this folder (agentskills.io format)",
+    "plugin_manifest": "plugin.yaml in this folder (verified Hermes plugin format)",
+    "suggested_toolset": "skills"
+  },
+  "guardrails": {
+    "no_fabrication": true,
+    "draft_only_for_generative_tools": true,
+    "human_approval_required": true,
+    "no_auto_send": true,
+    "use_supplied_facts_only": true,
+    "no_credential_handling": true
+  },
+  "keywords": [
+    "mcp tooling",
+    "hermes",
+    "analyze"
+  ]
+}

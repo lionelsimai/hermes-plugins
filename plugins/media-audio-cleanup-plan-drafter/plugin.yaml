@@ -1,0 +1,7 @@
+name: media-audio-cleanup-plan-drafter
+version: 1.0.0
+description: "Audio Cleanup Plan Drafter for Hermes Agent: apply a classify workflow to audio cleanup plan work — covers brief clarity, format spec and approval gate, using supplied facts only."
+author: Lionel Sim
+kind: standalone
+provides_tools:
+  - media_audio_cleanup_plan_drafter

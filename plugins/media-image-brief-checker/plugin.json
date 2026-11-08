@@ -1,0 +1,106 @@
+{
+  "name": "media-image-brief-checker",
+  "display_name": "Image Brief Checker",
+  "description": "Image Brief Checker for Hermes Agent: apply a score workflow to image brief work \u2014 covers brief clarity, format spec and approval gate, using supplied facts only.",
+  "category": "Media (Image Audio Video)",
+  "domain": "Hermes Agent",
+  "version": "1.0.0",
+  "author": {
+    "name": "Lionel Sim",
+    "url": "https://sg.linkedin.com/in/lionelshen"
+  },
+  "license": "MIT",
+  "tools": [
+    {
+      "name": "media_image_brief_checker",
+      "description": "Image Brief Checker for Hermes Agent: apply a score workflow to image brief work \u2014 covers brief clarity, format spec and approval gate, using supplied facts only.",
+      "kind": "score",
+      "inputSchema": {
+        "type": "object",
+        "properties": {
+          "metrics": {
+            "type": "object"
+          },
+          "counts": {
+            "type": "object"
+          },
+          "amounts": {
+            "type": "object"
+          },
+          "series": {
+            "type": "array",
+            "items": {
+              "type": "number"
+            }
+          },
+          "text": {
+            "type": "string"
+          },
+          "completed": {
+            "type": "array",
+            "items": {
+              "type": "string"
+            }
+          },
+          "facts": {
+            "type": "object"
+          },
+          "items": {
+            "type": "array"
+          },
+          "goal": {
+            "type": "string"
+          },
+          "timeframe_days": {
+            "type": "integer"
+          }
+        },
+        "required": []
+      },
+      "sample_input": {
+        "metrics": {
+          "image_brief_brief_clarity": 80,
+          "image_brief_format_spec": 65,
+          "image_brief_rights_and_consent": 90
+        }
+      },
+      "output": {
+        "plugin": "media-image-brief-checker",
+        "tool": "media_image_brief_checker",
+        "kind": "score",
+        "result": "object (shape varies by kind, see README)",
+        "guardrails": "object \u2014 present on every result"
+      }
+    }
+  ],
+  "handler": {
+    "type": "score",
+    "config": {
+      "items": [
+        "image brief brief clarity",
+        "image brief format spec",
+        "image brief rights and consent",
+        "image brief quality gate",
+        "image brief approval gate"
+      ]
+    }
+  },
+  "hermes": {
+    "skill": "SKILL.md in this folder (agentskills.io format)",
+    "plugin_manifest": "plugin.yaml in this folder (verified Hermes plugin format)",
+    "suggested_toolset": "media"
+  },
+  "guardrails": {
+    "no_fabrication": true,
+    "draft_only_for_generative_tools": true,
+    "human_approval_required": true,
+    "no_auto_send": true,
+    "use_supplied_facts_only": true,
+    "no_credential_handling": true
+  },
+  "keywords": [
+    "media (image audio video)",
+    "hermes",
+    "score"
+  ]
+}

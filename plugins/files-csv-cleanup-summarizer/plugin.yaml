@@ -1,0 +1,7 @@
+name: files-csv-cleanup-summarizer
+version: 1.0.0
+description: "Csv Cleanup Summarizer for Hermes Agent: apply a checklist workflow to csv cleanup work — covers format fit, completeness and output location, using supplied facts only."
+author: Lionel Sim
+kind: standalone
+provides_tools:
+  - files_csv_cleanup_summarizer

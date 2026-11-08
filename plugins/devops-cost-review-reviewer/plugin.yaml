@@ -1,0 +1,7 @@
+name: devops-cost-review-reviewer
+version: 1.0.0
+description: "Cost Review Reviewer for Hermes Agent: apply a score workflow to cost review work — covers risk noted, rollback step and window fit, using supplied facts only."
+author: Lionel Sim
+kind: standalone
+provides_tools:
+  - devops_cost_review_reviewer

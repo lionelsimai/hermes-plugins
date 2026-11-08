@@ -1,0 +1,7 @@
+name: data-pivot-summary-planner
+version: 1.0.0
+description: "Pivot Summary Planner for Hermes Agent: apply a template workflow to pivot summary work — covers data completeness, column consistency and format fit, using supplied facts only."
+author: Lionel Sim
+kind: standalone
+provides_tools:
+  - data_pivot_summary_planner

@@ -1,0 +1,7 @@
+name: devops-cost-review-reporter
+version: 1.0.0
+description: "Cost Review Reporter for Hermes Agent: apply a analyze workflow to cost review work — covers risk noted, rollback step and window fit, using supplied facts only."
+author: Lionel Sim
+kind: standalone
+provides_tools:
+  - devops_cost_review_reporter

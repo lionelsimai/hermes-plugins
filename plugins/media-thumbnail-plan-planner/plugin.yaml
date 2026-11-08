@@ -1,0 +1,7 @@
+name: media-thumbnail-plan-planner
+version: 1.0.0
+description: "Thumbnail Plan Planner for Hermes Agent: apply a classify workflow to thumbnail plan work — covers brief clarity, format spec and approval gate, using supplied facts only."
+author: Lionel Sim
+kind: standalone
+provides_tools:
+  - media_thumbnail_plan_planner

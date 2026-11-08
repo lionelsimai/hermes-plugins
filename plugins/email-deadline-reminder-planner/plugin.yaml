@@ -1,0 +1,7 @@
+name: email-deadline-reminder-planner
+version: 1.0.0
+description: "Deadline Reminder Planner for Hermes Agent: apply a score workflow to deadline reminder work — covers priority accuracy, tone fit and next step clarity, using supplied facts only."
+author: Lionel Sim
+kind: standalone
+provides_tools:
+  - email_deadline_reminder_planner

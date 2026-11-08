@@ -1,0 +1,7 @@
+name: mcp-mcp-test-plan-auditor
+version: 1.0.0
+description: "Mcp Test Plan Auditor for Hermes Agent: apply a checklist workflow to mcp test plan work — covers schema validity, description clarity and error behaviour, using supplied facts only."
+author: Lionel Sim
+kind: standalone
+provides_tools:
+  - mcp_mcp_test_plan_auditor

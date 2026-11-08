@@ -1,0 +1,7 @@
+name: mcp-server-comparison-drafter
+version: 1.0.0
+description: "Server Comparison Drafter for Hermes Agent: apply a audit workflow to server comparison work — covers schema validity, description clarity and error behaviour, using supplied facts only."
+author: Lionel Sim
+kind: standalone
+provides_tools:
+  - mcp_server_comparison_drafter

@@ -1,0 +1,7 @@
+name: media-avatar-script-drafter
+version: 1.0.0
+description: "Avatar Script Drafter for Hermes Agent: apply a plan workflow to avatar script work — covers brief clarity, format spec and approval gate, using supplied facts only."
+author: Lionel Sim
+kind: standalone
+provides_tools:
+  - media_avatar_script_drafter

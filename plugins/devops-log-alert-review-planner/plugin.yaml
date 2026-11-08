@@ -1,0 +1,7 @@
+name: devops-log-alert-review-planner
+version: 1.0.0
+description: "Log Alert Review Planner for Hermes Agent: apply a audit workflow to log alert review work — covers risk noted, rollback step and window fit, using supplied facts only."
+author: Lionel Sim
+kind: standalone
+provides_tools:
+  - devops_log_alert_review_planner

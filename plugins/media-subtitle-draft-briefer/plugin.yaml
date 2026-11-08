@@ -1,0 +1,7 @@
+name: media-subtitle-draft-briefer
+version: 1.0.0
+description: "Subtitle Draft Briefer for Hermes Agent: apply a plan workflow to subtitle draft work — covers brief clarity, format spec and approval gate, using supplied facts only."
+author: Lionel Sim
+kind: standalone
+provides_tools:
+  - media_subtitle_draft_briefer

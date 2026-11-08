@@ -1,0 +1,7 @@
+name: devops-docker-review-auditor
+version: 1.0.0
+description: "Docker Review Auditor for Hermes Agent: apply a audit workflow to docker review work — covers risk noted, rollback step and window fit, using supplied facts only."
+author: Lionel Sim
+kind: standalone
+provides_tools:
+  - devops_docker_review_auditor

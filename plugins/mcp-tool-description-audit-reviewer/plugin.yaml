@@ -1,0 +1,7 @@
+name: mcp-tool-description-audit-reviewer
+version: 1.0.0
+description: "Tool Description Audit Reviewer for Hermes Agent: apply a template workflow to tool description audit work — covers schema validity, description clarity and error behaviour, using supplied facts only."
+author: Lionel Sim
+kind: standalone
+provides_tools:
+  - mcp_tool_description_audit_reviewer

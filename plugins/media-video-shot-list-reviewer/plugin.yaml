@@ -1,0 +1,7 @@
+name: media-video-shot-list-reviewer
+version: 1.0.0
+description: "Video Shot List Reviewer for Hermes Agent: apply a audit workflow to video shot list work — covers brief clarity, format spec and approval gate, using supplied facts only."
+author: Lionel Sim
+kind: standalone
+provides_tools:
+  - media_video_shot_list_reviewer

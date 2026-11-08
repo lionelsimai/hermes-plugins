@@ -1,0 +1,7 @@
+name: media-podcast-outline-drafter
+version: 1.0.0
+description: "Podcast Outline Drafter for Hermes Agent: apply a audit workflow to podcast outline work — covers brief clarity, format spec and approval gate, using supplied facts only."
+author: Lionel Sim
+kind: standalone
+provides_tools:
+  - media_podcast_outline_drafter

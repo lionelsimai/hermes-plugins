@@ -1,0 +1,113 @@
+{
+  "name": "data-budget-tracker-analyzer",
+  "display_name": "Budget Tracker Analyzer",
+  "description": "Budget Tracker Analyzer for Hermes Agent: apply a analyze workflow to budget tracker work \u2014 covers data completeness, column consistency and format fit, using supplied facts only.",
+  "category": "Data & Spreadsheets",
+  "domain": "Hermes Agent",
+  "version": "1.0.0",
+  "author": {
+    "name": "Lionel Sim",
+    "url": "https://sg.linkedin.com/in/lionelshen"
+  },
+  "license": "MIT",
+  "tools": [
+    {
+      "name": "data_budget_tracker_analyzer",
+      "description": "Budget Tracker Analyzer for Hermes Agent: apply a analyze workflow to budget tracker work \u2014 covers data completeness, column consistency and format fit, using supplied facts only.",
+      "kind": "analyze",
+      "inputSchema": {
+        "type": "object",
+        "properties": {
+          "metrics": {
+            "type": "object"
+          },
+          "counts": {
+            "type": "object"
+          },
+          "amounts": {
+            "type": "object"
+          },
+          "series": {
+            "type": "array",
+            "items": {
+              "type": "number"
+            }
+          },
+          "text": {
+            "type": "string"
+          },
+          "completed": {
+            "type": "array",
+            "items": {
+              "type": "string"
+            }
+          },
+          "facts": {
+            "type": "object"
+          },
+          "items": {
+            "type": "array"
+          },
+          "goal": {
+            "type": "string"
+          },
+          "timeframe_days": {
+            "type": "integer"
+          }
+        },
+        "required": []
+      },
+      "sample_input": {
+        "counts": {
+          "budget_tracker_data_completeness": 40,
+          "budget_tracker_column_consistency": 25,
+          "budget_tracker_outliers_flagged": 10,
+          "budget_tracker_totals_verified": 75
+        },
+        "series": [
+          3,
+          5,
+          4,
+          8
+        ]
+      },
+      "output": {
+        "plugin": "data-budget-tracker-analyzer",
+        "tool": "data_budget_tracker_analyzer",
+        "kind": "analyze",
+        "result": "object (shape varies by kind, see README)",
+        "guardrails": "object \u2014 present on every result"
+      }
+    }
+  ],
+  "handler": {
+    "type": "analyze",
+    "config": {
+      "items": [
+        "budget tracker data completeness",
+        "budget tracker column consistency",
+        "budget tracker outliers flagged",
+        "budget tracker totals verified",
+        "budget tracker format fit"
+      ]
+    }
+  },
+  "hermes": {
+    "skill": "SKILL.md in this folder (agentskills.io format)",
+    "plugin_manifest": "plugin.yaml in this folder (verified Hermes plugin format)",
+    "suggested_toolset": "file"
+  },
+  "guardrails": {
+    "no_fabrication": true,
+    "draft_only_for_generative_tools": true,
+    "human_approval_required": true,
+    "no_auto_send": true,
+    "use_supplied_facts_only": true,
+    "no_credential_handling": true
+  },
+  "keywords": [
+    "data & spreadsheets",
+    "hermes",
+    "analyze"
+  ]
+}

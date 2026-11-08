@@ -1,0 +1,7 @@
+name: files-folder-structure-organizer
+version: 1.0.0
+description: "Folder Structure Organizer for Hermes Agent: apply a classify workflow to folder structure work — covers format fit, completeness and output location, using supplied facts only."
+author: Lionel Sim
+kind: standalone
+provides_tools:
+  - files_folder_structure_organizer

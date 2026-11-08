@@ -1,0 +1,7 @@
+name: media-media-review-checker
+version: 1.0.0
+description: "Media Review Checker for Hermes Agent: apply a audit workflow to media review work — covers brief clarity, format spec and approval gate, using supplied facts only."
+author: Lionel Sim
+kind: standalone
+provides_tools:
+  - media_media_review_checker

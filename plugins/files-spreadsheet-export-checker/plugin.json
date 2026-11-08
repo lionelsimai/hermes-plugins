@@ -1,0 +1,106 @@
+{
+  "name": "files-spreadsheet-export-checker",
+  "display_name": "Spreadsheet Export Checker",
+  "description": "Spreadsheet Export Checker for Hermes Agent: apply a score workflow to spreadsheet export work \u2014 covers format fit, completeness and output location, using supplied facts only.",
+  "category": "File & Document Work",
+  "domain": "Hermes Agent",
+  "version": "1.0.0",
+  "author": {
+    "name": "Lionel Sim",
+    "url": "https://sg.linkedin.com/in/lionelshen"
+  },
+  "license": "MIT",
+  "tools": [
+    {
+      "name": "files_spreadsheet_export_checker",
+      "description": "Spreadsheet Export Checker for Hermes Agent: apply a score workflow to spreadsheet export work \u2014 covers format fit, completeness and output location, using supplied facts only.",
+      "kind": "score",
+      "inputSchema": {
+        "type": "object",
+        "properties": {
+          "metrics": {
+            "type": "object"
+          },
+          "counts": {
+            "type": "object"
+          },
+          "amounts": {
+            "type": "object"
+          },
+          "series": {
+            "type": "array",
+            "items": {
+              "type": "number"
+            }
+          },
+          "text": {
+            "type": "string"
+          },
+          "completed": {
+            "type": "array",
+            "items": {
+              "type": "string"
+            }
+          },
+          "facts": {
+            "type": "object"
+          },
+          "items": {
+            "type": "array"
+          },
+          "goal": {
+            "type": "string"
+          },
+          "timeframe_days": {
+            "type": "integer"
+          }
+        },
+        "required": []
+      },
+      "sample_input": {
+        "metrics": {
+          "spreadsheet_export_format_fit": 80,
+          "spreadsheet_export_completeness": 65,
+          "spreadsheet_export_naming_consistency": 90
+        }
+      },
+      "output": {
+        "plugin": "files-spreadsheet-export-checker",
+        "tool": "files_spreadsheet_export_checker",
+        "kind": "score",
+        "result": "object (shape varies by kind, see README)",
+        "guardrails": "object \u2014 present on every result"
+      }
+    }
+  ],
+  "handler": {
+    "type": "score",
+    "config": {
+      "items": [
+        "spreadsheet export format fit",
+        "spreadsheet export completeness",
+        "spreadsheet export naming consistency",
+        "spreadsheet export source fidelity",
+        "spreadsheet export output location"
+      ]
+    }
+  },
+  "hermes": {
+    "skill": "SKILL.md in this folder (agentskills.io format)",
+    "plugin_manifest": "plugin.yaml in this folder (verified Hermes plugin format)",
+    "suggested_toolset": "file"
+  },
+  "guardrails": {
+    "no_fabrication": true,
+    "draft_only_for_generative_tools": true,
+    "human_approval_required": true,
+    "no_auto_send": true,
+    "use_supplied_facts_only": true,
+    "no_credential_handling": true
+  },
+  "keywords": [
+    "file & document work",
+    "hermes",
+    "score"
+  ]
+}

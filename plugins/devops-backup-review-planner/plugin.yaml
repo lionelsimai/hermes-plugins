@@ -1,0 +1,7 @@
+name: devops-backup-review-planner
+version: 1.0.0
+description: "Backup Review Planner for Hermes Agent: apply a prioritize workflow to backup review work — covers risk noted, rollback step and window fit, using supplied facts only."
+author: Lionel Sim
+kind: standalone
+provides_tools:
+  - devops_backup_review_planner

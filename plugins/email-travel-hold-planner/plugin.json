@@ -1,0 +1,113 @@
+{
+  "name": "email-travel-hold-planner",
+  "display_name": "Travel Hold Planner",
+  "description": "Travel Hold Planner for Hermes Agent: apply a analyze workflow to travel hold work \u2014 covers priority accuracy, tone fit and next step clarity, using supplied facts only.",
+  "category": "Email & Calendar",
+  "domain": "Hermes Agent",
+  "version": "1.0.0",
+  "author": {
+    "name": "Lionel Sim",
+    "url": "https://sg.linkedin.com/in/lionelshen"
+  },
+  "license": "MIT",
+  "tools": [
+    {
+      "name": "email_travel_hold_planner",
+      "description": "Travel Hold Planner for Hermes Agent: apply a analyze workflow to travel hold work \u2014 covers priority accuracy, tone fit and next step clarity, using supplied facts only.",
+      "kind": "analyze",
+      "inputSchema": {
+        "type": "object",
+        "properties": {
+          "metrics": {
+            "type": "object"
+          },
+          "counts": {
+            "type": "object"
+          },
+          "amounts": {
+            "type": "object"
+          },
+          "series": {
+            "type": "array",
+            "items": {
+              "type": "number"
+            }
+          },
+          "text": {
+            "type": "string"
+          },
+          "completed": {
+            "type": "array",
+            "items": {
+              "type": "string"
+            }
+          },
+          "facts": {
+            "type": "object"
+          },
+          "items": {
+            "type": "array"
+          },
+          "goal": {
+            "type": "string"
+          },
+          "timeframe_days": {
+            "type": "integer"
+          }
+        },
+        "required": []
+      },
+      "sample_input": {
+        "counts": {
+          "travel_hold_priority_accuracy": 40,
+          "travel_hold_tone_fit": 25,
+          "travel_hold_facts_supplied_only": 10,
+          "travel_hold_approval_gate": 75
+        },
+        "series": [
+          3,
+          5,
+          4,
+          8
+        ]
+      },
+      "output": {
+        "plugin": "email-travel-hold-planner",
+        "tool": "email_travel_hold_planner",
+        "kind": "analyze",
+        "result": "object (shape varies by kind, see README)",
+        "guardrails": "object \u2014 present on every result"
+      }
+    }
+  ],
+  "handler": {
+    "type": "analyze",
+    "config": {
+      "items": [
+        "travel hold priority accuracy",
+        "travel hold tone fit",
+        "travel hold facts supplied only",
+        "travel hold approval gate",
+        "travel hold next step clarity"
+      ]
+    }
+  },
+  "hermes": {
+    "skill": "SKILL.md in this folder (agentskills.io format)",
+    "plugin_manifest": "plugin.yaml in this folder (verified Hermes plugin format)",
+    "suggested_toolset": "messaging"
+  },
+  "guardrails": {
+    "no_fabrication": true,
+    "draft_only_for_generative_tools": true,
+    "human_approval_required": true,
+    "no_auto_send": true,
+    "use_supplied_facts_only": true,
+    "no_credential_handling": true
+  },
+  "keywords": [
+    "email & calendar",
+    "hermes",
+    "analyze"
+  ]
+}

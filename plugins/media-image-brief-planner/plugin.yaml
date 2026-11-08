@@ -1,0 +1,7 @@
+name: media-image-brief-planner
+version: 1.0.0
+description: "Image Brief Planner for Hermes Agent: apply a prioritize workflow to image brief work — covers brief clarity, format spec and approval gate, using supplied facts only."
+author: Lionel Sim
+kind: standalone
+provides_tools:
+  - media_image_brief_planner

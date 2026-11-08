@@ -1,0 +1,7 @@
+name: mcp-mcp-install-checklist-planner
+version: 1.0.0
+description: "Mcp Install Checklist Planner for Hermes Agent: apply a score workflow to mcp install checklist work — covers schema validity, description clarity and error behaviour, using supplied facts only."
+author: Lionel Sim
+kind: standalone
+provides_tools:
+  - mcp_mcp_install_checklist_planner

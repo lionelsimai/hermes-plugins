@@ -1,0 +1,7 @@
+name: mcp-mcp-server-review-auditor
+version: 1.0.0
+description: "Mcp Server Review Auditor for Hermes Agent: apply a audit workflow to mcp server review work — covers schema validity, description clarity and error behaviour, using supplied facts only."
+author: Lionel Sim
+kind: standalone
+provides_tools:
+  - mcp_mcp_server_review_auditor

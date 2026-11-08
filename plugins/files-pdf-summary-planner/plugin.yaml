@@ -1,0 +1,7 @@
+name: files-pdf-summary-planner
+version: 1.0.0
+description: "Pdf Summary Planner for Hermes Agent: apply a checklist workflow to pdf summary work — covers format fit, completeness and output location, using supplied facts only."
+author: Lionel Sim
+kind: standalone
+provides_tools:
+  - files_pdf_summary_planner

@@ -1,0 +1,7 @@
+name: mcp-transport-check-auditor
+version: 1.0.0
+description: "Transport Check Auditor for Hermes Agent: apply a audit workflow to transport check work — covers schema validity, description clarity and error behaviour, using supplied facts only."
+author: Lionel Sim
+kind: standalone
+provides_tools:
+  - mcp_transport_check_auditor

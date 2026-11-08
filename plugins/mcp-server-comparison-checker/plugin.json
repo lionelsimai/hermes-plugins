@@ -1,0 +1,106 @@
+{
+  "name": "mcp-server-comparison-checker",
+  "display_name": "Server Comparison Checker",
+  "description": "Server Comparison Checker for Hermes Agent: apply a score workflow to server comparison work \u2014 covers schema validity, description clarity and error behaviour, using supplied facts only.",
+  "category": "MCP Tooling",
+  "domain": "Hermes Agent",
+  "version": "1.0.0",
+  "author": {
+    "name": "Lionel Sim",
+    "url": "https://sg.linkedin.com/in/lionelshen"
+  },
+  "license": "MIT",
+  "tools": [
+    {
+      "name": "mcp_server_comparison_checker",
+      "description": "Server Comparison Checker for Hermes Agent: apply a score workflow to server comparison work \u2014 covers schema validity, description clarity and error behaviour, using supplied facts only.",
+      "kind": "score",
+      "inputSchema": {
+        "type": "object",
+        "properties": {
+          "metrics": {
+            "type": "object"
+          },
+          "counts": {
+            "type": "object"
+          },
+          "amounts": {
+            "type": "object"
+          },
+          "series": {
+            "type": "array",
+            "items": {
+              "type": "number"
+            }
+          },
+          "text": {
+            "type": "string"
+          },
+          "completed": {
+            "type": "array",
+            "items": {
+              "type": "string"
+            }
+          },
+          "facts": {
+            "type": "object"
+          },
+          "items": {
+            "type": "array"
+          },
+          "goal": {
+            "type": "string"
+          },
+          "timeframe_days": {
+            "type": "integer"
+          }
+        },
+        "required": []
+      },
+      "sample_input": {
+        "metrics": {
+          "server_comparison_schema_validity": 80,
+          "server_comparison_description_clarity": 65,
+          "server_comparison_least_privilege": 90
+        }
+      },
+      "output": {
+        "plugin": "mcp-server-comparison-checker",
+        "tool": "mcp_server_comparison_checker",
+        "kind": "score",
+        "result": "object (shape varies by kind, see README)",
+        "guardrails": "object \u2014 present on every result"
+      }
+    }
+  ],
+  "handler": {
+    "type": "score",
+    "config": {
+      "items": [
+        "server comparison schema validity",
+        "server comparison description clarity",
+        "server comparison least privilege",
+        "server comparison test coverage",
+        "server comparison error behaviour"
+      ]
+    }
+  },
+  "hermes": {
+    "skill": "SKILL.md in this folder (agentskills.io format)",
+    "plugin_manifest": "plugin.yaml in this folder (verified Hermes plugin format)",
+    "suggested_toolset": "skills"
+  },
+  "guardrails": {
+    "no_fabrication": true,
+    "draft_only_for_generative_tools": true,
+    "human_approval_required": true,
+    "no_auto_send": true,
+    "use_supplied_facts_only": true,
+    "no_credential_handling": true
+  },
+  "keywords": [
+    "mcp tooling",
+    "hermes",
+    "score"
+  ]
+}

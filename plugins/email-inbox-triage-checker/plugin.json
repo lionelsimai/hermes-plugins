@@ -1,0 +1,105 @@
+{
+  "name": "email-inbox-triage-checker",
+  "display_name": "Inbox Triage Checker",
+  "description": "Inbox Triage Checker for Hermes Agent: apply a template workflow to inbox triage work \u2014 covers priority accuracy, tone fit and next step clarity, using supplied facts only.",
+  "category": "Email & Calendar",
+  "domain": "Hermes Agent",
+  "version": "1.0.0",
+  "author": {
+    "name": "Lionel Sim",
+    "url": "https://sg.linkedin.com/in/lionelshen"
+  },
+  "license": "MIT",
+  "tools": [
+    {
+      "name": "email_inbox_triage_checker",
+      "description": "Inbox Triage Checker for Hermes Agent: apply a template workflow to inbox triage work \u2014 covers priority accuracy, tone fit and next step clarity, using supplied facts only.",
+      "kind": "template",
+      "inputSchema": {
+        "type": "object",
+        "properties": {
+          "metrics": {
+            "type": "object"
+          },
+          "counts": {
+            "type": "object"
+          },
+          "amounts": {
+            "type": "object"
+          },
+          "series": {
+            "type": "array",
+            "items": {
+              "type": "number"
+            }
+          },
+          "text": {
+            "type": "string"
+          },
+          "completed": {
+            "type": "array",
+            "items": {
+              "type": "string"
+            }
+          },
+          "facts": {
+            "type": "object"
+          },
+          "items": {
+            "type": "array"
+          },
+          "goal": {
+            "type": "string"
+          },
+          "timeframe_days": {
+            "type": "integer"
+          }
+        },
+        "required": []
+      },
+      "sample_input": {
+        "facts": {
+          "inbox_triage_priority_accuracy": "Sample supplied fact",
+          "inbox_triage_tone_fit": "Second supplied fact"
+        }
+      },
+      "output": {
+        "plugin": "email-inbox-triage-checker",
+        "tool": "email_inbox_triage_checker",
+        "kind": "template",
+        "result": "object (shape varies by kind, see README)",
+        "guardrails": "object \u2014 present on every result"
+      }
+    }
+  ],
+  "handler": {
+    "type": "template",
+    "config": {
+      "items": [
+        "inbox triage priority accuracy",
+        "inbox triage tone fit",
+        "inbox triage facts supplied only",
+        "inbox triage approval gate",
+        "inbox triage next step clarity"
+      ]
+    }
+  },
+  "hermes": {
+    "skill": "SKILL.md in this folder (agentskills.io format)",
+    "plugin_manifest": "plugin.yaml in this folder (verified Hermes plugin format)",
+    "suggested_toolset": "messaging"
+  },
+  "guardrails": {
+    "no_fabrication": true,
+    "draft_only_for_generative_tools": true,
+    "human_approval_required": true,
+    "no_auto_send": true,
+    "use_supplied_facts_only": true,
+    "no_credential_handling": true
+  },
+  "keywords": [
+    "email & calendar",
+    "hermes",
+    "template"
+  ]
+}

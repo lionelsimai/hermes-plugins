@@ -1,0 +1,7 @@
+name: files-markdown-note-organizer
+version: 1.0.0
+description: "Markdown Note Organizer for Hermes Agent: apply a analyze workflow to markdown note work — covers format fit, completeness and output location, using supplied facts only."
+author: Lionel Sim
+kind: standalone
+provides_tools:
+  - files_markdown_note_organizer

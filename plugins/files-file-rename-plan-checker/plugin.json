@@ -1,0 +1,105 @@
+{
+  "name": "files-file-rename-plan-checker",
+  "display_name": "File Rename Plan Checker",
+  "description": "File Rename Plan Checker for Hermes Agent: apply a checklist workflow to file rename plan work \u2014 covers format fit, completeness and output location, using supplied facts only.",
+  "category": "File & Document Work",
+  "domain": "Hermes Agent",
+  "version": "1.0.0",
+  "author": {
+    "name": "Lionel Sim",
+    "url": "https://sg.linkedin.com/in/lionelshen"
+  },
+  "license": "MIT",
+  "tools": [
+    {
+      "name": "files_file_rename_plan_checker",
+      "description": "File Rename Plan Checker for Hermes Agent: apply a checklist workflow to file rename plan work \u2014 covers format fit, completeness and output location, using supplied facts only.",
+      "kind": "checklist",
+      "inputSchema": {
+        "type": "object",
+        "properties": {
+          "metrics": {
+            "type": "object"
+          },
+          "counts": {
+            "type": "object"
+          },
+          "amounts": {
+            "type": "object"
+          },
+          "series": {
+            "type": "array",
+            "items": {
+              "type": "number"
+            }
+          },
+          "text": {
+            "type": "string"
+          },
+          "completed": {
+            "type": "array",
+            "items": {
+              "type": "string"
+            }
+          },
+          "facts": {
+            "type": "object"
+          },
+          "items": {
+            "type": "array"
+          },
+          "goal": {
+            "type": "string"
+          },
+          "timeframe_days": {
+            "type": "integer"
+          }
+        },
+        "required": []
+      },
+      "sample_input": {
+        "completed": [
+          "file rename plan format fit",
+          "file rename plan completeness"
+        ]
+      },
+      "output": {
+        "plugin": "files-file-rename-plan-checker",
+        "tool": "files_file_rename_plan_checker",
+        "kind": "checklist",
+        "result": "object (shape varies by kind, see README)",
+        "guardrails": "object \u2014 present on every result"
+      }
+    }
+  ],
+  "handler": {
+    "type": "checklist",
+    "config": {
+      "items": [
+        "file rename plan format fit",
+        "file rename plan completeness",
+        "file rename plan naming consistency",
+        "file rename plan source fidelity",
+        "file rename plan output location"
+      ]
+    }
+  },
+  "hermes": {
+    "skill": "SKILL.md in this folder (agentskills.io format)",
+    "plugin_manifest": "plugin.yaml in this folder (verified Hermes plugin format)",
+    "suggested_toolset": "file"
+  },
+  "guardrails": {
+    "no_fabrication": true,
+    "draft_only_for_generative_tools": true,
+    "human_approval_required": true,
+    "no_auto_send": true,
+    "use_supplied_facts_only": true,
+    "no_credential_handling": true
+  },
+  "keywords": [
+    "file & document work",
+    "hermes",
+    "checklist"
+  ]
+}

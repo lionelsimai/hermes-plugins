@@ -1,0 +1,103 @@
+{
+  "name": "files-folder-structure-checker",
+  "display_name": "Folder Structure Checker",
+  "description": "Folder Structure Checker for Hermes Agent: apply a plan workflow to folder structure work \u2014 covers format fit, completeness and output location, using supplied facts only.",
+  "category": "File & Document Work",
+  "domain": "Hermes Agent",
+  "version": "1.0.0",
+  "author": {
+    "name": "Lionel Sim",
+    "url": "https://sg.linkedin.com/in/lionelshen"
+  },
+  "license": "MIT",
+  "tools": [
+    {
+      "name": "files_folder_structure_checker",
+      "description": "Folder Structure Checker for Hermes Agent: apply a plan workflow to folder structure work \u2014 covers format fit, completeness and output location, using supplied facts only.",
+      "kind": "plan",
+      "inputSchema": {
+        "type": "object",
+        "properties": {
+          "metrics": {
+            "type": "object"
+          },
+          "counts": {
+            "type": "object"
+          },
+          "amounts": {
+            "type": "object"
+          },
+          "series": {
+            "type": "array",
+            "items": {
+              "type": "number"
+            }
+          },
+          "text": {
+            "type": "string"
+          },
+          "completed": {
+            "type": "array",
+            "items": {
+              "type": "string"
+            }
+          },
+          "facts": {
+            "type": "object"
+          },
+          "items": {
+            "type": "array"
+          },
+          "goal": {
+            "type": "string"
+          },
+          "timeframe_days": {
+            "type": "integer"
+          }
+        },
+        "required": []
+      },
+      "sample_input": {
+        "goal": "Sample goal for this workflow",
+        "timeframe_days": 14
+      },
+      "output": {
+        "plugin": "files-folder-structure-checker",
+        "tool": "files_folder_structure_checker",
+        "kind": "plan",
+        "result": "object (shape varies by kind, see README)",
+        "guardrails": "object \u2014 present on every result"
+      }
+    }
+  ],
+  "handler": {
+    "type": "plan",
+    "config": {
+      "items": [
+        "folder structure format fit",
+        "folder structure completeness",
+        "folder structure naming consistency",
+        "folder structure source fidelity",
+        "folder structure output location"
+      ]
+    }
+  },
+  "hermes": {
+    "skill": "SKILL.md in this folder (agentskills.io format)",
+    "plugin_manifest": "plugin.yaml in this folder (verified Hermes plugin format)",
+    "suggested_toolset": "file"
+  },
+  "guardrails": {
+    "no_fabrication": true,
+    "draft_only_for_generative_tools": true,
+    "human_approval_required": true,
+    "no_auto_send": true,
+    "use_supplied_facts_only": true,
+    "no_credential_handling": true
+  },
+  "keywords": [
+    "file & document work",
+    "hermes",
+    "plan"
+  ]
+}

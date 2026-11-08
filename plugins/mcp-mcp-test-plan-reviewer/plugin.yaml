@@ -1,0 +1,7 @@
+name: mcp-mcp-test-plan-reviewer
+version: 1.0.0
+description: "Mcp Test Plan Reviewer for Hermes Agent: apply a prioritize workflow to mcp test plan work — covers schema validity, description clarity and error behaviour, using supplied facts only."
+author: Lionel Sim
+kind: standalone
+provides_tools:
+  - mcp_mcp_test_plan_reviewer

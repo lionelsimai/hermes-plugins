@@ -1,0 +1,7 @@
+name: media-podcast-outline-reviewer
+version: 1.0.0
+description: "Podcast Outline Reviewer for Hermes Agent: apply a score workflow to podcast outline work — covers brief clarity, format spec and approval gate, using supplied facts only."
+author: Lionel Sim
+kind: standalone
+provides_tools:
+  - media_podcast_outline_reviewer

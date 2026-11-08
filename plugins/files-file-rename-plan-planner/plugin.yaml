@@ -1,0 +1,7 @@
+name: files-file-rename-plan-planner
+version: 1.0.0
+description: "File Rename Plan Planner for Hermes Agent: apply a analyze workflow to file rename plan work — covers format fit, completeness and output location, using supplied facts only."
+author: Lionel Sim
+kind: standalone
+provides_tools:
+  - files_file_rename_plan_planner

@@ -1,0 +1,113 @@
+{
+  "name": "files-markdown-note-organizer",
+  "display_name": "Markdown Note Organizer",
+  "description": "Markdown Note Organizer for Hermes Agent: apply a analyze workflow to markdown note work \u2014 covers format fit, completeness and output location, using supplied facts only.",
+  "category": "File & Document Work",
+  "domain": "Hermes Agent",
+  "version": "1.0.0",
+  "author": {
+    "name": "Lionel Sim",
+    "url": "https://sg.linkedin.com/in/lionelshen"
+  },
+  "license": "MIT",
+  "tools": [
+    {
+      "name": "files_markdown_note_organizer",
+      "description": "Markdown Note Organizer for Hermes Agent: apply a analyze workflow to markdown note work \u2014 covers format fit, completeness and output location, using supplied facts only.",
+      "kind": "analyze",
+      "inputSchema": {
+        "type": "object",
+        "properties": {
+          "metrics": {
+            "type": "object"
+          },
+          "counts": {
+            "type": "object"
+          },
+          "amounts": {
+            "type": "object"
+          },
+          "series": {
+            "type": "array",
+            "items": {
+              "type": "number"
+            }
+          },
+          "text": {
+            "type": "string"
+          },
+          "completed": {
+            "type": "array",
+            "items": {
+              "type": "string"
+            }
+          },
+          "facts": {
+            "type": "object"
+          },
+          "items": {
+            "type": "array"
+          },
+          "goal": {
+            "type": "string"
+          },
+          "timeframe_days": {
+            "type": "integer"
+          }
+        },
+        "required": []
+      },
+      "sample_input": {
+        "counts": {
+          "markdown_note_format_fit": 40,
+          "markdown_note_completeness": 25,
+          "markdown_note_naming_consistency": 10,
+          "markdown_note_source_fidelity": 75
+        },
+        "series": [
+          3,
+          5,
+          4,
+          8
+        ]
+      },
+      "output": {
+        "plugin": "files-markdown-note-organizer",
+        "tool": "files_markdown_note_organizer",
+        "kind": "analyze",
+        "result": "object (shape varies by kind, see README)",
+        "guardrails": "object \u2014 present on every result"
+      }
+    }
+  ],
+  "handler": {
+    "type": "analyze",
+    "config": {
+      "items": [
+        "markdown note format fit",
+        "markdown note completeness",
+        "markdown note naming consistency",
+        "markdown note source fidelity",
+        "markdown note output location"
+      ]
+    }
+  },
+  "hermes": {
+    "skill": "SKILL.md in this folder (agentskills.io format)",
+    "plugin_manifest": "plugin.yaml in this folder (verified Hermes plugin format)",
+    "suggested_toolset": "file"
+  },
+  "guardrails": {
+    "no_fabrication": true,
+    "draft_only_for_generative_tools": true,
+    "human_approval_required": true,
+    "no_auto_send": true,
+    "use_supplied_facts_only": true,
+    "no_credential_handling": true
+  },
+  "keywords": [
+    "file & document work",
+    "hermes",
+    "analyze"
+  ]
+}

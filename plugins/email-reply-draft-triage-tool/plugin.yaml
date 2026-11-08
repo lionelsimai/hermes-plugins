@@ -1,0 +1,7 @@
+name: email-reply-draft-triage-tool
+version: 1.0.0
+description: "Reply Draft Triage Tool for Hermes Agent: apply a audit workflow to reply draft work — covers priority accuracy, tone fit and next step clarity, using supplied facts only."
+author: Lionel Sim
+kind: standalone
+provides_tools:
+  - email_reply_draft_triage_tool

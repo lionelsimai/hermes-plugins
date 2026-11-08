@@ -1,0 +1,7 @@
+name: files-text-extraction-planner
+version: 1.0.0
+description: "Text Extraction Planner for Hermes Agent: apply a audit workflow to text extraction work — covers format fit, completeness and output location, using supplied facts only."
+author: Lionel Sim
+kind: standalone
+provides_tools:
+  - files_text_extraction_planner

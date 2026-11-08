@@ -1,0 +1,113 @@
+{
+  "name": "data-kpi-table-planner",
+  "display_name": "Kpi Table Planner",
+  "description": "Kpi Table Planner for Hermes Agent: apply a analyze workflow to kpi table work \u2014 covers data completeness, column consistency and format fit, using supplied facts only.",
+  "category": "Data & Spreadsheets",
+  "domain": "Hermes Agent",
+  "version": "1.0.0",
+  "author": {
+    "name": "Lionel Sim",
+    "url": "https://sg.linkedin.com/in/lionelshen"
+  },
+  "license": "MIT",
+  "tools": [
+    {
+      "name": "data_kpi_table_planner",
+      "description": "Kpi Table Planner for Hermes Agent: apply a analyze workflow to kpi table work \u2014 covers data completeness, column consistency and format fit, using supplied facts only.",
+      "kind": "analyze",
+      "inputSchema": {
+        "type": "object",
+        "properties": {
+          "metrics": {
+            "type": "object"
+          },
+          "counts": {
+            "type": "object"
+          },
+          "amounts": {
+            "type": "object"
+          },
+          "series": {
+            "type": "array",
+            "items": {
+              "type": "number"
+            }
+          },
+          "text": {
+            "type": "string"
+          },
+          "completed": {
+            "type": "array",
+            "items": {
+              "type": "string"
+            }
+          },
+          "facts": {
+            "type": "object"
+          },
+          "items": {
+            "type": "array"
+          },
+          "goal": {
+            "type": "string"
+          },
+          "timeframe_days": {
+            "type": "integer"
+          }
+        },
+        "required": []
+      },
+      "sample_input": {
+        "counts": {
+          "kpi_table_data_completeness": 40,
+          "kpi_table_column_consistency": 25,
+          "kpi_table_outliers_flagged": 10,
+          "kpi_table_totals_verified": 75
+        },
+        "series": [
+          3,
+          5,
+          4,
+          8
+        ]
+      },
+      "output": {
+        "plugin": "data-kpi-table-planner",
+        "tool": "data_kpi_table_planner",
+        "kind": "analyze",
+        "result": "object (shape varies by kind, see README)",
+        "guardrails": "object \u2014 present on every result"
+      }
+    }
+  ],
+  "handler": {
+    "type": "analyze",
+    "config": {
+      "items": [
+        "kpi table data completeness",
+        "kpi table column consistency",
+        "kpi table outliers flagged",
+        "kpi table totals verified",
+        "kpi table format fit"
+      ]
+    }
+  },
+  "hermes": {
+    "skill": "SKILL.md in this folder (agentskills.io format)",
+    "plugin_manifest": "plugin.yaml in this folder (verified Hermes plugin format)",
+    "suggested_toolset": "file"
+  },
+  "guardrails": {
+    "no_fabrication": true,
+    "draft_only_for_generative_tools": true,
+    "human_approval_required": true,
+    "no_auto_send": true,
+    "use_supplied_facts_only": true,
+    "no_credential_handling": true
+  },
+  "keywords": [
+    "data & spreadsheets",
+    "hermes",
+    "analyze"
+  ]
+}

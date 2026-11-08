@@ -1,0 +1,7 @@
+name: devops-incident-notes-reviewer
+version: 1.0.0
+description: "Incident Notes Reviewer for Hermes Agent: apply a template workflow to incident notes work — covers risk noted, rollback step and window fit, using supplied facts only."
+author: Lionel Sim
+kind: standalone
+provides_tools:
+  - devops_incident_notes_reviewer

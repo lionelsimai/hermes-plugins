@@ -1,0 +1,7 @@
+name: data-outlier-review-cleaner
+version: 1.0.0
+description: "Outlier Review Cleaner for Hermes Agent: apply a checklist workflow to outlier review work — covers data completeness, column consistency and format fit, using supplied facts only."
+author: Lionel Sim
+kind: standalone
+provides_tools:
+  - data_outlier_review_cleaner

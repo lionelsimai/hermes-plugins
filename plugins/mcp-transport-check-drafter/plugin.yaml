@@ -1,0 +1,7 @@
+name: mcp-transport-check-drafter
+version: 1.0.0
+description: "Transport Check Drafter for Hermes Agent: apply a classify workflow to transport check work — covers schema validity, description clarity and error behaviour, using supplied facts only."
+author: Lionel Sim
+kind: standalone
+provides_tools:
+  - mcp_transport_check_drafter

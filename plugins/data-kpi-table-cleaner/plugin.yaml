@@ -1,0 +1,7 @@
+name: data-kpi-table-cleaner
+version: 1.0.0
+description: "Kpi Table Cleaner for Hermes Agent: apply a prioritize workflow to kpi table work — covers data completeness, column consistency and format fit, using supplied facts only."
+author: Lionel Sim
+kind: standalone
+provides_tools:
+  - data_kpi_table_cleaner

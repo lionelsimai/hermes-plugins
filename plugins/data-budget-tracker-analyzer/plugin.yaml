@@ -1,0 +1,7 @@
+name: data-budget-tracker-analyzer
+version: 1.0.0
+description: "Budget Tracker Analyzer for Hermes Agent: apply a analyze workflow to budget tracker work — covers data completeness, column consistency and format fit, using supplied facts only."
+author: Lionel Sim
+kind: standalone
+provides_tools:
+  - data_budget_tracker_analyzer

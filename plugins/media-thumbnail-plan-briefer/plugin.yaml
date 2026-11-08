@@ -1,0 +1,7 @@
+name: media-thumbnail-plan-briefer
+version: 1.0.0
+description: "Thumbnail Plan Briefer for Hermes Agent: apply a template workflow to thumbnail plan work — covers brief clarity, format spec and approval gate, using supplied facts only."
+author: Lionel Sim
+kind: standalone
+provides_tools:
+  - media_thumbnail_plan_briefer

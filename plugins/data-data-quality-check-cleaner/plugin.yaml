@@ -1,0 +1,7 @@
+name: data-data-quality-check-cleaner
+version: 1.0.0
+description: "Data Quality Check Cleaner for Hermes Agent: apply a score workflow to data quality check work — covers data completeness, column consistency and format fit, using supplied facts only."
+author: Lionel Sim
+kind: standalone
+provides_tools:
+  - data_data_quality_check_cleaner

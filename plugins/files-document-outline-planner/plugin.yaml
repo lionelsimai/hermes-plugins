@@ -1,0 +1,7 @@
+name: files-document-outline-planner
+version: 1.0.0
+description: "Document Outline Planner for Hermes Agent: apply a plan workflow to document outline work — covers format fit, completeness and output location, using supplied facts only."
+author: Lionel Sim
+kind: standalone
+provides_tools:
+  - files_document_outline_planner

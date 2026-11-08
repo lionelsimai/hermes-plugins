@@ -1,0 +1,7 @@
+name: media-video-shot-list-planner
+version: 1.0.0
+description: "Video Shot List Planner for Hermes Agent: apply a analyze workflow to video shot list work — covers brief clarity, format spec and approval gate, using supplied facts only."
+author: Lionel Sim
+kind: standalone
+provides_tools:
+  - media_video_shot_list_planner

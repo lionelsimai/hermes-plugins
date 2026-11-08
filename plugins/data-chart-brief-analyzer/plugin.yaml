@@ -1,0 +1,7 @@
+name: data-chart-brief-analyzer
+version: 1.0.0
+description: "Chart Brief Analyzer for Hermes Agent: apply a classify workflow to chart brief work — covers data completeness, column consistency and format fit, using supplied facts only."
+author: Lionel Sim
+kind: standalone
+provides_tools:
+  - data_chart_brief_analyzer

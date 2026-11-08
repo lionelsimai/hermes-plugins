@@ -1,0 +1,7 @@
+name: media-subtitle-draft-reviewer
+version: 1.0.0
+description: "Subtitle Draft Reviewer for Hermes Agent: apply a template workflow to subtitle draft work — covers brief clarity, format spec and approval gate, using supplied facts only."
+author: Lionel Sim
+kind: standalone
+provides_tools:
+  - media_subtitle_draft_reviewer

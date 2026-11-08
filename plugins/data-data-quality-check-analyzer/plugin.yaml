@@ -1,0 +1,7 @@
+name: data-data-quality-check-analyzer
+version: 1.0.0
+description: "Data Quality Check Analyzer for Hermes Agent: apply a checklist workflow to data quality check work — covers data completeness, column consistency and format fit, using supplied facts only."
+author: Lionel Sim
+kind: standalone
+provides_tools:
+  - data_data_quality_check_analyzer

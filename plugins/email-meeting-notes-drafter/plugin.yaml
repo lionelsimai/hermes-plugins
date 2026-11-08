@@ -1,0 +1,7 @@
+name: email-meeting-notes-drafter
+version: 1.0.0
+description: "Meeting Notes Drafter for Hermes Agent: apply a classify workflow to meeting notes work — covers priority accuracy, tone fit and next step clarity, using supplied facts only."
+author: Lionel Sim
+kind: standalone
+provides_tools:
+  - email_meeting_notes_drafter

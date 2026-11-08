@@ -1,0 +1,7 @@
+name: data-export-pack-summarizer
+version: 1.0.0
+description: "Export Pack Summarizer for Hermes Agent: apply a checklist workflow to export pack work — covers data completeness, column consistency and format fit, using supplied facts only."
+author: Lionel Sim
+kind: standalone
+provides_tools:
+  - data_export_pack_summarizer

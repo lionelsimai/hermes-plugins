@@ -1,0 +1,7 @@
+name: email-travel-hold-checker
+version: 1.0.0
+description: "Travel Hold Checker for Hermes Agent: apply a template workflow to travel hold work — covers priority accuracy, tone fit and next step clarity, using supplied facts only."
+author: Lionel Sim
+kind: standalone
+provides_tools:
+  - email_travel_hold_checker

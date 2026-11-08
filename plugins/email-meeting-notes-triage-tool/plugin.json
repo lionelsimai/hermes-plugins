@@ -1,0 +1,113 @@
+{
+  "name": "email-meeting-notes-triage-tool",
+  "display_name": "Meeting Notes Triage Tool",
+  "description": "Meeting Notes Triage Tool for Hermes Agent: apply a analyze workflow to meeting notes work \u2014 covers priority accuracy, tone fit and next step clarity, using supplied facts only.",
+  "category": "Email & Calendar",
+  "domain": "Hermes Agent",
+  "version": "1.0.0",
+  "author": {
+    "name": "Lionel Sim",
+    "url": "https://sg.linkedin.com/in/lionelshen"
+  },
+  "license": "MIT",
+  "tools": [
+    {
+      "name": "email_meeting_notes_triage_tool",
+      "description": "Meeting Notes Triage Tool for Hermes Agent: apply a analyze workflow to meeting notes work \u2014 covers priority accuracy, tone fit and next step clarity, using supplied facts only.",
+      "kind": "analyze",
+      "inputSchema": {
+        "type": "object",
+        "properties": {
+          "metrics": {
+            "type": "object"
+          },
+          "counts": {
+            "type": "object"
+          },
+          "amounts": {
+            "type": "object"
+          },
+          "series": {
+            "type": "array",
+            "items": {
+              "type": "number"
+            }
+          },
+          "text": {
+            "type": "string"
+          },
+          "completed": {
+            "type": "array",
+            "items": {
+              "type": "string"
+            }
+          },
+          "facts": {
+            "type": "object"
+          },
+          "items": {
+            "type": "array"
+          },
+          "goal": {
+            "type": "string"
+          },
+          "timeframe_days": {
+            "type": "integer"
+          }
+        },
+        "required": []
+      },
+      "sample_input": {
+        "counts": {
+          "meeting_notes_priority_accuracy": 40,
+          "meeting_notes_tone_fit": 25,
+          "meeting_notes_facts_supplied_only": 10,
+          "meeting_notes_approval_gate": 75
+        },
+        "series": [
+          3,
+          5,
+          4,
+          8
+        ]
+      },
+      "output": {
+        "plugin": "email-meeting-notes-triage-tool",
+        "tool": "email_meeting_notes_triage_tool",
+        "kind": "analyze",
+        "result": "object (shape varies by kind, see README)",
+        "guardrails": "object \u2014 present on every result"
+      }
+    }
+  ],
+  "handler": {
+    "type": "analyze",
+    "config": {
+      "items": [
+        "meeting notes priority accuracy",
+        "meeting notes tone fit",
+        "meeting notes facts supplied only",
+        "meeting notes approval gate",
+        "meeting notes next step clarity"
+      ]
+    }
+  },
+  "hermes": {
+    "skill": "SKILL.md in this folder (agentskills.io format)",
+    "plugin_manifest": "plugin.yaml in this folder (verified Hermes plugin format)",
+    "suggested_toolset": "messaging"
+  },
+  "guardrails": {
+    "no_fabrication": true,
+    "draft_only_for_generative_tools": true,
+    "human_approval_required": true,
+    "no_auto_send": true,
+    "use_supplied_facts_only": true,
+    "no_credential_handling": true
+  },
+  "keywords": [
+    "email & calendar",
+    "hermes",
+    "analyze"
+  ]
+}

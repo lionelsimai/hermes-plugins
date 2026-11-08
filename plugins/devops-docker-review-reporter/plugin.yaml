@@ -1,0 +1,7 @@
+name: devops-docker-review-reporter
+version: 1.0.0
+description: "Docker Review Reporter for Hermes Agent: apply a prioritize workflow to docker review work — covers risk noted, rollback step and window fit, using supplied facts only."
+author: Lionel Sim
+kind: standalone
+provides_tools:
+  - devops_docker_review_reporter

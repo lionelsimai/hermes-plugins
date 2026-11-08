@@ -1,0 +1,7 @@
+name: email-follow-up-note-drafter
+version: 1.0.0
+description: "Follow Up Note Drafter for Hermes Agent: apply a audit workflow to follow up note work — covers priority accuracy, tone fit and next step clarity, using supplied facts only."
+author: Lionel Sim
+kind: standalone
+provides_tools:
+  - email_follow_up_note_drafter

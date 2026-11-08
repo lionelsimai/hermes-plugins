@@ -1,0 +1,106 @@
+{
+  "name": "files-archive-bundle-organizer",
+  "display_name": "Archive Bundle Organizer",
+  "description": "Archive Bundle Organizer for Hermes Agent: apply a score workflow to archive bundle work \u2014 covers format fit, completeness and output location, using supplied facts only.",
+  "category": "File & Document Work",
+  "domain": "Hermes Agent",
+  "version": "1.0.0",
+  "author": {
+    "name": "Lionel Sim",
+    "url": "https://sg.linkedin.com/in/lionelshen"
+  },
+  "license": "MIT",
+  "tools": [
+    {
+      "name": "files_archive_bundle_organizer",
+      "description": "Archive Bundle Organizer for Hermes Agent: apply a score workflow to archive bundle work \u2014 covers format fit, completeness and output location, using supplied facts only.",
+      "kind": "score",
+      "inputSchema": {
+        "type": "object",
+        "properties": {
+          "metrics": {
+            "type": "object"
+          },
+          "counts": {
+            "type": "object"
+          },
+          "amounts": {
+            "type": "object"
+          },
+          "series": {
+            "type": "array",
+            "items": {
+              "type": "number"
+            }
+          },
+          "text": {
+            "type": "string"
+          },
+          "completed": {
+            "type": "array",
+            "items": {
+              "type": "string"
+            }
+          },
+          "facts": {
+            "type": "object"
+          },
+          "items": {
+            "type": "array"
+          },
+          "goal": {
+            "type": "string"
+          },
+          "timeframe_days": {
+            "type": "integer"
+          }
+        },
+        "required": []
+      },
+      "sample_input": {
+        "metrics": {
+          "archive_bundle_format_fit": 80,
+          "archive_bundle_completeness": 65,
+          "archive_bundle_naming_consistency": 90
+        }
+      },
+      "output": {
+        "plugin": "files-archive-bundle-organizer",
+        "tool": "files_archive_bundle_organizer",
+        "kind": "score",
+        "result": "object (shape varies by kind, see README)",
+        "guardrails": "object \u2014 present on every result"
+      }
+    }
+  ],
+  "handler": {
+    "type": "score",
+    "config": {
+      "items": [
+        "archive bundle format fit",
+        "archive bundle completeness",
+        "archive bundle naming consistency",
+        "archive bundle source fidelity",
+        "archive bundle output location"
+      ]
+    }
+  },
+  "hermes": {
+    "skill": "SKILL.md in this folder (agentskills.io format)",
+    "plugin_manifest": "plugin.yaml in this folder (verified Hermes plugin format)",
+    "suggested_toolset": "file"
+  },
+  "guardrails": {
+    "no_fabrication": true,
+    "draft_only_for_generative_tools": true,
+    "human_approval_required": true,
+    "no_auto_send": true,
+    "use_supplied_facts_only": true,
+    "no_credential_handling": true
+  },
+  "keywords": [
+    "file & document work",
+    "hermes",
+    "score"
+  ]
+}

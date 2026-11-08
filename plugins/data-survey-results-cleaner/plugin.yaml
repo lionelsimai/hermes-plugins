@@ -1,0 +1,7 @@
+name: data-survey-results-cleaner
+version: 1.0.0
+description: "Survey Results Cleaner for Hermes Agent: apply a audit workflow to survey results work — covers data completeness, column consistency and format fit, using supplied facts only."
+author: Lionel Sim
+kind: standalone
+provides_tools:
+  - data_survey_results_cleaner

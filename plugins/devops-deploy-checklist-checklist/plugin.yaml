@@ -1,0 +1,7 @@
+name: devops-deploy-checklist-checklist
+version: 1.0.0
+description: "Deploy Checklist Checklist for Hermes Agent: apply a template workflow to deploy checklist work — covers risk noted, rollback step and window fit, using supplied facts only."
+author: Lionel Sim
+kind: standalone
+provides_tools:
+  - devops_deploy_checklist_checklist

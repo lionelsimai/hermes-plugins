@@ -1,0 +1,105 @@
+{
+  "name": "email-newsletter-draft-triage-tool",
+  "display_name": "Newsletter Draft Triage Tool",
+  "description": "Newsletter Draft Triage Tool for Hermes Agent: apply a checklist workflow to newsletter draft work \u2014 covers priority accuracy, tone fit and next step clarity, using supplied facts only.",
+  "category": "Email & Calendar",
+  "domain": "Hermes Agent",
+  "version": "1.0.0",
+  "author": {
+    "name": "Lionel Sim",
+    "url": "https://sg.linkedin.com/in/lionelshen"
+  },
+  "license": "MIT",
+  "tools": [
+    {
+      "name": "email_newsletter_draft_triage_tool",
+      "description": "Newsletter Draft Triage Tool for Hermes Agent: apply a checklist workflow to newsletter draft work \u2014 covers priority accuracy, tone fit and next step clarity, using supplied facts only.",
+      "kind": "checklist",
+      "inputSchema": {
+        "type": "object",
+        "properties": {
+          "metrics": {
+            "type": "object"
+          },
+          "counts": {
+            "type": "object"
+          },
+          "amounts": {
+            "type": "object"
+          },
+          "series": {
+            "type": "array",
+            "items": {
+              "type": "number"
+            }
+          },
+          "text": {
+            "type": "string"
+          },
+          "completed": {
+            "type": "array",
+            "items": {
+              "type": "string"
+            }
+          },
+          "facts": {
+            "type": "object"
+          },
+          "items": {
+            "type": "array"
+          },
+          "goal": {
+            "type": "string"
+          },
+          "timeframe_days": {
+            "type": "integer"
+          }
+        },
+        "required": []
+      },
+      "sample_input": {
+        "completed": [
+          "newsletter draft priority accuracy",
+          "newsletter draft tone fit"
+        ]
+      },
+      "output": {
+        "plugin": "email-newsletter-draft-triage-tool",
+        "tool": "email_newsletter_draft_triage_tool",
+        "kind": "checklist",
+        "result": "object (shape varies by kind, see README)",
+        "guardrails": "object \u2014 present on every result"
+      }
+    }
+  ],
+  "handler": {
+    "type": "checklist",
+    "config": {
+      "items": [
+        "newsletter draft priority accuracy",
+        "newsletter draft tone fit",
+        "newsletter draft facts supplied only",
+        "newsletter draft approval gate",
+        "newsletter draft next step clarity"
+      ]
+    }
+  },
+  "hermes": {
+    "skill": "SKILL.md in this folder (agentskills.io format)",
+    "plugin_manifest": "plugin.yaml in this folder (verified Hermes plugin format)",
+    "suggested_toolset": "messaging"
+  },
+  "guardrails": {
+    "no_fabrication": true,
+    "draft_only_for_generative_tools": true,
+    "human_approval_required": true,
+    "no_auto_send": true,
+    "use_supplied_facts_only": true,
+    "no_credential_handling": true
+  },
+  "keywords": [
+    "email & calendar",
+    "hermes",
+    "checklist"
+  ]
+}

@@ -1,0 +1,105 @@
+{
+  "name": "email-meeting-agenda-planner",
+  "display_name": "Meeting Agenda Planner",
+  "description": "Meeting Agenda Planner for Hermes Agent: apply a checklist workflow to meeting agenda work \u2014 covers priority accuracy, tone fit and next step clarity, using supplied facts only.",
+  "category": "Email & Calendar",
+  "domain": "Hermes Agent",
+  "version": "1.0.0",
+  "author": {
+    "name": "Lionel Sim",
+    "url": "https://sg.linkedin.com/in/lionelshen"
+  },
+  "license": "MIT",
+  "tools": [
+    {
+      "name": "email_meeting_agenda_planner",
+      "description": "Meeting Agenda Planner for Hermes Agent: apply a checklist workflow to meeting agenda work \u2014 covers priority accuracy, tone fit and next step clarity, using supplied facts only.",
+      "kind": "checklist",
+      "inputSchema": {
+        "type": "object",
+        "properties": {
+          "metrics": {
+            "type": "object"
+          },
+          "counts": {
+            "type": "object"
+          },
+          "amounts": {
+            "type": "object"
+          },
+          "series": {
+            "type": "array",
+            "items": {
+              "type": "number"
+            }
+          },
+          "text": {
+            "type": "string"
+          },
+          "completed": {
+            "type": "array",
+            "items": {
+              "type": "string"
+            }
+          },
+          "facts": {
+            "type": "object"
+          },
+          "items": {
+            "type": "array"
+          },
+          "goal": {
+            "type": "string"
+          },
+          "timeframe_days": {
+            "type": "integer"
+          }
+        },
+        "required": []
+      },
+      "sample_input": {
+        "completed": [
+          "meeting agenda priority accuracy",
+          "meeting agenda tone fit"
+        ]
+      },
+      "output": {
+        "plugin": "email-meeting-agenda-planner",
+        "tool": "email_meeting_agenda_planner",
+        "kind": "checklist",
+        "result": "object (shape varies by kind, see README)",
+        "guardrails": "object \u2014 present on every result"
+      }
+    }
+  ],
+  "handler": {
+    "type": "checklist",
+    "config": {
+      "items": [
+        "meeting agenda priority accuracy",
+        "meeting agenda tone fit",
+        "meeting agenda facts supplied only",
+        "meeting agenda approval gate",
+        "meeting agenda next step clarity"
+      ]
+    }
+  },
+  "hermes": {
+    "skill": "SKILL.md in this folder (agentskills.io format)",
+    "plugin_manifest": "plugin.yaml in this folder (verified Hermes plugin format)",
+    "suggested_toolset": "messaging"
+  },
+  "guardrails": {
+    "no_fabrication": true,
+    "draft_only_for_generative_tools": true,
+    "human_approval_required": true,
+    "no_auto_send": true,
+    "use_supplied_facts_only": true,
+    "no_credential_handling": true
+  },
+  "keywords": [
+    "email & calendar",
+    "hermes",
+    "checklist"
+  ]
+}

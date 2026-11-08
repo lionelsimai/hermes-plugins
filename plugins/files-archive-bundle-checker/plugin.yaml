@@ -1,0 +1,7 @@
+name: files-archive-bundle-checker
+version: 1.0.0
+description: "Archive Bundle Checker for Hermes Agent: apply a template workflow to archive bundle work — covers format fit, completeness and output location, using supplied facts only."
+author: Lionel Sim
+kind: standalone
+provides_tools:
+  - files_archive_bundle_checker

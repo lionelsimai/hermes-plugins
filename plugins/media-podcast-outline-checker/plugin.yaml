@@ -1,0 +1,7 @@
+name: media-podcast-outline-checker
+version: 1.0.0
+description: "Podcast Outline Checker for Hermes Agent: apply a prioritize workflow to podcast outline work — covers brief clarity, format spec and approval gate, using supplied facts only."
+author: Lionel Sim
+kind: standalone
+provides_tools:
+  - media_podcast_outline_checker

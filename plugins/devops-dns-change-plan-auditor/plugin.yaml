@@ -1,0 +1,7 @@
+name: devops-dns-change-plan-auditor
+version: 1.0.0
+description: "Dns Change Plan Auditor for Hermes Agent: apply a template workflow to dns change plan work — covers risk noted, rollback step and window fit, using supplied facts only."
+author: Lionel Sim
+kind: standalone
+provides_tools:
+  - devops_dns_change_plan_auditor

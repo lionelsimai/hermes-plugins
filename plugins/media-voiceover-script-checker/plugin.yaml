@@ -1,0 +1,7 @@
+name: media-voiceover-script-checker
+version: 1.0.0
+description: "Voiceover Script Checker for Hermes Agent: apply a template workflow to voiceover script work — covers brief clarity, format spec and approval gate, using supplied facts only."
+author: Lionel Sim
+kind: standalone
+provides_tools:
+  - media_voiceover_script_checker

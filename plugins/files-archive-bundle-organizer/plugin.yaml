@@ -1,0 +1,7 @@
+name: files-archive-bundle-organizer
+version: 1.0.0
+description: "Archive Bundle Organizer for Hermes Agent: apply a score workflow to archive bundle work — covers format fit, completeness and output location, using supplied facts only."
+author: Lionel Sim
+kind: standalone
+provides_tools:
+  - files_archive_bundle_organizer

@@ -1,0 +1,7 @@
+name: email-calendar-conflict-summarizer
+version: 1.0.0
+description: "Calendar Conflict Summarizer for Hermes Agent: apply a analyze workflow to calendar conflict work — covers priority accuracy, tone fit and next step clarity, using supplied facts only."
+author: Lionel Sim
+kind: standalone
+provides_tools:
+  - email_calendar_conflict_summarizer

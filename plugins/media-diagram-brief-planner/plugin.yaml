@@ -1,0 +1,7 @@
+name: media-diagram-brief-planner
+version: 1.0.0
+description: "Diagram Brief Planner for Hermes Agent: apply a template workflow to diagram brief work — covers brief clarity, format spec and approval gate, using supplied facts only."
+author: Lionel Sim
+kind: standalone
+provides_tools:
+  - media_diagram_brief_planner
